@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gissell Narvv | Pagos</title>
+  <style>
+    :root {
+      --bg: #fff8fb;
+      --card: #ffffff;
+      --text: #2b2b2b;
+      --muted: #777;
+      --gold: #c89b3c;
+      --pink: #e8a8c8;
+      --dark: #1d1d1d;
+      --success: #2e9d55;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(180deg, #fff8fb, #ffffff);
+      color: var(--text);
+      padding: 22px;
+    }
+
+    .container {
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 22px;
+    }
+
+    .logo {
+      width: 78px;
+      height: 78px;
+      border-radius: 50%;
+      margin: 0 auto 10px;
+      background: linear-gradient(135deg, var(--pink), var(--gold));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 38px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 28px;
+      letter-spacing: 0.5px;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      margin-top: 6px;
+      font-size: 15px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 22px;
+      padding: 18px;
+      margin-bottom: 16px;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.08);
+      border: 1px solid rgba(200,155,60,0.18);
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 12px;
+      color: var(--dark);
+    }
+
+    .data-box {
+      background: #fafafa;
+      border: 1px dashed #d6b76a;
+      border-radius: 14px;
+      padding: 12px;
+      margin-bottom: 10px;
+    }
+
+    .label {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .value {
+      font-size: 17px;
+      font-weight: bold;
+      word-break: break-word;
+    }
+
+    button, a.button {
+      width: 100%;
+      display: block;
+      text-align: center;
+      border: none;
+      border-radius: 14px;
+      padding: 14px;
+      margin-top: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      background: var(--dark);
+      color: white;
+    }
+
+    .gold {
+      background: linear-gradient(135deg, #d6aa45, #b78324);
+      color: white;
+    }
+
+    .pink {
+      background: linear-gradient(135deg, #e8a8c8, #d875aa);
+      color: white;
+    }
+
+    .light {
+      background: #fff4fa;
+      color: var(--dark);
+      border: 1px solid #f0c2d8;
+    }
+
+    .notice {
+      font-size: 13px;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 12px;
+      line-height: 1.4;
+    }
+
+    .toast {
+      display: none;
+      position: fixed;
+      left: 50%;
+      bottom: 24px;
+      transform: translateX(-50%);
+      background: var(--success);
+      color: white;
+      padding: 13px 18px;
+      border-radius: 999px;
+      font-weight: bold;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.18);
+      z-index: 999;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <div class="logo">🦋</div>
+      <h1>Gissell Narvv</h1>
+      <div class="subtitle">Pagos y contacto rápido</div>
+    </div>
+
+    <div class="card">
+      <div class="section-title">💳 Datos para transferencia</div>
+
+      <div class="data-box">
+        <div class="label">Banco</div>
+        <div class="value" id="banco">CAMBIA AQUÍ EL BANCO</div>
+      </div>
+
+      <div class="data-box">
+        <div class="label">Titular</div>
+        <div class="value" id="titular">CAMBIA AQUÍ EL TITULAR</div>
+      </div>
+
+      <div class="data-box">
+        <div class="label">CLABE</div>
+        <div class="value" id="clabe">000000000000000000</div>
+      </div>
+
+      <button class="gold" onclick="copiarTexto('clabe', 'CLABE copiada')">
+        📋 Copiar CLABE
+      </button>
+
+      <div class="data-box" style="margin-top:14px;">
+        <div class="label">Tarjeta</div>
+        <div class="value" id="tarjeta">0000 0000 0000 0000</div>
+      </div>
+
+      <button class="gold" onclick="copiarTexto('tarjeta', 'Número de tarjeta copiado')">
+        💳 Copiar tarjeta
+      </button>
+
+      <p class="notice">
+        Después de copiar, abre tu app bancaria y pega los datos para hacer la transferencia.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="section-title">📲 Confirmar pago</div>
+
+      <a class="button pink" id="whatsappPago" href="#" target="_blank">
+        ✅ Ya realicé mi pago
+      </a>
+
+      <a class="button light" id="whatsappCotizar" href="#" target="_blank">
+        💬 Cotizar por WhatsApp
+      </a>
+      <a class="button pink" id="whatsappPedido" href="#" target="_blank">
+      🛍️ Realizar pedido
+     </a>
+      <a class="button pink" id="grupoWhatsapp" href="#" target="_blank">
+  💎 Entrar al grupo de WhatsApp
+      </a>
+      
+    </div>
+
+    <div class="card">
+      <div class="section-title">🌐 Más información</div>
+
+      <a class="button light" id="instagram" href="#" target="_blank">
+        📸 Instagram
+      </a>
+
+      <a class="button light" id="catalogo" href="#" target="_blank">
+        🛍️ Catálogo
+      </a>
+
+      <a class="button light" id="ubicacion" href="#" target="_blank">
+        📍 Ubicación
+      </a>
+    </div>
+
+    <footer>
+      Gissell Narvv · Joyería y grabados personalizados
+    </footer>
+  </div>
+
+  <div class="toast" id="toast">Copiado</div>
+
+  <script>
+    /*
+      CAMBIA SOLO ESTA PARTE:
+      Pon tus datos reales aquí.
+    */
+
+    const datos = {
+      banco: "BBVA",
+      titular: "Guisela Navarrete Robles",
+      tarjeta: "4152314017380737",
+
+      whatsapp: "527441140018",
+      instagram: "https://www.instagram.com/gissell.narva/",
+      ubicacion: "https://maps.app.goo.gl/me19eaarCFBGkJyi7",
+      grupoWhatsapp: "https://chat.whatsapp.com/GHodTxwbFepAhmYpxSSd98"
+    };
+
+    document.getElementById("banco").textContent = datos.banco;
+    document.getElementById("titular").textContent = datos.titular;
+    document.getElementById("tarjeta").textContent = datos.tarjeta;
+
+    const mensajePago = encodeURIComponent(
+      "Hola, ya realicé mi transferencia. Enseguida te envío mi comprobante."
+    );
+
+    const mensajeCotizar = encodeURIComponent(
+      "Hola, quiero cotizar un grabado personalizado."
+    );
+    );
+
+const mensajeRealizarPedido = encodeURIComponent(
+  "Hola, quiero realizar un pedido."
+);
+
+    document.getElementById("whatsappPago").href =
+      `https://wa.me/${datos.whatsapp}?text=${mensajePago}`;
+
+    document.getElementById("whatsappCotizar").href =
+      `https://wa.me/${datos.whatsapp}?text=${mensajeCotizar}`;
+    
+    document.getElementById("whatsappPedido").href =
+  `https://wa.me/${datos.whatsapp}?text=${mensajeRealizarPedido}`;
+
+    document.getElementById("instagram").href = datos.instagram;
+    document.getElementById("ubicacion").href = datos.ubicacion;
+    document.getElementById("grupoWhatsapp").href = datos.grupoWhatsapp;
+
+    function copiarTexto(id, mensaje) {
+      const texto = document.getElementById(id).textContent.trim();
+
+      navigator.clipboard.writeText(texto).then(() => {
+        mostrarToast(mensaje);
+      }).catch(() => {
+        alert("Copia manualmente este dato: " + texto);
+      });
+    }
+
+    function mostrarToast(mensaje) {
+      const toast = document.getElementById("toast");
+      toast.textContent = "✅ " + mensaje;
+      toast.style.display = "block";
+
+      setTimeout(() => {
+        toast.style.display = "none";
+      }, 2200);
+    }
+  </script>
+
+</body>
+</html>
