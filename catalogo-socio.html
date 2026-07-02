@@ -420,13 +420,13 @@ footer {
     <header>
       <div class="logo">🦋</div>
       <h1>Gissell Narvv</h1>
-      <p class="subtitle">Catálogo especial de piezas disponibles con nuestro socio. Toca una foto para verla grande y apreciar mejor los detalles.</p>
+      <p class="subtitle">Catálogo especial de piezas disponibles con Jazmin Boutique. Toca una foto para verla  y apreciar mejor los detalles.</p>
     </header>
 
     <section class="hero">
-      <span class="badge">✨ Catálogo NFC</span>
+      <span class="badge">✨ Catálogo electronico</span>
       <h2>Piezas disponibles en tienda</h2>
-      <p>Las existencias pueden cambiar durante el día. Confirma por WhatsApp antes de apartar.</p>
+      <p>Las existencias pueden cambiar durante el día. Confirma con tu vendedora la disponibilidad antes de apartar.</p>
       <div class="actions">
         <a class="btn btn-primary" id="whatsappGeneral" href="#">Pedir por WhatsApp</a>
         <a class="btn btn-secondary" href="index.html">Volver al menú</a>
@@ -442,10 +442,10 @@ footer {
     <section class="grid" id="productos"></section>
 
     <section class="panel">
-      <p><strong>Tip:</strong> usa de 2 a 4 fotos por producto: una frontal, una de detalle, una en mano o modelo y una de referencia de tamaño.</p>
+      <p><strong>Tip:</strong> si no encuentras la pieza que buscas, pide mas informacion a tu vendedora</p>
     </section>
 
-    <footer>Gissell Narvv · Catálogo del socio</footer>
+    <footer>Gissell Narvv · Catálogo del Jazmin Boutique</footer>
   </main>
 
   <div class="modal" id="modal" aria-hidden="true">
@@ -472,9 +472,9 @@ footer {
     const productos = [
       {
         codigo: "SOC-001",
-        nombre: "Cadena dorada con dije corazón",
+        nombre: "Cadena Hailey Bieber",
         categoria: "Cadenas",
-        material: "Acero inoxidable dorado",
+        material: "Oro laminado",
         precio: 90,
         imagenes: [
           "img/producto-01-1.svg",
@@ -534,7 +534,7 @@ footer {
 
     function mensajeProducto(producto) {
       return encodeURIComponent(
-        `Hola, vengo del catálogo NFC del socio. Me interesa esta pieza:\n\n` +
+        `Hola, vengo del catálogo electronico de Jazmin Boutique. Me interesa esta pieza:\n\n` +
         `Código: ${producto.codigo}\n` +
         `Producto: ${producto.nombre}\n` +
         `Precio: ${formatoPrecio(producto.precio)}\n\n` +
