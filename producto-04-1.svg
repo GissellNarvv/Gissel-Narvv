@@ -1,0 +1,7 @@
+<svg width="900" height="1000" viewBox="0 0 900 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="1000" fill="#F5E4DE"/>
+  <circle cx="450" cy="375" r="130" fill="#E8C9BE"/>
+  <path d="M250 720C330 610 389 570 450 570C511 570 570 610 650 720H250Z" fill="#D6AA9A"/>
+  <text x="450" y="800" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="42" fill="#7A4F40" font-weight="700">Producto 03</text>
+  <text x="450" y="852" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="28" fill="#7D6F6B">Foto 3</text>
+</svg>

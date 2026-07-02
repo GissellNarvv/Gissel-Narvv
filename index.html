@@ -18,323 +18,76 @@
       --shadow: 0 12px 30px rgba(80, 48, 38, 0.10);
       --radius: 22px;
     }
-
-    * {
-      box-sizing: border-box;
-    }
-
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background:
-        radial-gradient(circle at top left, #ffe7df 0, transparent 35%),
-        radial-gradient(circle at bottom right, #f7d9cd 0, transparent 30%),
-        var(--bg);
+      background: radial-gradient(circle at top left, #ffe7df 0, transparent 35%), radial-gradient(circle at bottom right, #f7d9cd 0, transparent 30%), var(--bg);
       color: var(--text);
     }
-
-    .page {
-      width: min(100%, 980px);
-      margin: 0 auto;
-      padding: 22px 16px 36px;
-    }
-
-    header {
-      padding: 18px 0 10px;
-      text-align: center;
-    }
-
-    .logo {
-      width: 76px;
-      height: 76px;
-      margin: 0 auto 12px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #fff, #f1d0c4);
-      box-shadow: var(--shadow);
-      font-size: 34px;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: clamp(28px, 7vw, 46px);
-      letter-spacing: -0.04em;
-      line-height: 0.95;
-    }
-
-    .subtitle {
-      margin: 10px auto 0;
-      max-width: 620px;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.5;
-    }
-
-    .hero {
-      margin-top: 20px;
-      padding: 22px;
-      background: rgba(255, 255, 255, 0.78);
-      border: 1px solid var(--border);
-      border-radius: calc(var(--radius) + 8px);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
-    }
-
-    .hero-top {
-      display: flex;
-      gap: 14px;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 12px;
-      background: var(--soft);
-      color: var(--brand-dark);
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .hero h2 {
-      margin: 16px 0 8px;
-      font-size: clamp(24px, 6vw, 38px);
-      line-height: 1.05;
-      letter-spacing: -0.04em;
-    }
-
-    .hero p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.55;
-      font-size: 15px;
-    }
-
-    .actions {
-      display: flex;
-      gap: 10px;
-      margin-top: 18px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      appearance: none;
-      border: 0;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      text-decoration: none;
-      border-radius: 999px;
-      padding: 13px 17px;
-      font-weight: 800;
-      cursor: pointer;
-      font-size: 14px;
-      transition: transform .2s ease, box-shadow .2s ease;
-    }
-
-    .btn:active {
-      transform: scale(.98);
-    }
-
-    .btn-primary {
-      background: var(--brand-dark);
-      color: white;
-      box-shadow: 0 10px 20px rgba(122, 79, 64, 0.20);
-    }
-
-    .btn-secondary {
-      background: white;
-      color: var(--brand-dark);
-      border: 1px solid var(--border);
-    }
-
-    .section-title {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 16px;
-      margin: 28px 4px 14px;
-    }
-
-    .section-title h3 {
-      margin: 0;
-      font-size: 24px;
-      letter-spacing: -0.03em;
-    }
-
-    .section-title span {
-      color: var(--muted);
-      font-size: 13px;
-      white-space: nowrap;
-    }
-
-    .filters {
-      display: flex;
-      gap: 8px;
-      overflow-x: auto;
-      padding: 2px 2px 14px;
-      margin-bottom: 8px;
-    }
-
-    .filter {
-      white-space: nowrap;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.85);
-      color: var(--brand-dark);
-      padding: 10px 14px;
-      border-radius: 999px;
-      font-weight: 800;
-      cursor: pointer;
-    }
-
-    .filter.active {
-      background: var(--brand-dark);
-      color: white;
-      border-color: var(--brand-dark);
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .product {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      display: flex;
-      flex-direction: column;
-      min-height: 100%;
-    }
-
-    .photo-wrap {
-      position: relative;
-      aspect-ratio: 1 / 1.08;
-      background: #f5e4de;
-      overflow: hidden;
-    }
-
-    .photo-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform .35s ease;
-    }
-
-    .product:active .photo-wrap img {
-      transform: scale(1.03);
-    }
-
-    .code {
-      position: absolute;
-      left: 10px;
-      top: 10px;
-      padding: 6px 9px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.88);
-      color: var(--brand-dark);
-      font-size: 11px;
-      font-weight: 900;
-      backdrop-filter: blur(8px);
-    }
-
-    .content {
-      padding: 13px;
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-      flex: 1;
-    }
-
-    .category {
-      color: var(--brand);
-      font-size: 12px;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: .06em;
-    }
-
-    .name {
-      margin: 0;
-      font-size: 16px;
-      line-height: 1.15;
-    }
-
-    .material {
-      margin: 0;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.35;
-    }
-
-    .price-row {
-      margin-top: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      padding-top: 4px;
-    }
-
-    .price {
-      font-size: 18px;
-      font-weight: 900;
-      color: var(--text);
-      white-space: nowrap;
-    }
-
-    .mini-btn {
-      text-decoration: none;
-      background: #25D366;
-      color: white;
-      padding: 9px 11px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 900;
-      white-space: nowrap;
-    }
-
-    .notice {
-      margin-top: 22px;
-      background: rgba(255,255,255,.72);
-      border: 1px dashed var(--brand);
-      border-radius: var(--radius);
-      padding: 16px;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.5;
-    }
-
-    footer {
-      text-align: center;
-      padding: 26px 0 4px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
+    .page { width: min(100%, 980px); margin: 0 auto; padding: 22px 16px 36px; }
+    header { padding: 18px 0 10px; text-align: center; }
+    .logo { width: 76px; height: 76px; margin: 0 auto 12px; display: grid; place-items: center; border-radius: 50%; background: linear-gradient(135deg, #fff, #f1d0c4); box-shadow: var(--shadow); font-size: 34px; }
+    h1 { margin: 0; font-size: clamp(28px, 7vw, 46px); letter-spacing: -0.04em; line-height: 0.95; }
+    .subtitle { margin: 10px auto 0; max-width: 620px; color: var(--muted); font-size: 15px; line-height: 1.5; }
+    .hero { margin-top: 20px; padding: 22px; background: rgba(255,255,255,.78); border: 1px solid var(--border); border-radius: calc(var(--radius) + 8px); box-shadow: var(--shadow); backdrop-filter: blur(10px); }
+    .hero-top { display: flex; gap: 14px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+    .badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; background: var(--soft); color: var(--brand-dark); border-radius: 999px; font-size: 13px; font-weight: 700; }
+    .hero h2 { margin: 16px 0 8px; font-size: clamp(24px, 6vw, 38px); line-height: 1.05; letter-spacing: -0.04em; }
+    .hero p { margin: 0; color: var(--muted); line-height: 1.55; font-size: 15px; }
+    .actions { display: flex; gap: 10px; margin-top: 18px; flex-wrap: wrap; }
+    .btn { appearance: none; border: 0; display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; border-radius: 999px; padding: 13px 17px; font-weight: 800; cursor: pointer; font-size: 14px; transition: transform .2s ease, box-shadow .2s ease; }
+    .btn:active { transform: scale(.98); }
+    .btn-primary { background: var(--brand-dark); color: white; box-shadow: 0 10px 20px rgba(122,79,64,.20); }
+    .btn-secondary { background: white; color: var(--brand-dark); border: 1px solid var(--border); }
+    .section-title { display: flex; align-items: end; justify-content: space-between; gap: 16px; margin: 28px 4px 14px; }
+    .section-title h3 { margin: 0; font-size: 24px; letter-spacing: -0.03em; }
+    .section-title span { color: var(--muted); font-size: 13px; white-space: nowrap; }
+    .filters { display: flex; gap: 8px; overflow-x: auto; padding: 2px 2px 14px; margin-bottom: 8px; }
+    .filter { white-space: nowrap; border: 1px solid var(--border); background: rgba(255,255,255,.85); color: var(--brand-dark); padding: 10px 14px; border-radius: 999px; font-weight: 800; cursor: pointer; }
+    .filter.active { background: var(--brand-dark); color: white; border-color: var(--brand-dark); }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .product { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column; min-height: 100%; }
+    .photo-wrap { position: relative; aspect-ratio: 1 / 1.08; background: #f5e4de; overflow: hidden; cursor: zoom-in; border: 0; padding: 0; width: 100%; }
+    .photo-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .35s ease; }
+    .product:active .photo-wrap img { transform: scale(1.03); }
+    .code { position: absolute; left: 10px; top: 10px; padding: 6px 9px; border-radius: 999px; background: rgba(255,255,255,.88); color: var(--brand-dark); font-size: 11px; font-weight: 900; backdrop-filter: blur(8px); }
+    .zoom-label { position: absolute; right: 10px; bottom: 10px; padding: 7px 10px; border-radius: 999px; background: rgba(46,36,34,.78); color: white; font-size: 11px; font-weight: 900; backdrop-filter: blur(8px); }
+    .thumbs { display: flex; gap: 6px; padding: 9px 10px 0; overflow-x: auto; }
+    .thumb { width: 42px; height: 42px; min-width: 42px; border-radius: 12px; border: 2px solid transparent; padding: 0; overflow: hidden; background: #f5e4de; cursor: pointer; }
+    .thumb.active { border-color: var(--brand-dark); }
+    .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .content { padding: 13px; display: flex; flex-direction: column; gap: 7px; flex: 1; }
+    .category { color: var(--brand); font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: .06em; }
+    .name { margin: 0; font-size: 16px; line-height: 1.15; }
+    .material { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.35; }
+    .price-row { margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 10px; padding-top: 4px; }
+    .price { font-size: 18px; font-weight: 900; color: var(--text); white-space: nowrap; }
+    .mini-btn { text-decoration: none; background: #25D366; color: white; padding: 9px 11px; border-radius: 999px; font-size: 12px; font-weight: 900; white-space: nowrap; }
+    .notice { margin-top: 22px; background: rgba(255,255,255,.72); border: 1px dashed var(--brand); border-radius: var(--radius); padding: 16px; color: var(--muted); font-size: 14px; line-height: 1.5; }
+    footer { text-align: center; padding: 26px 0 4px; color: var(--muted); font-size: 13px; }
+    .modal { position: fixed; inset: 0; z-index: 99; background: rgba(20,13,11,.88); display: none; align-items: center; justify-content: center; padding: 18px; }
+    .modal.open { display: flex; }
+    .modal-card { width: min(100%, 900px); max-height: 94vh; background: white; border-radius: 24px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 24px 80px rgba(0,0,0,.35); }
+    .modal-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 13px 14px; border-bottom: 1px solid var(--border); }
+    .modal-title { min-width: 0; }
+    .modal-title strong { display: block; font-size: 15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .modal-title span { display: block; color: var(--muted); font-size: 12px; margin-top: 2px; }
+    .close { border: 0; background: var(--soft); color: var(--brand-dark); width: 38px; height: 38px; border-radius: 50%; font-size: 22px; font-weight: 900; cursor: pointer; flex: 0 0 auto; }
+    .modal-image-area { position: relative; background: #120d0b; display: grid; place-items: center; min-height: 300px; max-height: 68vh; }
+    .modal-image-area img { width: 100%; height: 100%; max-height: 68vh; object-fit: contain; display: block; }
+    .nav-img { position: absolute; top: 50%; transform: translateY(-50%); border: 0; width: 42px; height: 42px; border-radius: 50%; background: rgba(255,255,255,.88); color: var(--brand-dark); font-size: 28px; font-weight: 900; cursor: pointer; }
+    .prev { left: 10px; }
+    .next { right: 10px; }
+    .modal-footer { display: flex; gap: 8px; padding: 10px; overflow-x: auto; border-top: 1px solid var(--border); }
+    .modal-thumb { width: 58px; height: 58px; min-width: 58px; border-radius: 14px; border: 2px solid transparent; overflow: hidden; padding: 0; cursor: pointer; background: #f5e4de; }
+    .modal-thumb.active { border-color: var(--brand-dark); }
+    .modal-thumb img { width: 100%; height: 100%; object-fit: cover; }
     @media (min-width: 760px) {
-      .page {
-        padding: 36px 24px 54px;
-      }
-
-      .grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 18px;
-      }
-
-      .hero {
-        padding: 34px;
-      }
+      .page { padding: 36px 24px 54px; }
+      .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+      .hero { padding: 34px; }
+      .modal-image-area { min-height: 500px; }
     }
   </style>
 </head>
@@ -343,12 +96,11 @@
     <header>
       <div class="logo" aria-label="Logo Gissell Narvv">🦋</div>
       <h1>Gissell Narvv</h1>
-      <p class="subtitle">Catálogo especial de piezas disponibles con nuestro socio. Toca una pieza para pedir información por WhatsApp.</p>
+      <p class="subtitle">Catálogo especial de piezas disponibles con nuestro socio. Toca una foto para verla grande y apreciar mejor los detalles.</p>
     </header>
-
     <section class="hero">
       <div class="hero-top">
-        <span class="badge">✨ Catálogo Electronico</span>
+        <span class="badge">✨ Catálogo NFC</span>
         <span class="badge">Disponible en tienda</span>
       </div>
       <h2>Piezas listas para enamorar</h2>
@@ -358,166 +110,90 @@
         <a class="btn btn-secondary" href="#catalogo">Ver catálogo</a>
       </div>
     </section>
-
-    <div class="section-title" id="catalogo">
-      <h3>Catálogo</h3>
-      <span id="contador"></span>
-    </div>
-
+    <div class="section-title" id="catalogo"><h3>Catálogo</h3><span id="contador"></span></div>
     <div class="filters" id="filters"></div>
-
     <section class="grid" id="productos"></section>
-
-    <div class="notice">
-      <strong>Nota:</strong> este catálogo es para mostrar las piezas que están físicamente con Jazmin Boutique. <strong>img</strong>.
-    </div>
-
-    <footer>
-      Gissell Narvv · Joyería para brillar todos los días
-    </footer>
+    <div class="notice"><strong>Tip para vender mejor:</strong> usa de 2 a 4 fotos por producto: una frontal, una en mano o modelo, una de detalle y una con empaque. Así la clienta puede apreciar brillo, tamaño y acabado antes de preguntar.</div>
+    <footer>Gissell Narvv · Joyería para brillar todos los días</footer>
   </main>
-
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title"><strong id="modalName">Producto</strong><span id="modalCounter">1 / 1</span></div>
+        <button class="close" id="closeModal" aria-label="Cerrar">×</button>
+      </div>
+      <div class="modal-image-area">
+        <button class="nav-img prev" id="prevImg" aria-label="Imagen anterior">‹</button>
+        <img id="modalImg" src="" alt="">
+        <button class="nav-img next" id="nextImg" aria-label="Imagen siguiente">›</button>
+      </div>
+      <div class="modal-footer" id="modalThumbs"></div>
+    </div>
+  </div>
   <script>
-    /*
-      CÓMO EDITAR:
-      1. Sube tus fotos a la carpeta img.
-      2. Cambia el texto de "imagen" por el nombre exacto de tu archivo.
-         Ejemplo: img/collar-corazon.jpg
-      3. Cambia nombre, precio, material y categoría.
-      4. Si una pieza se vende, puedes borrar su bloque completo.
-    */
-
-    const numeroWhatsApp = "527441140018"; // Cambia este número si usarás otro WhatsApp.
-
+    const numeroWhatsApp = "527441140018";
     const productos = [
-      {
-        codigo: "SOC-001",
-        nombre: "Cadena Inicial Hailey Bieber",
-        categoria: "Cadenas",
-        material: "Dije Oro laminado",
-        precio: 90,
-        imagen: "img/cadenabiber5d.png"
-      },
-      {
-        codigo: "SOC-002",
-        nombre: "Pulsera fina con detalle elegante",
-        categoria: "Pulseras",
-        material: "Acero inoxidable",
-        precio: 75,
-        imagen: "img/producto-02.jpg"
-      },
-      {
-        codigo: "SOC-003",
-        nombre: "Aretes dorados de uso diario",
-        categoria: "Aretes",
-        material: "Acero inoxidable dorado",
-        precio: 55,
-        imagen: "img/producto-03.jpg"
-      },
-      {
-        codigo: "SOC-004",
-        nombre: "Anillo ajustable minimalista",
-        categoria: "Anillos",
-        material: "Acero inoxidable",
-        precio: 65,
-        imagen: "img/producto-04.jpg"
-      },
-      {
-        codigo: "SOC-005",
-        nombre: "Coordinado delicado",
-        categoria: "Coordinados",
-        material: "Acero inoxidable dorado",
-        precio: 120,
-        imagen: "img/producto-05.jpg"
-      },
-      {
-        codigo: "SOC-006",
-        nombre: "Cadena con dije especial",
-        categoria: "Cadenas",
-        material: "Acero inoxidable",
-        precio: 100,
-        imagen: "img/producto-06.jpg"
-      }
+      { codigo: "SOC-001", nombre: "Cadena dorada con dije corazón", categoria: "Cadenas", material: "Acero inoxidable dorado", precio: 90, imagenes: ["img/producto-01-1.svg", "img/producto-01-2.svg", "img/producto-01-3.svg"] },
+      { codigo: "SOC-002", nombre: "Pulsera fina con detalle elegante", categoria: "Pulseras", material: "Acero inoxidable", precio: 75, imagenes: ["img/producto-02-1.svg", "img/producto-02-2.svg"] },
+      { codigo: "SOC-003", nombre: "Aretes dorados de uso diario", categoria: "Aretes", material: "Acero inoxidable dorado", precio: 55, imagenes: ["img/producto-03-1.svg", "img/producto-03-2.svg", "img/producto-03-3.svg"] },
+      { codigo: "SOC-004", nombre: "Anillo ajustable minimalista", categoria: "Anillos", material: "Acero inoxidable", precio: 65, imagenes: ["img/producto-04-1.svg"] }
     ];
-
     const productosContainer = document.querySelector("#productos");
     const filtersContainer = document.querySelector("#filters");
     const contador = document.querySelector("#contador");
     const whatsappGeneral = document.querySelector("#whatsappGeneral");
-
-    function formatoPrecio(valor) {
-      return new Intl.NumberFormat("es-MX", {
-        style: "currency",
-        currency: "MXN",
-        maximumFractionDigits: 0
-      }).format(valor);
-    }
-
-    function mensajeProducto(producto) {
-      return encodeURIComponent(
-        `Hola, vengo del catálogo NFC del socio. Me interesa esta pieza:\n\n` +
-        `Código: ${producto.codigo}\n` +
-        `Producto: ${producto.nombre}\n` +
-        `Precio: ${formatoPrecio(producto.precio)}\n\n` +
-        `¿Sigue disponible?`
-      );
-    }
-
-    function linkWhatsApp(producto) {
-      return `https://wa.me/${numeroWhatsApp}?text=${mensajeProducto(producto)}`;
-    }
-
+    const modal = document.querySelector("#modal");
+    const modalImg = document.querySelector("#modalImg");
+    const modalName = document.querySelector("#modalName");
+    const modalCounter = document.querySelector("#modalCounter");
+    const modalThumbs = document.querySelector("#modalThumbs");
+    const closeModal = document.querySelector("#closeModal");
+    const prevImg = document.querySelector("#prevImg");
+    const nextImg = document.querySelector("#nextImg");
+    let galeriaActual = [], productoActual = null, indiceActual = 0;
+    function formatoPrecio(valor) { return new Intl.NumberFormat("es-MX", { style: "currency", currency: "MXN", maximumFractionDigits: 0 }).format(valor); }
+    function mensajeProducto(producto) { return encodeURIComponent(`Hola, vengo del catálogo NFC del socio. Me interesa esta pieza:\n\nCódigo: ${producto.codigo}\nProducto: ${producto.nombre}\nPrecio: ${formatoPrecio(producto.precio)}\n\n¿Sigue disponible?`); }
+    function linkWhatsApp(producto) { return `https://wa.me/${numeroWhatsApp}?text=${mensajeProducto(producto)}`; }
+    function getImagenes(producto) { if (producto.imagenes && producto.imagenes.length) return producto.imagenes; if (producto.imagen) return [producto.imagen]; return ["img/placeholder.svg"]; }
     function pintarProductos(categoria = "Todo") {
-      const lista = categoria === "Todo"
-        ? productos
-        : productos.filter(p => p.categoria === categoria);
-
+      const lista = categoria === "Todo" ? productos : productos.filter(p => p.categoria === categoria);
       contador.textContent = `${lista.length} pieza${lista.length === 1 ? "" : "s"}`;
       productosContainer.innerHTML = "";
-
-      lista.forEach(producto => {
+      lista.forEach((producto) => {
+        const imagenes = getImagenes(producto);
         const card = document.createElement("article");
         card.className = "product";
-        card.innerHTML = `
-          <div class="photo-wrap">
-            <span class="code">${producto.codigo}</span>
-            <img src="${producto.imagen}" alt="${producto.nombre}" onerror="this.src='img/placeholder.svg'">
-          </div>
-          <div class="content">
-            <span class="category">${producto.categoria}</span>
-            <h4 class="name">${producto.nombre}</h4>
-            <p class="material">${producto.material}</p>
-            <div class="price-row">
-              <span class="price">${formatoPrecio(producto.precio)}</span>
-              <a class="mini-btn" href="${linkWhatsApp(producto)}" target="_blank" rel="noopener">Pedir</a>
-            </div>
-          </div>
-        `;
+        const thumbs = imagenes.length > 1 ? `<div class="thumbs">${imagenes.map((img, index) => `<button class="thumb ${index === 0 ? "active" : ""}" data-img="${img}" aria-label="Ver foto ${index + 1}"><img src="${img}" alt="${producto.nombre} foto ${index + 1}" onerror="this.src='img/placeholder.svg'"></button>`).join("")}</div>` : "";
+        card.innerHTML = `<button class="photo-wrap" aria-label="Ampliar ${producto.nombre}"><span class="code">${producto.codigo}</span><img class="main-photo" src="${imagenes[0]}" alt="${producto.nombre}" onerror="this.src='img/placeholder.svg'"><span class="zoom-label">Ampliar</span></button>${thumbs}<div class="content"><span class="category">${producto.categoria}</span><h4 class="name">${producto.nombre}</h4><p class="material">${producto.material}</p><div class="price-row"><span class="price">${formatoPrecio(producto.precio)}</span><a class="mini-btn" href="${linkWhatsApp(producto)}" target="_blank" rel="noopener">Pedir</a></div></div>`;
+        const mainPhoto = card.querySelector(".main-photo");
+        const photoWrap = card.querySelector(".photo-wrap");
+        const thumbButtons = card.querySelectorAll(".thumb");
+        photoWrap.addEventListener("click", () => { const currentSrc = mainPhoto.getAttribute("src"); const currentIndex = Math.max(0, imagenes.indexOf(currentSrc)); abrirModal(producto, currentIndex); });
+        thumbButtons.forEach((btn, index) => { btn.addEventListener("click", () => { thumbButtons.forEach(b => b.classList.remove("active")); btn.classList.add("active"); mainPhoto.src = imagenes[index]; }); });
         productosContainer.appendChild(card);
       });
     }
-
     function pintarFiltros() {
       const categorias = ["Todo", ...new Set(productos.map(p => p.categoria))];
-
       filtersContainer.innerHTML = "";
-      categorias.forEach(categoria => {
-        const btn = document.createElement("button");
-        btn.className = "filter" + (categoria === "Todo" ? " active" : "");
-        btn.textContent = categoria;
-        btn.addEventListener("click", () => {
-          document.querySelectorAll(".filter").forEach(b => b.classList.remove("active"));
-          btn.classList.add("active");
-          pintarProductos(categoria);
-        });
-        filtersContainer.appendChild(btn);
-      });
+      categorias.forEach(categoria => { const btn = document.createElement("button"); btn.className = "filter" + (categoria === "Todo" ? " active" : ""); btn.textContent = categoria; btn.addEventListener("click", () => { document.querySelectorAll(".filter").forEach(b => b.classList.remove("active")); btn.classList.add("active"); pintarProductos(categoria); }); filtersContainer.appendChild(btn); });
     }
-
+    function abrirModal(producto, index = 0) { productoActual = producto; galeriaActual = getImagenes(producto); indiceActual = index; modal.classList.add("open"); modal.setAttribute("aria-hidden", "false"); document.body.style.overflow = "hidden"; modalName.textContent = producto.nombre; pintarModal(); }
+    function cerrarModal() { modal.classList.remove("open"); modal.setAttribute("aria-hidden", "true"); document.body.style.overflow = ""; }
+    function pintarModal() {
+      const img = galeriaActual[indiceActual] || "img/placeholder.svg";
+      modalImg.src = img; modalImg.alt = productoActual ? productoActual.nombre : "Producto"; modalCounter.textContent = `${indiceActual + 1} / ${galeriaActual.length}`;
+      prevImg.style.display = galeriaActual.length > 1 ? "block" : "none"; nextImg.style.display = galeriaActual.length > 1 ? "block" : "none";
+      modalThumbs.innerHTML = galeriaActual.map((img, index) => `<button class="modal-thumb ${index === indiceActual ? "active" : ""}" aria-label="Ver imagen ${index + 1}"><img src="${img}" alt="Miniatura ${index + 1}" onerror="this.src='img/placeholder.svg'"></button>`).join("");
+      modalThumbs.querySelectorAll(".modal-thumb").forEach((btn, index) => { btn.addEventListener("click", () => { indiceActual = index; pintarModal(); }); });
+    }
+    function siguienteImagen() { if (!galeriaActual.length) return; indiceActual = (indiceActual + 1) % galeriaActual.length; pintarModal(); }
+    function anteriorImagen() { if (!galeriaActual.length) return; indiceActual = (indiceActual - 1 + galeriaActual.length) % galeriaActual.length; pintarModal(); }
+    closeModal.addEventListener("click", cerrarModal); nextImg.addEventListener("click", siguienteImagen); prevImg.addEventListener("click", anteriorImagen);
+    modal.addEventListener("click", (event) => { if (event.target === modal) cerrarModal(); });
+    document.addEventListener("keydown", (event) => { if (!modal.classList.contains("open")) return; if (event.key === "Escape") cerrarModal(); if (event.key === "ArrowRight") siguienteImagen(); if (event.key === "ArrowLeft") anteriorImagen(); });
     whatsappGeneral.href = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent("Hola, vengo del catálogo NFC del socio. Quiero información de las piezas disponibles.")}`;
-
-    pintarFiltros();
-    pintarProductos();
+    pintarFiltros(); pintarProductos();
   </script>
 </body>
 </html>
