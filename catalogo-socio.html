@@ -740,7 +740,7 @@ function pintarProductos(categoria = "Todo") {
       if (event.target === modal) cerrarModal();
     });
 
-    whatsappGeneral.href = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent("Hola, vengo del catálogo NFC del socio. Quiero información de las piezas disponibles.")};`
+    whatsappGeneral.href = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent("Hola, vengo del catálogo de Jazmin Boutique. Quiero información de las piezas disponibles.")};`
 buscador.addEventListener("input", () => {
   const filtroActivo = document.querySelector(".filter.active").textContent;
   pintarProductos(filtroActivo);
