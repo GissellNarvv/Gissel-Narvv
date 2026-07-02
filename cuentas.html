@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Números de Cuenta | Gissell Narvv</title>
+  <meta name="description" content="Datos de pago de Gissell Narvv." />
+  <style>
+    
+:root {
+  --bg: #fff8f6;
+  --card: #ffffff;
+  --text: #2e2422;
+  --muted: #7d6f6b;
+  --brand: #b88970;
+  --brand-dark: #7a4f40;
+  --soft: #f4dfd7;
+  --border: #ead6cf;
+  --shadow: 0 12px 30px rgba(80, 48, 38, 0.10);
+  --radius: 22px;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(circle at top left, #ffe7df 0, transparent 35%),
+    radial-gradient(circle at bottom right, #f7d9cd 0, transparent 30%),
+    var(--bg);
+  color: var(--text);
+}
+.page {
+  width: min(100%, 980px);
+  margin: 0 auto;
+  padding: 22px 16px 38px;
+}
+header {
+  padding: 16px 0 12px;
+  text-align: center;
+}
+.logo {
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 12px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #fff, #f1d0c4);
+  box-shadow: var(--shadow);
+  font-size: 34px;
+}
+h1 {
+  margin: 0;
+  font-size: clamp(30px, 7vw, 48px);
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+}
+.subtitle {
+  margin: 10px auto 0;
+  max-width: 650px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.5;
+}
+.hero, .panel {
+  margin-top: 20px;
+  padding: 22px;
+  background: rgba(255, 255, 255, 0.80);
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) + 8px);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: var(--soft);
+  color: var(--brand-dark);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+}
+.hero h2 {
+  margin: 16px 0 8px;
+  font-size: clamp(24px, 6vw, 38px);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+.hero p, .panel p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
+  font-size: 15px;
+}
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+.btn {
+  appearance: none;
+  border: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 13px 17px;
+  font-weight: 800;
+  cursor: pointer;
+  font-size: 14px;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.btn:active { transform: scale(.98); }
+.btn-primary {
+  background: var(--brand-dark);
+  color: white;
+  box-shadow: 0 10px 20px rgba(122, 79, 64, 0.20);
+}
+.btn-secondary {
+  background: white;
+  color: var(--brand-dark);
+  border: 1px solid var(--border);
+}
+.section-title {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 28px 4px 14px;
+}
+.section-title h3 {
+  margin: 0;
+  font-size: 24px;
+  letter-spacing: -0.03em;
+}
+.section-title span {
+  color: var(--muted);
+  font-size: 13px;
+  white-space: nowrap;
+}
+footer {
+  text-align: center;
+  padding: 26px 0 4px;
+  color: var(--muted);
+  font-size: 13px;
+}
+@media (min-width: 760px) {
+  .page { padding: 36px 24px 54px; }
+  .hero, .panel { padding: 34px; }
+}
+
+    .bank-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .bank-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    .bank-card::before {
+      content: "";
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: var(--soft);
+      right: -40px;
+      top: -50px;
+      opacity: .8;
+    }
+    .bank-card h3 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      position: relative;
+    }
+    .label {
+      display: block;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+    .data {
+      display: block;
+      margin-top: 3px;
+      font-size: 19px;
+      font-weight: 900;
+      word-break: break-word;
+    }
+    .copy {
+      width: 100%;
+      margin-top: 14px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--brand-dark);
+      color: white;
+      padding: 12px 14px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+    .small-note {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .back {
+      margin-top: 14px;
+    }
+    @media (min-width: 760px) {
+      .bank-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <div class="logo">🦋</div>
+      <h1>Datos de pago</h1>
+      <p class="subtitle">Realiza tu pago y envía tu comprobante por WhatsApp para confirmar tu pedido.</p>
+    </header>
+
+    <section class="hero">
+      <span class="badge">💳 Gissell Narvv</span>
+      <h2>Números de cuenta</h2>
+      <p>Estos datos son una plantilla editable. Revisa bien titular, banco y números antes de publicar la página.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://wa.me/527441140018?text=Hola%2C%20ya%20realic%C3%A9%20mi%20pago.%20Te%20env%C3%ADo%20mi%20comprobante." target="_blank" rel="noopener">Enviar comprobante</a>
+        <a class="btn btn-secondary" href="index.html">Volver al menú</a>
+      </div>
+    </section>
+
+    <section class="bank-grid">
+      <article class="bank-card">
+        <h3>HSBC</h3>
+        <span class="label">Tarjeta</span>
+        <span class="data" id="hsbc-tarjeta">4213166182004428</span>
+        <span class="label">Titular</span>
+        <span class="data">EDITAR TITULAR</span>
+        <button class="copy" data-copy="4213166182004428">Copiar número</button>
+      </article>
+
+      <article class="bank-card">
+        <h3>Banco 2</h3>
+        <span class="label">Tarjeta / CLABE</span>
+        <span class="data">EDITAR NÚMERO</span>
+        <span class="label">Titular</span>
+        <span class="data">EDITAR TITULAR</span>
+        <button class="copy" data-copy="EDITAR NÚMERO">Copiar número</button>
+      </article>
+    </section>
+
+    <section class="panel">
+      <p><strong>Importante:</strong> revisa que cada número esté correcto antes de compartir. Puedes borrar bancos que no uses o agregar más tarjetas copiando una tarjeta completa dentro del archivo.</p>
+    </section>
+
+    <footer>Gissell Narvv · Gracias por tu compra</footer>
+  </main>
+
+  <script>
+    document.querySelectorAll(".copy").forEach(btn => {
+      btn.addEventListener("click", async () => {
+        const text = btn.dataset.copy;
+        try {
+          await navigator.clipboard.writeText(text);
+          const old = btn.textContent;
+          btn.textContent = "Copiado";
+          setTimeout(() => btn.textContent = old, 1300);
+        } catch (e) {
+          alert("No se pudo copiar automáticamente. Mantén presionado el número para copiarlo.");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
