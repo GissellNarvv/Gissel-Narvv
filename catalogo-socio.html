@@ -438,8 +438,15 @@ footer {
       <span id="contador"></span>
     </div>
 
-    <div class="filters" id="filters"></div>
-    <section class="grid" id="productos"></section>
+    <input 
+  type="search" 
+  id="buscador" 
+  placeholder="Buscar producto, material o código..." 
+  style="width:100%; padding:14px 16px; border-radius:999px; border:1px solid var(--border); margin-bottom:14px; font-size:15px;"
+>
+
+<div class="filters" id="filters"></div>
+<section class="grid" id="productos"></section>
 
     <section class="panel">
       <p><strong>Tip:</strong> si no encuentras la pieza que buscas, pide mas informacion a tu vendedora</p>
@@ -538,6 +545,7 @@ footer {
     const filtersContainer = document.querySelector("#filters");
     const contador = document.querySelector("#contador");
     const whatsappGeneral = document.querySelector("#whatsappGeneral");
+    const buscador = document.querySelector("#buscador");
 
     const modal = document.querySelector("#modal");
     const modalImg = document.querySelector("#modalImg");
@@ -579,65 +587,82 @@ footer {
       return ["img/placeholder.svg"];
     }
 
-    function pintarProductos(categoria = "Todo") {
-      const lista = categoria === "Todo" ? productos : productos.filter(p => p.categoria === categoria);
-      contador.textContent = `${lista.length} pieza${lista.length === 1 ? "" : "s"}`;
-      productosContainer.innerHTML = "";
+function pintarProductos(categoria = "Todo") {
+  const texto = buscador.value.toLowerCase().trim();
 
-      lista.forEach(producto => {
-        const imagenes = getImagenes(producto);
-        const card = document.createElement("article");
-        card.className = "product";
+  const lista = productos.filter(p => {
+    const coincideCategoria = categoria === "Todo" || p.categoria === categoria;
 
-        const thumbs = imagenes.length > 1
-          ? `<div class="thumbs">
-              ${imagenes.map((img, index) => `
-                <button class="thumb ${index === 0 ? "active" : ""}" aria-label="Ver foto ${index + 1}">
-                  <img src="${img}" alt="${producto.nombre} foto ${index + 1}" onerror="this.src='img/placeholder.svg'">
-                </button>
-              `).join("")}
-            </div>`
-          : "";
+    const contenido = `
+      ${p.codigo}
+      ${p.nombre}
+      ${p.categoria}
+      ${p.material}
+      ${p.precio}
+    `.toLowerCase();
 
-        card.innerHTML = `
-          <button class="photo-wrap" aria-label="Ampliar ${producto.nombre}">
-            <span class="code">${producto.codigo}</span>
-            <img class="main-photo" src="${imagenes[0]}" alt="${producto.nombre}" onerror="this.src='img/placeholder.svg'">
-            <span class="zoom-label">Ampliar</span>
-          </button>
-          ${thumbs}
-          <div class="content">
-            <span class="category">${producto.categoria}</span>
-            <h4 class="name">${producto.nombre}</h4>
-            <p class="material">${producto.material}</p>
-            <div class="price-row">
-              <span class="price">${formatoPrecio(producto.precio)}</span>
-              <a class="mini-btn" href="${linkWhatsApp(producto)}" target="_blank" rel="noopener">Pedir</a>
-            </div>
-          </div>
-        `;
+    const coincideBusqueda = contenido.includes(texto);
 
-        const mainPhoto = card.querySelector(".main-photo");
-        const photoWrap = card.querySelector(".photo-wrap");
-        const thumbButtons = card.querySelectorAll(".thumb");
+    return coincideCategoria && coincideBusqueda;
+  });
 
-        photoWrap.addEventListener("click", () => {
-          const currentSrc = mainPhoto.getAttribute("src");
-          const currentIndex = Math.max(0, imagenes.indexOf(currentSrc));
-          abrirModal(producto, currentIndex);
-        });
+  contador.textContent = `${lista.length} pieza${lista.length === 1 ? "" : "s"}`;
+  productosContainer.innerHTML = "";
 
-        thumbButtons.forEach((btn, index) => {
-          btn.addEventListener("click", () => {
-            thumbButtons.forEach(b => b.classList.remove("active"));
-            btn.classList.add("active");
-            mainPhoto.src = imagenes[index];
-          });
-        });
+  lista.forEach(producto => {
+    const imagenes = getImagenes(producto);
+    const card = document.createElement("article");
+    card.className = "product";
 
-        productosContainer.appendChild(card);
+    const thumbs = imagenes.length > 1
+      ? `<div class="thumbs">
+          ${imagenes.map((img, index) => `
+            <button class="thumb ${index === 0 ? "active" : ""}" aria-label="Ver foto ${index + 1}">
+              <img src="${img}" alt="${producto.nombre} foto ${index + 1}" onerror="this.src='img/placeholder.svg'">
+            </button>
+          `).join("")}
+        </div>`
+      : "";
+
+    card.innerHTML = `
+      <button class="photo-wrap" aria-label="Ampliar ${producto.nombre}">
+        <span class="code">${producto.codigo}</span>
+        <img class="main-photo" src="${imagenes[0]}" alt="${producto.nombre}" onerror="this.src='img/placeholder.svg'">
+        <span class="zoom-label">Ampliar</span>
+      </button>
+      ${thumbs}
+      <div class="content">
+        <span class="category">${producto.categoria}</span>
+        <h4 class="name">${producto.nombre}</h4>
+        <p class="material">${producto.material}</p>
+        <div class="price-row">
+          <span class="price">${formatoPrecio(producto.precio)}</span>
+          <a class="mini-btn" href="${linkWhatsApp(producto)}" target="_blank" rel="noopener">Pedir</a>
+        </div>
+      </div>
+    `;
+
+    const mainPhoto = card.querySelector(".main-photo");
+    const photoWrap = card.querySelector(".photo-wrap");
+    const thumbButtons = card.querySelectorAll(".thumb");
+
+    photoWrap.addEventListener("click", () => {
+      const currentSrc = mainPhoto.getAttribute("src");
+      const currentIndex = Math.max(0, imagenes.indexOf(currentSrc));
+      abrirModal(producto, currentIndex);
+    });
+
+    thumbButtons.forEach((btn, index) => {
+      btn.addEventListener("click", () => {
+        thumbButtons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        mainPhoto.src = imagenes[index];
       });
-    }
+    });
+
+    productosContainer.appendChild(card);
+  });
+}
 
     function pintarFiltros() {
       const categorias = ["Todo", ...new Set(productos.map(p => p.categoria))];
@@ -713,8 +738,11 @@ footer {
       if (event.target === modal) cerrarModal();
     });
 
-    whatsappGeneral.href = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent("Hola, vengo del catálogo NFC del socio. Quiero información de las piezas disponibles.")}`;
-
+    whatsappGeneral.href = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent("Hola, vengo del catálogo NFC del socio. Quiero información de las piezas disponibles.")};`
+buscador.addEventListener("input", () => {
+  const filtroActivo = document.querySelector(".filter.active").textContent;
+  pintarProductos(filtroActivo);
+});
     pintarFiltros();
     pintarProductos();
   </script>
