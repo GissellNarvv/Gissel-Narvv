@@ -1,0 +1,2024 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catálogo Oficial | Gissell Narvv</title>
+  <meta name="description" content="Catálogo oficial de piezas disponibles de Gissell Narvv." />
+  <style>
+    
+:root {
+  --bg: #fff8f6;
+  --card: #ffffff;
+  --text: #2e2422;
+  --muted: #7d6f6b;
+  --brand: #b88970;
+  --brand-dark: #7a4f40;
+  --soft: #f4dfd7;
+  --border: #ead6cf;
+  --shadow: 0 12px 30px rgba(80, 48, 38, 0.10);
+  --radius: 22px;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(circle at top left, #ffe7df 0, transparent 35%),
+    radial-gradient(circle at bottom right, #f7d9cd 0, transparent 30%),
+    var(--bg);
+  color: var(--text);
+}
+.page {
+  width: min(100%, 980px);
+  margin: 0 auto;
+  padding: 22px 16px 38px;
+}
+header {
+  padding: 16px 0 12px;
+  text-align: center;
+}
+.logo {
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 12px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #fff, #f1d0c4);
+  box-shadow: var(--shadow);
+  font-size: 34px;
+}
+h1 {
+  margin: 0;
+  font-size: clamp(30px, 7vw, 48px);
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+}
+.subtitle {
+  margin: 10px auto 0;
+  max-width: 650px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.5;
+}
+.hero, .panel {
+  margin-top: 20px;
+  padding: 22px;
+  background: rgba(255, 255, 255, 0.80);
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) + 8px);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: var(--soft);
+  color: var(--brand-dark);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+}
+.hero h2 {
+  margin: 16px 0 8px;
+  font-size: clamp(24px, 6vw, 38px);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+.hero p, .panel p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
+  font-size: 15px;
+}
+.actions{
+    display:flex;
+}
+
+.actions .btn{
+    width:100%;
+    text-align:center;
+}
+.btn {
+  appearance: none;
+  border: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 13px 17px;
+  font-weight: 800;
+  cursor: pointer;
+  font-size: 14px;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.btn:active { transform: scale(.98); }
+.btn-primary {
+  background: var(--brand-dark);
+  color: white;
+  box-shadow: 0 10px 20px rgba(122, 79, 64, 0.20);
+}
+.btn-secondary {
+  background: white;
+  color: var(--brand-dark);
+  border: 1px solid var(--border);
+}
+.section-title {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 28px 4px 14px;
+}
+.section-title h3 {
+  margin: 0;
+  font-size: 24px;
+  letter-spacing: -0.03em;
+}
+.section-title span {
+  color: var(--muted);
+  font-size: 13px;
+  white-space: nowrap;
+}
+footer {
+  text-align: center;
+  padding: 26px 0 4px;
+  color: var(--muted);
+  font-size: 13px;
+}
+@media (min-width: 760px) {
+  .page { padding: 36px 24px 54px; }
+  .hero, .panel { padding: 34px; }
+}
+
+    
+.filters {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 2px 2px 14px;
+  margin-bottom: 8px;
+}
+.filter {
+  white-space: nowrap;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.85);
+  color: var(--brand-dark);
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.filter.active {
+  background: var(--brand-dark);
+  color: white;
+  border-color: var(--brand-dark);
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+.product {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+.photo-wrap {
+  position: relative;
+  aspect-ratio: 1 / 1.08;
+  background: #f5e4de;
+  overflow: hidden;
+  cursor: zoom-in;
+  border: 0;
+  padding: 0;
+  width: 100%;
+}
+.photo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.code, .zoom-label {
+  position: absolute;
+  border-radius: 999px;
+  backdrop-filter: blur(8px);
+  font-weight: 900;
+}
+.code {
+  left: 10px;
+  top: 10px;
+  padding: 6px 9px;
+  background: rgba(255,255,255,.88);
+  color: var(--brand-dark);
+  font-size: 11px;
+}
+.zoom-label {
+  right: 10px;
+  bottom: 10px;
+  padding: 7px 10px;
+  background: rgba(46,36,34,.78);
+  color: white;
+  font-size: 11px;
+}
+.thumbs {
+  display: flex;
+  gap: 6px;
+  padding: 9px 10px 0;
+  overflow-x: auto;
+}
+.thumb {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  padding: 0;
+  overflow: hidden;
+  background: #f5e4de;
+  cursor: pointer;
+}
+.thumb.active { border-color: var(--brand-dark); }
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.content {
+  padding: 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  flex: 1;
+}
+.category {
+  color: var(--brand);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+.name {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.15;
+}
+.material {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.35;
+}
+.price-row {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-top: 4px;
+}
+.price {
+  font-size: 18px;
+  font-weight: 900;
+  color: var(--text);
+  white-space: nowrap;
+}
+.mini-btn {
+  text-decoration: none;
+  background: #25D366;
+  color: white;
+  padding: 9px 11px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  background: rgba(20, 13, 11, .88);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+}
+.modal.open { display: flex; }
+.modal-card {
+  width: min(100%, 900px);
+  max-height: 94vh;
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 24px 80px rgba(0,0,0,.35);
+}
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 13px 14px;
+  border-bottom: 1px solid var(--border);
+}
+.modal-title strong {
+  display: block;
+  font-size: 15px;
+}
+.modal-title span {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 2px;
+}
+.close {
+  border: 0;
+  background: var(--soft);
+  color: var(--brand-dark);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  font-size: 22px;
+  font-weight: 900;
+  cursor: pointer;
+}
+.modal-image-area {
+  position: relative;
+  background: #120d0b;
+  display: grid;
+  place-items: center;
+  min-height: 300px;
+  max-height: 68vh;
+}
+.modal-image-area img {
+  width: 100%;
+  height: 100%;
+  max-height: 68vh;
+  object-fit: contain;
+  display: block;
+}
+.nav-img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.88);
+  color: var(--brand-dark);
+  font-size: 28px;
+  font-weight: 900;
+  cursor: pointer;
+}
+.prev { left: 10px; }
+.next { right: 10px; }
+.modal-footer {
+  display: flex;
+  gap: 8px;
+  padding: 10px;
+  overflow-x: auto;
+  border-top: 1px solid var(--border);
+}
+.modal-thumb {
+  width: 58px;
+  height: 58px;
+  min-width: 58px;
+  border-radius: 14px;
+  border: 2px solid transparent;
+  overflow: hidden;
+  padding: 0;
+  cursor: pointer;
+  background: #f5e4de;
+}
+.modal-thumb.active { border-color: var(--brand-dark); }
+.modal-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media (min-width: 760px) {
+  .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+  .modal-image-area { min-height: 500px; }
+}
+
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <div class="logo">🦋</div>
+      <h1>Gissell Narvv</h1>
+      <p class="subtitle">Catálogo oficial de piezas disponibles. Toca una foto para verla y apreciar mejor los detalles.</p>
+    </header>
+
+    <section class="hero">
+      <span class="badge">✨ Catálogo electronico</span>
+      <h2>Piezas disponibles en tienda</h2>
+      <p>Las existencias pueden cambiar durante el día. Confirma con tu vendedora la disponibilidad antes de apartar.</p>
+      <div class="actions">
+    <a class="btn btn-primary" id="whatsappGeneral" href="#">
+        Pedir por WhatsApp
+    </a>
+
+    <a class="btn btn-secondary" href="index.html">
+        ← Volver al menú
+    </a>
+</div>
+    </section>
+
+    <div class="section-title" id="catalogo">
+      <h3>Catálogo</h3>
+      <span id="contador"></span>
+    </div>
+
+    <input 
+  type="search" 
+  id="buscador" 
+  placeholder="Buscar producto, material o código..." 
+  style="width:100%; padding:14px 16px; border-radius:999px; border:1px solid var(--border); margin-bottom:14px; font-size:15px;"
+>
+
+<div class="filters" id="filters"></div>
+<section class="grid" id="productos"></section>
+
+    <section class="panel">
+      <p><strong>Tip:</strong> si no encuentras la pieza que buscas, pide mas informacion a tu vendedora</p>
+    </section>
+
+    <footer>Gissell Narvv · Catálogo Oficial</footer>
+  </main>
+
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title">
+          <strong id="modalName">Producto</strong>
+          <span id="modalCounter">1 / 1</span>
+        </div>
+        <button class="close" id="closeModal" aria-label="Cerrar">×</button>
+      </div>
+      <div class="modal-image-area">
+        <button class="nav-img prev" id="prevImg" aria-label="Imagen anterior">‹</button>
+        <img id="modalImg" src="" alt="">
+        <button class="nav-img next" id="nextImg" aria-label="Imagen siguiente">›</button>
+      </div>
+      <div class="modal-footer" id="modalThumbs"></div>
+    </div>
+  </div>
+
+  <script>
+    const numeroWhatsApp = "527441140018";
+
+    const productos = [
+      {
+        codigo: "SOC-001",
+        nombre: "Cadena Hailey Bieber",
+        categoria: "Cadenas",
+        material: "Oro laminado",
+        precio: 75,
+        imagenes: [
+          "img/cadenabiber5.png",
+          "img/cadenabiber4.png",
+          "img/cadenabiber1.png"
+        ]
+      },
+      {
+        codigo: "SOC-002",
+        nombre: "Anillo Inicial",
+        categoria: "Anillos",
+        material: "Acero inoxidable",
+        precio: 55,
+        imagenes: [
+          "img/anilloinicial3.png",
+          "img/anilloinicial1.png"
+        ]
+      },
+      {
+        codigo: "SOC-003",
+        nombre: "Coordinado Flor",
+        categoria: "Coordinados",
+        material: "Acero inoxidable dorado",
+        precio: 90,
+        imagenes: [
+          "img/coordinado1.png",
+          "img/coordinadoflor3.png"
+        ]
+      },
+      {
+  codigo: "SOC-004",
+  nombre: "Coordinados Varios",
+  categoria: "Coordinados",
+  material: "Acero Inoxidable",
+  precio: 90,
+  imagenes: ["img/imagen2.jpeg"
+            ]
+},
+      {
+  codigo: "SOC-005",
+  nombre: "Brazaletes VARIOS",
+  categoria: "Brazalete",
+  material: "Acero Inoxidable",
+  precio: 90,
+  imagenes: ["img/imagen1.png"
+            ]
+},
+      {
+  codigo: "SOC-006",
+  nombre: "Iniciales Varias",
+  categoria: "Iniciales",
+  material: "Acero Inoxidable",
+  precio: 55,
+  imagenes: [
+    "img/imagen4.jpeg"
+  ]
+},
+      {
+  codigo: "SOC-007",
+  nombre: "Arnes",
+  categoria: "Pulsera",
+  material: "Acero Inoxidable",
+  precio: 100,
+  imagenes: [
+    "img/arnes1.jpeg",
+    "img/arnes2.jpeg",
+    "img/arnes4.jpeg",
+    "img/arnes5.jpeg",
+    "img/arnes6.jpeg",
+    "img/arnes7.jpeg"]
+ },
+      {
+  codigo: "SOC-008",
+  nombre: "Cadena Hijos",
+  categoria: "Cadenas",
+  material: "Oro laminado",
+  precio: 160,
+  imagenes: [
+    "img/cadenaniñoniña1.png",
+    ]
+ },
+      {
+  codigo: "SOC-009",
+  nombre: "Cadena Letra Delgada",
+  categoria: "Cadenas",
+  material: "Acero Inoxidable",
+  precio: 75,
+  imagenes: [
+    "img/cadenaletradelgada1.jpeg",
+    "img/cadenaletradelgada2.jpeg",
+    ]
+ },
+      {
+  codigo: "SOC-010",
+  nombre: "Aretes Puente (Par)",
+  categoria: "Aretes",
+  material: "Acero Inoxidable",
+  precio: 120,
+  imagenes: [
+    "img/aretepuente1.jpeg",
+    "img/aretepunete2.jpeg",
+    ]
+ },
+      {
+  codigo: "SOC-011",
+  nombre: "Cadenitas corbata",
+  categoria: "Cadenas",
+  material: "Acero Inoxidable",
+  precio: 95,
+  imagenes: [
+    "img/corbatero1.jpeg",
+    "img/corbatero6.jpeg",
+    "img/corbatero7.jpeg",
+    "img/corbatero8.jpeg",
+    ]
+ },
+      {
+  codigo: "SOC-012",
+  nombre: "Pulsera De Moda",
+  categoria: "Pulsera",
+  material: "Shakira",
+  precio: 10,
+  imagenes: [
+    "img/shakira1.jpeg",
+    "img/shakira2.jpeg",
+    ]
+ },
+      {
+  codigo: "SOC-013",
+  nombre: "Pulsera Arcoiris",
+  categoria: "Pulsera",
+  material: "Acero Inoxidable",
+  precio: 110,
+  imagenes: [
+    "img/Pulseraarcoiris1.jpeg",
+    "img/Pulseraarcoiris2.jpeg",
+    "img/Pulseraarcoiris3.jpeg",
+    ]
+ },
+      {
+  codigo: "SOC-014",
+  nombre: "Cadena Mar",
+  categoria: "Cadenas",
+  material: "Acero Inoxidable 316",
+  precio: 190,
+  imagenes: [
+    "img/cadenamar2.png",
+    "img/cadenamar1.png"
+    ]
+ },
+      {
+  codigo: "SOC-015",
+  nombre: "Hops Corazon",
+  categoria: "Aretes",
+  material: "Acero Inoxidable",
+  precio: 70,
+  imagenes: [
+    "img/hugscorzon1.png"
+    ]
+ },
+      {
+  codigo: "SOC-016",
+  nombre: "Corbatero Corazon",
+  categoria: "Corbateros",
+  material: "Acero Inoxidable",
+  precio: 110,
+  imagenes: [
+    "img/cadenacorazoncorbatero2.jpeg",
+    "img/cadenacorazoncorbatero1.jpeg"
+    ]
+ },
+      {
+  codigo: "SOC-017",
+  nombre: "Cadena Marinera",
+  categoria: "Cadenas",
+  material: "Acero Inoxidable",
+  precio: 80,
+  imagenes: [
+    "img/cadenitamarina1.png",
+    "img/cadenitamarina2.png"
+    ]
+ },
+      {
+  codigo: "SOC-018",
+  nombre: "Anillo Tulipan",
+  categoria: "Anillos",
+  material: "Oro Laminado",
+  precio: 50,
+  imagenes: [
+    "img/anillotulipan1.jpeg",
+    "img/anillotulipan2.jpeg",
+    "img/anillotulipan3.jpeg"
+    ]
+ },
+      {
+  codigo: "SOC-019",
+  nombre: "Anillo Pandora",
+  categoria: "Anillos",
+  material: "Oro Laminado",
+  precio: 60,
+  imagenes: [
+    "img/anillopandor1.png",
+    "img/anillopandora2.jpeg"
+    ]
+ },
+      {
+  codigo: "SOC-020",
+  nombre: "Reloj Casio",
+  categoria: "Reloj",
+  material: "Metal",
+  precio: 280,
+  imagenes: [
+    "img/relojcasio1.png",
+    "img/relojcasio2.png"
+    ]
+ },
+      {
+  codigo: "SOC-021",
+  nombre: "Anillos Chunky",
+  categoria: "Anillos",
+  material: "Acero Inoxidable 316",
+  precio: 110,
+  imagenes: [
+    "img/anilleroconanillos1.png"
+    ]
+ },
+      {
+  codigo: "SOC-022",
+  nombre: "Sombrilla LED",
+  categoria: "Accesorios",
+  material: "Variedad disponible",
+  descripcion: "Disponible ahora",
+  precio: 115,
+  imagenes: [
+    "img/soc-022-sombrilla-led-1.jpg",
+    "img/soc-022-sombrilla-led-2.jpg",
+    "img/soc-022-sombrilla-led-3.jpg",
+    "img/soc-022-sombrilla-led-4.jpg",
+    "img/soc-022-sombrilla-led-5.jpg",
+    "img/soc-022-sombrilla-led-6.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-023",
+  nombre: "Abanicos",
+  categoria: "Accesorios",
+  material: "Variedad disponible",
+  descripcion: "Disponible ahora",
+  precio: 15,
+  imagenes: [
+    "img/soc-023-abanicos-1.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-024",
+  nombre: "Cepillo masajeador",
+  categoria: "Accesorios",
+  material: "Variedad disponible",
+  descripcion: "Disponible ahora",
+  precio: 18,
+  imagenes: [
+    "img/soc-024-cepillo-masajeador-1.jpg",
+    "img/soc-024-cepillo-masajeador-2.jpg",
+    "img/soc-024-cepillo-masajeador-3.jpg",
+    "img/soc-024-cepillo-masajeador-4.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-025",
+  nombre: "Anillos ajustables",
+  categoria: "Anillos",
+  material: "Acero inoxidable",
+  descripcion: "Disponible ahora",
+  precio: 35,
+  imagenes: [
+    "img/soc-025-anillos-ajustables-1.jpg",
+    "img/soc-025-anillos-ajustables-2.jpg",
+    "img/soc-025-anillos-ajustables-3.jpg",
+    "img/soc-025-anillos-ajustables-4.jpg",
+    "img/soc-025-anillos-ajustables-5.jpg",
+    "img/soc-025-anillos-ajustables-6.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-026",
+  nombre: "Exhibidor 3 niveles",
+  categoria: "Exhibidores",
+  material: "Madera",
+  descripcion: "Para exhibición",
+  precio: 230,
+  imagenes: [
+    "img/soc-026-exhibidor-3-niveles-1.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-027",
+  nombre: "Anillo Elan",
+  categoria: "Anillos",
+  material: "Variedad disponible",
+  descripcion: "Estilo de mar",
+  precio: 110,
+  imagenes: [
+    "img/soc-027-anillo-elan-1.jpg",
+    "img/soc-027-anillo-elan-2.jpg",
+    "img/soc-027-anillo-elan-3.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-028",
+  nombre: "Collar de cuentas",
+  categoria: "Cadenas",
+  material: "Acero inoxidable",
+  descripcion: "Acabado dorado",
+  precio: 50,
+  imagenes: [
+    "img/soc-028-collar-de-cuentas-1.jpg",
+    "img/soc-028-collar-de-cuentas-2.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-029",
+  nombre: "Perfumes Sabrina",
+  categoria: "Perfumes",
+  material: "Variedad disponible",
+  descripcion: "Aroma viral",
+  precio: 250,
+  imagenes: [
+    "img/soc-029-perfumes-sabrina-1.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-030",
+  nombre: "Collar con cuentas artesanales",
+  categoria: "Cadenas",
+  material: "Acero inoxidable",
+  descripcion: "Colorido y fresco",
+  precio: 75,
+  imagenes: [
+    "img/soc-030-collar-con-cuentas-artesanales-1.jpg",
+    "img/soc-030-collar-con-cuentas-artesanales-2.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-031",
+  nombre: "Collar estilo artesanal",
+  categoria: "Cadenas",
+  material: "Acero inoxidable",
+  descripcion: "Disponible ahora",
+  precio: 75,
+  imagenes: [
+    "img/soc-031-collar-estilo-artesanal-1.jpg",
+    "img/soc-031-collar-estilo-artesanal-2.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-032",
+  nombre: "Hermoso collar estilo boho chic",
+  categoria: "Cadenas",
+  material: "Acero inoxidable",
+  descripcion: "Disponible ahora",
+  precio: 95,
+  imagenes: [
+    "img/soc-032-hermoso-collar-estilo-boho-chic-1.jpg",
+    "img/soc-032-hermoso-collar-estilo-boho-chic-2.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-033",
+  nombre: "Cadenita estrella marina",
+  categoria: "Cadenas",
+  material: "Acero inoxidable",
+  descripcion: "Estilo de mar",
+  precio: 50,
+  imagenes: [
+    "img/soc-033-cadenita-estrella-marina-1.jpg",
+    "img/soc-033-cadenita-estrella-marina-2.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-034",
+  nombre: "Porta lentes",
+  categoria: "Cadenas",
+  material: "Acero inoxidable",
+  descripcion: "Para exhibición",
+  precio: 110,
+  imagenes: [
+    "img/soc-034-porta-lentes-1.jpg",
+    "img/soc-034-porta-lentes-2.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-035",
+  nombre: "Cadenita doble",
+  categoria: "Cadenas",
+  material: "Acero inoxidable",
+  descripcion: "Disponible ahora",
+  precio: 95,
+  imagenes: [
+    "img/soc-035-cadenita-doble-1.jpg",
+    "img/soc-035-cadenita-doble-2.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-036",
+  nombre: "Cadena estilo playa",
+  categoria: "Cadenas",
+  material: "Acero inoxidable",
+  descripcion: "Estilo de mar",
+  precio: 90,
+  imagenes: [
+    "img/soc-036-cadena-estilo-playa-1.jpg",
+    "img/soc-036-cadena-estilo-playa-2.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-037",
+  nombre: "Set flora",
+  categoria: "Coordinados",
+  material: "Acero inoxidable",
+  descripcion: "Detalle floral",
+  precio: 80,
+  imagenes: [
+    "img/soc-037-set-flora-1.jpg",
+    "img/soc-037-set-flora-2.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-038",
+  nombre: "Ballerinas cabello",
+  categoria: "Accesorios",
+  material: "Variedad disponible",
+  descripcion: "Colorido y fresco",
+  precio: 55,
+  imagenes: [
+    "img/soc-038-ballerinas-cabello-1.jpg",
+    "img/soc-038-ballerinas-cabello-2.jpg",
+    "img/soc-038-ballerinas-cabello-3.jpg",
+    "img/soc-038-ballerinas-cabello-4.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-039",
+  nombre: "Collar osito",
+  categoria: "Cadenas",
+  material: "Acero inoxidable",
+  descripcion: "Disponible ahora",
+  precio: 50,
+  imagenes: [
+    "img/soc-039-collar-osito-1.jpg",
+    "img/soc-039-collar-osito-2.jpg",
+    "img/soc-039-collar-osito-3.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-040",
+  nombre: "Collar osito",
+  categoria: "Cadenas",
+  material: "Variedad disponible",
+  descripcion: "Estilo de mar",
+  precio: 250,
+  imagenes: [
+    "img/soc-040-collar-osito-1.jpg",
+    "img/soc-040-collar-osito-2.jpg",
+    "img/soc-040-collar-osito-3.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-041",
+  nombre: "Moños docena",
+  categoria: "Accesorios",
+  material: "Variedad disponible",
+  descripcion: "Disponible ahora",
+  precio: 110,
+  imagenes: [
+    "img/soc-041-monos-docena-1.jpg",
+    "img/soc-041-monos-docena-2.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-042",
+  nombre: "Hops",
+  categoria: "Aretes",
+  material: "Variedad disponible",
+  descripcion: "Disponible ahora",
+  precio: 55,
+  imagenes: [
+    "img/soc-042-hops-1.jpg",
+    "img/soc-042-hops-2.jpg",
+    "img/soc-042-hops-3.jpg",
+    "img/soc-042-hops-4.jpg",
+    "img/soc-042-hops-5.jpg",
+    "img/soc-042-hops-6.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-043",
+  nombre: "Pines",
+  categoria: "Accesorios",
+  material: "Variedad disponible",
+  descripcion: "Estilo de mar",
+  precio: 15,
+  imagenes: [
+    "img/soc-043-pines-1.jpg",
+    "img/soc-043-pines-2.jpg",
+    "img/soc-043-pines-3.jpg",
+    "img/soc-043-pines-4.jpg",
+    "img/soc-043-pines-5.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-044",
+  nombre: "Charms para crocs",
+  categoria: "Accesorios",
+  material: "Variedad disponible",
+  descripcion: "Disponible ahora",
+  precio: 16,
+  imagenes: [
+    "img/soc-044-charms-para-crocs-1.jpg",
+    "img/soc-044-charms-para-crocs-2.jpg",
+    "img/soc-044-charms-para-crocs-3.jpg",
+    "img/soc-044-charms-para-crocs-4.jpg",
+    "img/soc-044-charms-para-crocs-5.jpg",
+    "img/soc-044-charms-para-crocs-6.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-045",
+  nombre: "Cadenita lazo",
+  categoria: "Cadenas",
+  material: "Acero inoxidable",
+  descripcion: "Disponible ahora",
+  precio: 65,
+  imagenes: [
+    "img/soc-045-cadenita-lazo-1.jpg",
+    "img/soc-045-cadenita-lazo-2.jpg",
+    "img/soc-045-cadenita-lazo-3.jpg",
+    "img/soc-045-cadenita-lazo-4.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-046",
+  nombre: "Cadenita flor de cerezo",
+  categoria: "Cadenas",
+  material: "Acero inoxidable",
+  descripcion: "Detalle floral",
+  precio: 65,
+  imagenes: [
+    "img/soc-046-cadenita-flor-de-cerezo-1.jpg",
+    "img/soc-046-cadenita-flor-de-cerezo-2.jpg",
+    "img/soc-046-cadenita-flor-de-cerezo-3.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-047",
+  nombre: "Cadenita corazón alas",
+  categoria: "Cadenas",
+  material: "Acero inoxidable",
+  descripcion: "Detalle corazón",
+  precio: 65,
+  imagenes: [
+    "img/soc-047-cadenita-corazon-alas-1.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-048",
+  nombre: "Italian bracelet",
+  categoria: "Pulseras",
+  material: "Acero inoxidable",
+  descripcion: "Acabado dorado",
+  precio: 75,
+  imagenes: [
+    "img/soc-048-italian-bracelet-1.jpg",
+    "img/soc-048-italian-bracelet-2.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-049",
+  nombre: "Cadenita heart",
+  categoria: "Cadenas",
+  material: "Acero inoxidable",
+  descripcion: "Detalle corazón",
+  precio: 65,
+  imagenes: [
+    "img/soc-049-cadenita-heart-1.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-050",
+  nombre: "Cadenita pink",
+  categoria: "Cadenas",
+  material: "Acero inoxidable",
+  descripcion: "Disponible ahora",
+  precio: 65,
+  imagenes: [
+    "img/soc-050-cadenita-pink-1.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-051",
+  nombre: "Cadenita racimo",
+  categoria: "Cadenas",
+  material: "Acero inoxidable",
+  descripcion: "Disponible ahora",
+  precio: 65,
+  imagenes: [
+    "img/soc-051-cadenita-racimo-1.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-052",
+  nombre: "Cadenita torsal",
+  categoria: "Cadenas",
+  material: "Acero inoxidable",
+  descripcion: "Disponible ahora",
+  precio: 35,
+  imagenes: [
+    "img/soc-052-cadenita-torsal-1.jpg",
+    "img/soc-052-cadenita-torsal-2.jpg",
+    "img/soc-052-cadenita-torsal-3.jpg",
+    "img/soc-052-cadenita-torsal-4.jpg",
+    "img/soc-052-cadenita-torsal-5.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-053",
+  nombre: "Cadenita bailarina",
+  categoria: "Cadenas",
+  material: "Acero inoxidable",
+  descripcion: "Disponible ahora",
+  precio: 35,
+  imagenes: [
+    "img/soc-053-cadenita-bailarina-1.jpg",
+    "img/soc-053-cadenita-bailarina-2.jpg",
+    "img/soc-053-cadenita-bailarina-3.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-054",
+  nombre: "Coordinado Donna",
+  categoria: "Coordinados",
+  material: "Acero inoxidable",
+  descripcion: "Disponible ahora",
+  precio: 80,
+  imagenes: [
+    "img/soc-054-coordinado-donna-1.jpg",
+    "img/soc-054-coordinado-donna-2.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-055",
+  nombre: "Coordinado star fish",
+  categoria: "Aretes",
+  material: "Acero inoxidable",
+  descripcion: "Disponible ahora",
+  precio: 80,
+  imagenes: [
+    "img/soc-055-coordinado-star-fish-1.jpg",
+    "img/soc-055-coordinado-star-fish-2.jpg",
+    "img/soc-055-coordinado-star-fish-3.jpg",
+    "img/soc-055-coordinado-star-fish-4.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-056",
+  nombre: "Aretes perla",
+  categoria: "Aretes",
+  material: "Acero inoxidable",
+  descripcion: "Acabado dorado",
+  precio: 60,
+  imagenes: [
+    "img/soc-056-aretes-perla-1.jpg",
+    "img/soc-056-aretes-perla-2.jpg",
+    "img/soc-056-aretes-perla-3.jpg",
+    "img/soc-056-aretes-perla-4.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-057",
+  nombre: "Coordinado",
+  categoria: "Coordinados",
+  material: "Acero inoxidable",
+  descripcion: "Disponible ahora",
+  precio: 145,
+  imagenes: [
+    "img/soc-057-coordinado-1.jpg",
+    "img/soc-057-coordinado-2.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-058",
+  nombre: "Collar bandana",
+  categoria: "Cadenas",
+  material: "Acero inoxidable",
+  descripcion: "Disponible ahora",
+  precio: 145,
+  imagenes: [
+    "img/soc-058-collar-bandana-1.jpg",
+    "img/soc-058-collar-bandana-2.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-059",
+  nombre: "Collar corbatero",
+  categoria: "Corbateros",
+  material: "Acero inoxidable",
+  descripcion: "Disponible ahora",
+  precio: 145,
+  imagenes: [
+    "img/soc-059-collar-corbatero-1.jpg",
+    "img/soc-059-collar-corbatero-2.jpg",
+    "img/soc-059-collar-corbatero-3.jpg",
+    "img/soc-059-collar-corbatero-4.jpg",
+    "img/soc-059-collar-corbatero-5.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-060",
+  nombre: "Collar plateado",
+  categoria: "Cadenas",
+  material: "Acero inoxidable",
+  descripcion: "Acabado plateado",
+  precio: 145,
+  imagenes: [
+    "img/soc-060-collar-plateado-1.jpg",
+    "img/soc-060-collar-plateado-2.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-061",
+  nombre: "Collar turquesa",
+  categoria: "Cadenas",
+  material: "Acero inoxidable",
+  descripcion: "Disponible ahora",
+  precio: 145,
+  imagenes: [
+    "img/soc-061-collar-turquesa-1.jpg",
+    "img/soc-061-collar-turquesa-2.jpg",
+    "img/soc-061-collar-turquesa-3.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-062",
+  nombre: "Coordinados solares",
+  categoria: "Coordinados",
+  material: "Acero inoxidable",
+  descripcion: "Disponible ahora",
+  precio: 80,
+  imagenes: [
+    "img/soc-062-coordinados-solares-1.jpg",
+    "img/soc-062-coordinados-solares-2.jpg",
+    "img/soc-062-coordinados-solares-3.jpg",
+    "img/soc-062-coordinados-solares-4.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-063",
+  nombre: "Brazalete coral",
+  categoria: "Pulseras",
+  material: "Acero inoxidable",
+  descripcion: "Disponible ahora",
+  precio: 80,
+  imagenes: [
+    "img/soc-063-brazalete-coral-1.jpg",
+    "img/soc-063-brazalete-coral-2.jpg",
+    "img/soc-063-brazalete-coral-3.jpg",
+    "img/soc-063-brazalete-coral-4.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-064",
+  nombre: "Set nácar",
+  categoria: "Coordinados",
+  material: "Variedad disponible",
+  descripcion: "Acabado dorado",
+  precio: 145,
+  imagenes: [
+    "img/soc-064-set-nacar-1.jpg",
+    "img/soc-064-set-nacar-2.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-065",
+  nombre: "Coordinado perla",
+  categoria: "Coordinados",
+  material: "Acero inoxidable",
+  descripcion: "Detalle elegante",
+  precio: 145,
+  imagenes: [
+    "img/soc-065-coordinado-perla-1.jpg",
+    "img/soc-065-coordinado-perla-2.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-066",
+  nombre: "Coordinado gota",
+  categoria: "Coordinados",
+  material: "Acero inoxidable",
+  descripcion: "Disponible ahora",
+  precio: 145,
+  imagenes: [
+    "img/soc-066-coordinado-gota-1.jpg",
+    "img/soc-066-coordinado-gota-2.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-067",
+  nombre: "Coordinado doble",
+  categoria: "Coordinados",
+  material: "Acero inoxidable",
+  descripcion: "Disponible ahora",
+  precio: 145,
+  imagenes: [
+    "img/soc-067-coordinado-doble-1.jpg",
+    "img/soc-067-coordinado-doble-2.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-068",
+  nombre: "Exhibidor de pulceras",
+  categoria: "Pulseras",
+  material: "Madera",
+  descripcion: "Para exhibición",
+  precio: 240,
+  imagenes: [
+    "img/soc-068-exhibidor-de-pulceras-1.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-069",
+  nombre: "Maxi collar",
+  categoria: "Cadenas",
+  material: "Acero inoxidable",
+  descripcion: "Acabado dorado",
+  precio: 145,
+  imagenes: [
+    "img/soc-069-maxi-collar-1.jpg",
+    "img/soc-069-maxi-collar-2.jpg",
+    "img/soc-069-maxi-collar-3.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-070",
+  nombre: "Coordinado arcoíris",
+  categoria: "Coordinados",
+  material: "Acero inoxidable",
+  descripcion: "Colorido y fresco",
+  precio: 145,
+  imagenes: [
+    "img/soc-070-coordinado-arcoiris-1.jpg",
+    "img/soc-070-coordinado-arcoiris-2.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-071",
+  nombre: "Pulseritas cristal",
+  categoria: "Pulseras",
+  material: "Variedad disponible",
+  descripcion: "Disponible ahora",
+  precio: 25,
+  imagenes: [
+    "img/soc-071-pulseritas-cristal-1.jpg",
+    "img/soc-071-pulseritas-cristal-2.jpg",
+    "img/soc-071-pulseritas-cristal-3.jpg",
+    "img/soc-071-pulseritas-cristal-4.jpg",
+    "img/soc-071-pulseritas-cristal-5.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-072",
+  nombre: "Cepillitos multiusos",
+  categoria: "Accesorios",
+  material: "Variedad disponible",
+  descripcion: "Disponible ahora",
+  precio: 10,
+  imagenes: [
+    "img/soc-072-cepillitos-multiusos-1.jpg",
+    "img/soc-072-cepillitos-multiusos-2.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-073",
+  nombre: "Collar cerezitas",
+  categoria: "Cadenas",
+  material: "Variedad disponible",
+  descripcion: "Disponible ahora",
+  precio: 40,
+  imagenes: [
+    "img/soc-073-collar-cerezitas-1.jpg",
+    "img/soc-073-collar-cerezitas-2.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-074",
+  nombre: "Collares de cuentas",
+  categoria: "Cadenas",
+  material: "Variedad disponible",
+  descripcion: "Colorido y fresco",
+  precio: 40,
+  imagenes: [
+    "img/soc-074-collares-de-cuentas-1.jpg",
+    "img/soc-074-collares-de-cuentas-2.jpg",
+    "img/soc-074-collares-de-cuentas-3.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-075",
+  nombre: "Collar concha perlas",
+  categoria: "Cadenas",
+  material: "Acero inoxidable",
+  descripcion: "Estilo de mar",
+  precio: 145,
+  imagenes: [
+    "img/soc-075-collar-concha-perlas-1.jpg",
+    "img/soc-075-collar-concha-perlas-2.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-076",
+  nombre: "Cadena doble carey",
+  categoria: "Cadenas",
+  material: "Acero inoxidable",
+  descripcion: "Colorido y fresco",
+  precio: 145,
+  imagenes: [
+    "img/soc-076-cadena-doble-carey-1.jpg",
+    "img/soc-076-cadena-doble-carey-2.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-077",
+  nombre: "Coronitas mini",
+  categoria: "Accesorios",
+  material: "Variedad disponible",
+  descripcion: "Acabado dorado",
+  precio: 20,
+  imagenes: [
+    "img/soc-077-coronitas-mini-1.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-078",
+  nombre: "Arracaditas lisas",
+  categoria: "Aretes",
+  material: "Acero inoxidable",
+  descripcion: "Disponible ahora",
+  precio: 10,
+  imagenes: [
+    "img/soc-078-arracaditas-lisas-1.jpg",
+    "img/soc-078-arracaditas-lisas-2.jpg",
+    "img/soc-078-arracaditas-lisas-3.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-079",
+  nombre: "Mini arracaditas",
+  categoria: "Aretes",
+  material: "Acero inoxidable",
+  descripcion: "Disponible ahora",
+  precio: 60,
+  imagenes: [
+    "img/soc-079-mini-arracaditas-1.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-080",
+  nombre: "Producto",
+  categoria: "Accesorios",
+  material: "Variedad disponible",
+  descripcion: "Disponible ahora",
+  precio: 145,
+  imagenes: [
+    "img/soc-080-producto-1.jpg",
+    "img/soc-080-producto-2.jpg",
+    "img/soc-080-producto-3.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-081",
+  nombre: "Pendientes premium",
+  categoria: "Aretes",
+  material: "Acero inoxidable 316",
+  descripcion: "Disponible ahora",
+  precio: 110,
+  imagenes: [
+    "img/soc-081-pendientes-premium-1.jpg",
+    "img/soc-081-pendientes-premium-2.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-082",
+  nombre: "Pulsera dijes",
+  categoria: "Pulseras",
+  material: "Variedad disponible",
+  descripcion: "Detalle elegante",
+  precio: 145,
+  imagenes: [
+    "img/soc-082-pulsera-dijes-1.jpg",
+    "img/soc-082-pulsera-dijes-2.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-083",
+  nombre: "Coordinado mariposa",
+  categoria: "Coordinados",
+  material: "Variedad disponible",
+  descripcion: "Acabado dorado",
+  precio: 110,
+  imagenes: [
+    "img/soc-083-coordinado-mariposa-1.jpg",
+    "img/soc-083-coordinado-mariposa-2.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-084",
+  nombre: "Collares boho",
+  categoria: "Cadenas",
+  material: "Acero inoxidable",
+  descripcion: "Detalle elegante",
+  precio: 75,
+  imagenes: [
+    "img/soc-084-collares-boho-1.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-085",
+  nombre: "Tobilleras",
+  categoria: "Tobilleras",
+  material: "Acero inoxidable",
+  descripcion: "Disponible ahora",
+  precio: 55,
+  imagenes: [
+    "img/soc-085-tobilleras-1.jpg",
+    "img/soc-085-tobilleras-2.jpg",
+    "img/soc-085-tobilleras-3.jpg",
+    "img/soc-085-tobilleras-4.jpg",
+    "img/soc-085-tobilleras-5.jpg",
+    "img/soc-085-tobilleras-6.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-086",
+  nombre: "Porta pulseras doble",
+  categoria: "Pulseras",
+  material: "Variedad disponible",
+  descripcion: "Para exhibición",
+  precio: 65,
+  imagenes: [
+    "img/soc-086-porta-pulseras-doble-1.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-087",
+  nombre: "Pulsera glow",
+  categoria: "Pulseras",
+  material: "Acero inoxidable 316",
+  descripcion: "Disponible ahora",
+  precio: 145,
+  imagenes: [
+    "img/soc-087-pulsera-glow-1.jpg",
+    "img/soc-087-pulsera-glow-2.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-088",
+  nombre: "Pulseritas",
+  categoria: "Pulseras",
+  material: "Acero inoxidable",
+  descripcion: "Disponible ahora",
+  precio: 45,
+  imagenes: [
+    "img/soc-088-pulseritas-1.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-089",
+  nombre: "Pendientes",
+  categoria: "Aretes",
+  material: "Acero inoxidable",
+  descripcion: "Disponible ahora",
+  precio: 25,
+  imagenes: [
+    "img/soc-089-pendientes-1.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-090",
+  nombre: "Cadenita caballito de mar",
+  categoria: "Cadenas",
+  material: "Acero inoxidable",
+  descripcion: "Estilo de mar",
+  precio: 75,
+  imagenes: [
+    "img/soc-090-cadenita-caballito-de-mar-1.jpg",
+    "img/soc-090-cadenita-caballito-de-mar-2.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-091",
+  nombre: "Cadenita caballito arcoíris",
+  categoria: "Cadenas",
+  material: "Acero inoxidable",
+  descripcion: "Estilo de mar",
+  precio: 75,
+  imagenes: [
+    "img/soc-091-cadenita-caballito-arcoiris-1.jpg",
+    "img/soc-091-cadenita-caballito-arcoiris-2.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-092",
+  nombre: "Pulseritas corazones",
+  categoria: "Pulseras",
+  material: "Acero inoxidable",
+  descripcion: "Acabado dorado",
+  precio: 55,
+  imagenes: [
+    "img/soc-092-pulseritas-corazones-1.jpg",
+    "img/soc-092-pulseritas-corazones-2.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-093",
+  nombre: "Pulsera lunetas",
+  categoria: "Pulseras",
+  material: "Acero inoxidable",
+  descripcion: "Disponible ahora",
+  precio: 75,
+  imagenes: [
+    "img/soc-093-pulsera-lunetas-1.jpg",
+    "img/soc-093-pulsera-lunetas-2.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-094",
+  nombre: "Pulsera Mónaco",
+  categoria: "Pulseras",
+  material: "Oro laminado",
+  descripcion: "Disponible ahora",
+  precio: 95,
+  imagenes: [
+    "img/soc-094-pulsera-monaco-1.jpg",
+    "img/soc-094-pulsera-monaco-2.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-095",
+  nombre: "Collar concha",
+  categoria: "Cadenas",
+  material: "Variedad disponible",
+  descripcion: "Acabado dorado",
+  precio: 65,
+  imagenes: [
+    "img/soc-095-collar-concha-1.jpg",
+    "img/soc-095-collar-concha-2.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-096",
+  nombre: "Maxi collar",
+  categoria: "Cadenas",
+  material: "Acero inoxidable",
+  descripcion: "Colorido y fresco",
+  precio: 185,
+  imagenes: [
+    "img/soc-096-maxi-collar-1.jpg",
+    "img/soc-096-maxi-collar-2.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-097",
+  nombre: "Maxi collar",
+  categoria: "Cadenas",
+  material: "Acero inoxidable 316",
+  descripcion: "Estilo de mar",
+  precio: 145,
+  imagenes: [
+    "img/soc-097-maxi-collar-1.jpg",
+    "img/soc-097-maxi-collar-2.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-098",
+  nombre: "Producto",
+  categoria: "Cadenas",
+  material: "Acero inoxidable",
+  descripcion: "Acabado dorado",
+  precio: 185,
+  imagenes: [
+    "img/soc-098-producto-1.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-099",
+  nombre: "Set nácar",
+  categoria: "Coordinados",
+  material: "Variedad disponible",
+  descripcion: "Acabado dorado",
+  precio: 175,
+  imagenes: [
+    "img/soc-099-set-nacar-1.jpg",
+    "img/soc-099-set-nacar-2.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-100",
+  nombre: "Modificamos",
+  categoria: "Accesorios",
+  material: "Variedad disponible",
+  descripcion: "Disponible ahora",
+  precio: 175,
+  imagenes: [
+    "img/soc-100-modificamos-1.jpg",
+    "img/soc-100-modificamos-2.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-101",
+  nombre: "Hay accesorios que simplemente completan",
+  categoria: "Cadenas",
+  material: "Acero inoxidable 316",
+  descripcion: "Estilo de mar",
+  precio: 170,
+  imagenes: [
+    "img/soc-101-hay-accesorios-que-simplemente-complet-1.jpg",
+    "img/soc-101-hay-accesorios-que-simplemente-complet-2.jpg",
+    "img/soc-101-hay-accesorios-que-simplemente-complet-3.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-102",
+  nombre: "Collar doble",
+  categoria: "Cadenas",
+  material: "Acero inoxidable",
+  descripcion: "Disponible ahora",
+  precio: 75,
+  imagenes: [
+    "img/soc-102-collar-doble-1.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-103",
+  nombre: "Maxi collar",
+  categoria: "Cadenas",
+  material: "Acero inoxidable",
+  descripcion: "Colorido y fresco",
+  precio: 175,
+  imagenes: [
+    "img/soc-103-maxi-collar-1.jpg",
+    "img/soc-103-maxi-collar-2.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-104",
+  nombre: "Sabes q es lo más padre de esto",
+  categoria: "Cadenas",
+  material: "Acero inoxidable 316",
+  descripcion: "Estilo de mar",
+  precio: 165,
+  imagenes: [
+    "img/soc-104-sabes-q-es-lo-mas-padre-de-esto-1.jpg",
+    "img/soc-104-sabes-q-es-lo-mas-padre-de-esto-2.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-105",
+  nombre: "Coordinado",
+  categoria: "Coordinados",
+  material: "Acero inoxidable",
+  descripcion: "Detalle floral",
+  precio: 145,
+  imagenes: [
+    "img/soc-105-coordinado-1.jpg",
+    "img/soc-105-coordinado-2.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-106",
+  nombre: "Collar dije sol",
+  categoria: "Cadenas",
+  material: "Acero inoxidable",
+  descripcion: "Disponible ahora",
+  precio: 150,
+  imagenes: [
+    "img/soc-106-collar-dije-sol-1.jpg",
+    "img/soc-106-collar-dije-sol-2.jpg",
+    "img/soc-106-collar-dije-sol-3.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-107",
+  nombre: "Collar multi charms",
+  categoria: "Cadenas",
+  material: "Acero inoxidable",
+  descripcion: "Disponible ahora",
+  precio: 110,
+  imagenes: [
+    "img/soc-107-collar-multi-charms-1.jpg",
+    "img/soc-107-collar-multi-charms-2.jpg",
+    "img/soc-107-collar-multi-charms-3.jpg",
+    "img/soc-107-collar-multi-charms-4.jpg",
+    "img/soc-107-collar-multi-charms-5.jpg",
+    "img/soc-107-collar-multi-charms-6.jpg"
+  ]
+ },
+      {
+  codigo: "SOC-108",
+  nombre: "Pines",
+  categoria: "Accesorios",
+  material: "Variedad disponible",
+  descripcion: "Estilo de mar",
+  precio: 16,
+  imagenes: [
+    "img/soc-108-pines-1.jpg",
+    "img/soc-108-pines-2.jpg",
+    "img/soc-108-pines-3.jpg",
+    "img/soc-108-pines-4.jpg",
+    "img/soc-108-pines-5.jpg",
+    "img/soc-108-pines-6.jpg"
+  ]
+ }
+];
+
+    const productosContainer = document.querySelector("#productos");
+    const filtersContainer = document.querySelector("#filters");
+    const contador = document.querySelector("#contador");
+    const whatsappGeneral = document.querySelector("#whatsappGeneral");
+    const buscador = document.querySelector("#buscador");
+
+    const modal = document.querySelector("#modal");
+    const modalImg = document.querySelector("#modalImg");
+    const modalName = document.querySelector("#modalName");
+    const modalCounter = document.querySelector("#modalCounter");
+    const modalThumbs = document.querySelector("#modalThumbs");
+    const closeModal = document.querySelector("#closeModal");
+    const prevImg = document.querySelector("#prevImg");
+    const nextImg = document.querySelector("#nextImg");
+
+    let galeriaActual = [];
+    let productoActual = null;
+    let indiceActual = 0;
+
+    function formatoPrecio(valor) {
+      return new Intl.NumberFormat("es-MX", {
+        style: "currency",
+        currency: "MXN",
+        maximumFractionDigits: 0
+      }).format(valor);
+    }
+
+    function mensajeProducto(producto) {
+      return encodeURIComponent(
+        `Hola, vengo del catálogo oficial de Gissell Narvv. Me interesa esta pieza:\n\n` +
+        `Código: ${producto.codigo}\n` +
+        `Producto: ${producto.nombre}\n` +
+        `Precio: ${formatoPrecio(producto.precio)}\n\n` +
+        `¿Sigue disponible?`
+      );
+    }
+
+    function linkWhatsApp(producto) {
+      return `https://wa.me/${numeroWhatsApp}?text=${mensajeProducto(producto)}`;
+    }
+
+    function getImagenes(producto) {
+      if (producto.imagenes && producto.imagenes.length) return producto.imagenes;
+      return ["img/placeholder.svg"];
+    }
+
+function pintarProductos(categoria = "Todo") {
+  const texto = buscador.value.toLowerCase().trim();
+
+  const lista = productos.filter(p => {
+    const coincideCategoria = categoria === "Todo" || p.categoria === categoria;
+
+    const contenido = `
+      ${p.codigo}
+      ${p.nombre}
+      ${p.categoria}
+      ${p.material}
+      ${p.precio}
+      ${p.descripcion || ""}
+    `.toLowerCase();
+
+    const coincideBusqueda = contenido.includes(texto);
+
+    return coincideCategoria && coincideBusqueda;
+  });
+
+  contador.textContent = `${lista.length} pieza${lista.length === 1 ? "" : "s"}`;
+  productosContainer.innerHTML = "";
+
+  lista.forEach(producto => {
+    const imagenes = getImagenes(producto);
+    const card = document.createElement("article");
+    card.className = "product";
+
+    const thumbs = imagenes.length > 1
+      ? `<div class="thumbs">
+          ${imagenes.map((img, index) => `
+            <button class="thumb ${index === 0 ? "active" : ""}" aria-label="Ver foto ${index + 1}">
+              <img src="${img}" alt="${producto.nombre} foto ${index + 1}" onerror="this.src='img/placeholder.svg'">
+            </button>
+          `).join("")}
+        </div>`
+      : "";
+
+    const descripcionHtml = producto.descripcion ? `<p class="material">${producto.descripcion}</p>` : "";
+
+    card.innerHTML = `
+      <button class="photo-wrap" aria-label="Ampliar ${producto.nombre}">
+        <span class="code">${producto.codigo}</span>
+        <img class="main-photo" src="${imagenes[0]}" alt="${producto.nombre}" onerror="this.src='img/placeholder.svg'">
+        <span class="zoom-label">Ampliar</span>
+      </button>
+      ${thumbs}
+      <div class="content">
+        <span class="category">${producto.categoria}</span>
+        <h4 class="name">${producto.nombre}</h4>
+        <p class="material">${producto.material}</p>
+        ${descripcionHtml}
+        <div class="price-row">
+          <span class="price">${formatoPrecio(producto.precio)}</span>
+          <a class="mini-btn" href="${linkWhatsApp(producto)}" target="_blank" rel="noopener">Pedir</a>
+        </div>
+      </div>
+    `;
+
+    const mainPhoto = card.querySelector(".main-photo");
+    const photoWrap = card.querySelector(".photo-wrap");
+    const thumbButtons = card.querySelectorAll(".thumb");
+
+    photoWrap.addEventListener("click", () => {
+      const currentSrc = mainPhoto.getAttribute("src");
+      const currentIndex = Math.max(0, imagenes.indexOf(currentSrc));
+      abrirModal(producto, currentIndex);
+    });
+
+    thumbButtons.forEach((btn, index) => {
+      btn.addEventListener("click", () => {
+        thumbButtons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        mainPhoto.src = imagenes[index];
+      });
+    });
+
+    productosContainer.appendChild(card);
+  });
+}
+
+    function pintarFiltros() {
+      const categorias = ["Todo", ...new Set(productos.map(p => p.categoria))];
+      filtersContainer.innerHTML = "";
+      categorias.forEach(categoria => {
+        const btn = document.createElement("button");
+        btn.className = "filter" + (categoria === "Todo" ? " active" : "");
+        btn.textContent = categoria;
+        btn.addEventListener("click", () => {
+          document.querySelectorAll(".filter").forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+          pintarProductos(categoria);
+        });
+        filtersContainer.appendChild(btn);
+      });
+    }
+
+    function abrirModal(producto, index = 0) {
+      productoActual = producto;
+      galeriaActual = getImagenes(producto);
+      indiceActual = index;
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      modalName.textContent = producto.nombre;
+      pintarModal();
+    }
+
+    function cerrarModal() {
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    function pintarModal() {
+      const img = galeriaActual[indiceActual] || "img/placeholder.svg";
+      modalImg.src = img;
+      modalImg.alt = productoActual ? productoActual.nombre : "Producto";
+      modalCounter.textContent = `${indiceActual + 1} / ${galeriaActual.length}`;
+      prevImg.style.display = galeriaActual.length > 1 ? "block" : "none";
+      nextImg.style.display = galeriaActual.length > 1 ? "block" : "none";
+
+      modalThumbs.innerHTML = galeriaActual.map((img, index) => `
+        <button class="modal-thumb ${index === indiceActual ? "active" : ""}" aria-label="Ver imagen ${index + 1}">
+          <img src="${img}" alt="Miniatura ${index + 1}" onerror="this.src='img/placeholder.svg'">
+        </button>
+      `).join("");
+
+      modalThumbs.querySelectorAll(".modal-thumb").forEach((btn, index) => {
+        btn.addEventListener("click", () => {
+          indiceActual = index;
+          pintarModal();
+        });
+      });
+    }
+
+    function siguienteImagen() {
+      if (!galeriaActual.length) return;
+      indiceActual = (indiceActual + 1) % galeriaActual.length;
+      pintarModal();
+    }
+
+    function anteriorImagen() {
+      if (!galeriaActual.length) return;
+      indiceActual = (indiceActual - 1 + galeriaActual.length) % galeriaActual.length;
+      pintarModal();
+    }
+
+    closeModal.addEventListener("click", cerrarModal);
+    nextImg.addEventListener("click", siguienteImagen);
+    prevImg.addEventListener("click", anteriorImagen);
+    modal.addEventListener("click", event => {
+      if (event.target === modal) cerrarModal();
+    });
+
+    whatsappGeneral.href = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent("Hola, vengo del catálogo oficial de Gissell Narvv. Quiero información de las piezas disponibles.")}`;
+buscador.addEventListener("input", () => {
+  const filtroActivo = document.querySelector(".filter.active").textContent;
+  pintarProductos(filtroActivo);
+});
+    pintarFiltros();
+    pintarProductos();
+  </script>
+</body>
+</html>
