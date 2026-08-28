@@ -413,6 +413,70 @@ footer {
 .video-thumb-label { width:100%; height:100%; display:grid; place-items:center; background:#2e2422; color:white; font-size:20px; }
 #modalVideo { width:100%; height:100%; max-height:68vh; object-fit:contain; display:none; background:#120d0b; }
 
+
+.catalog-tools {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  margin: 0 2px 14px;
+  flex-wrap: wrap;
+}
+.sort-label {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+}
+.sort-select {
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.95);
+  color: var(--brand-dark);
+  padding: 10px 36px 10px 13px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 13px;
+  cursor: pointer;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: wrap;
+  margin: 24px 0 8px;
+}
+.page-btn {
+  min-width: 38px;
+  height: 38px;
+  padding: 0 11px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: white;
+  color: var(--brand-dark);
+  font-weight: 900;
+  cursor: pointer;
+}
+.page-btn.active {
+  background: var(--brand-dark);
+  color: white;
+  border-color: var(--brand-dark);
+}
+.page-btn:disabled {
+  opacity: .4;
+  cursor: default;
+}
+@media (max-width: 520px) {
+  .catalog-tools {
+    align-items: stretch;
+  }
+  .sort-label {
+    width: 100%;
+  }
+  .sort-select {
+    width: 100%;
+  }
+}
+
 @media (min-width: 760px) {
   .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
   .modal-image-area { min-height: 500px; }
@@ -455,8 +519,21 @@ footer {
   style="width:100%; padding:14px 16px; border-radius:999px; border:1px solid var(--border); margin-bottom:14px; font-size:15px;"
 >
 
+<div class="catalog-tools">
+  <label class="sort-label" for="ordenar">Ordenar por</label>
+  <select id="ordenar" class="sort-select" aria-label="Ordenar productos">
+    <option value="nuevo" selected>Más nuevos primero</option>
+    <option value="antiguo">Más antiguos primero</option>
+    <option value="az">Nombre A → Z</option>
+    <option value="za">Nombre Z → A</option>
+    <option value="precio-asc">Precio: menor → mayor</option>
+    <option value="precio-desc">Precio: mayor → menor</option>
+  </select>
+</div>
+
 <div class="filters" id="filters"></div>
 <section class="grid" id="productos"></section>
+<nav class="pagination" id="paginacion" aria-label="Páginas del catálogo"></nav>
 
     <section class="panel">
       <p><strong>Tip:</strong> si no encuentras la pieza que buscas, pide mas informacion a tu vendedora</p>
@@ -2478,10 +2555,78 @@ footer {
       return /\.(mp4|webm|ogg)$/i.test(ruta);
     }
 
-function pintarProductos(categoria = "Todo") {
+    const ordenar = document.querySelector("#ordenar");
+    const paginacion = document.querySelector("#paginacion");
+    const PRODUCTOS_POR_PAGINA = 18;
+    let categoriaActiva = "Todo";
+    let paginaActual = 1;
+
+    function numeroSoc(producto) {
+      const m = String(producto.codigo || "").match(/(\d+)/);
+      return m ? Number(m[1]) : 0;
+    }
+
+    function ordenarLista(lista) {
+      const modo = ordenar.value;
+      const copia = [...lista];
+
+      if (modo === "nuevo") {
+        copia.sort((a, b) => numeroSoc(b) - numeroSoc(a));
+      } else if (modo === "antiguo") {
+        copia.sort((a, b) => numeroSoc(a) - numeroSoc(b));
+      } else if (modo === "az") {
+        copia.sort((a, b) => a.nombre.localeCompare(b.nombre, "es", { sensitivity: "base" }));
+      } else if (modo === "za") {
+        copia.sort((a, b) => b.nombre.localeCompare(a.nombre, "es", { sensitivity: "base" }));
+      } else if (modo === "precio-asc") {
+        copia.sort((a, b) => Number(a.precio) - Number(b.precio) || numeroSoc(b) - numeroSoc(a));
+      } else if (modo === "precio-desc") {
+        copia.sort((a, b) => Number(b.precio) - Number(a.precio) || numeroSoc(b) - numeroSoc(a));
+      }
+      return copia;
+    }
+
+    function cambiarPagina(nuevaPagina) {
+      paginaActual = nuevaPagina;
+      pintarProductos(categoriaActiva);
+      document.querySelector("#catalogo").scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    function pintarPaginacion(totalPaginas) {
+      paginacion.innerHTML = "";
+      if (totalPaginas <= 1) return;
+
+      const anterior = document.createElement("button");
+      anterior.className = "page-btn";
+      anterior.textContent = "‹";
+      anterior.setAttribute("aria-label", "Página anterior");
+      anterior.disabled = paginaActual === 1;
+      anterior.addEventListener("click", () => cambiarPagina(paginaActual - 1));
+      paginacion.appendChild(anterior);
+
+      for (let i = 1; i <= totalPaginas; i++) {
+        const btn = document.createElement("button");
+        btn.className = "page-btn" + (i === paginaActual ? " active" : "");
+        btn.textContent = i;
+        btn.setAttribute("aria-label", `Página ${i}`);
+        btn.addEventListener("click", () => cambiarPagina(i));
+        paginacion.appendChild(btn);
+      }
+
+      const siguiente = document.createElement("button");
+      siguiente.className = "page-btn";
+      siguiente.textContent = "›";
+      siguiente.setAttribute("aria-label", "Página siguiente");
+      siguiente.disabled = paginaActual === totalPaginas;
+      siguiente.addEventListener("click", () => cambiarPagina(paginaActual + 1));
+      paginacion.appendChild(siguiente);
+    }
+
+function pintarProductos(categoria = categoriaActiva) {
+  categoriaActiva = categoria;
   const texto = buscador.value.toLowerCase().trim();
 
-  const lista = productos.filter(p => {
+  let lista = productos.filter(p => {
     const coincideCategoria = categoria === "Todo" || p.categoria === categoria;
 
     const contenido = `
@@ -2491,18 +2636,27 @@ function pintarProductos(categoria = "Todo") {
       ${p.material}
       ${p.descripcion || ""}
       ${p.precio}
-      ${p.descripcion || ""}
     `.toLowerCase();
 
-    const coincideBusqueda = contenido.includes(texto);
-
-    return coincideCategoria && coincideBusqueda;
+    return coincideCategoria && contenido.includes(texto);
   });
 
-  contador.textContent = `${lista.length} pieza${lista.length === 1 ? "" : "s"}`;
+  lista = ordenarLista(lista);
+
+  const total = lista.length;
+  const totalPaginas = Math.max(1, Math.ceil(total / PRODUCTOS_POR_PAGINA));
+  if (paginaActual > totalPaginas) paginaActual = totalPaginas;
+
+  const inicio = (paginaActual - 1) * PRODUCTOS_POR_PAGINA;
+  const listaPagina = lista.slice(inicio, inicio + PRODUCTOS_POR_PAGINA);
+
+  contador.textContent = total
+    ? `${total} pieza${total === 1 ? "" : "s"} · Página ${paginaActual} de ${totalPaginas}`
+    : "0 piezas";
+
   productosContainer.innerHTML = "";
 
-  lista.forEach(producto => {
+  listaPagina.forEach(producto => {
     const imagenes = getImagenes(producto);
     const medios = getMedios(producto);
     const card = document.createElement("article");
@@ -2565,23 +2719,29 @@ function pintarProductos(categoria = "Todo") {
 
     productosContainer.appendChild(card);
   });
+
+  pintarPaginacion(total === 0 ? 0 : totalPaginas);
 }
+
 
     function pintarFiltros() {
       const categorias = ["Todo", ...new Set(productos.map(p => p.categoria))];
       filtersContainer.innerHTML = "";
       categorias.forEach(categoria => {
         const btn = document.createElement("button");
-        btn.className = "filter" + (categoria === "Todo" ? " active" : "");
+        btn.className = "filter" + (categoria === categoriaActiva ? " active" : "");
         btn.textContent = categoria;
         btn.addEventListener("click", () => {
           document.querySelectorAll(".filter").forEach(b => b.classList.remove("active"));
           btn.classList.add("active");
-          pintarProductos(categoria);
+          categoriaActiva = categoria;
+          paginaActual = 1;
+          pintarProductos(categoriaActiva);
         });
         filtersContainer.appendChild(btn);
       });
     }
+
 
     function abrirModal(producto, index = 0) {
       productoActual = producto;
@@ -2657,11 +2817,17 @@ function pintarProductos(categoria = "Todo") {
 
     whatsappGeneral.href = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent("Hola, vengo del catálogo oficial de Gissell Narvv. Quiero información de las piezas disponibles.")}`;
 buscador.addEventListener("input", () => {
-  const filtroActivo = document.querySelector(".filter.active").textContent;
-  pintarProductos(filtroActivo);
+  paginaActual = 1;
+  pintarProductos(categoriaActiva);
 });
+
+ordenar.addEventListener("change", () => {
+  paginaActual = 1;
+  pintarProductos(categoriaActiva);
+});
+
     pintarFiltros();
-    pintarProductos();
+    pintarProductos("Todo");
   </script>
 </body>
 </html>
