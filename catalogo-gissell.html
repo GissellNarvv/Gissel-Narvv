@@ -305,6 +305,37 @@ footer {
   font-weight: 900;
   white-space: nowrap;
 }
+
+.product.agotado {
+  opacity: .82;
+}
+
+.product.agotado .main-photo {
+  filter: grayscale(.25);
+}
+
+.sold-out-badge {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: rgba(46,36,34,.90);
+  color: white;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: .08em;
+  box-shadow: 0 8px 22px rgba(0,0,0,.22);
+}
+
+.mini-btn.agotado {
+  background: #b8b0ad;
+  color: white;
+  cursor: not-allowed;
+  pointer-events: none;
+}
 .modal {
   position: fixed;
   inset: 0;
@@ -1608,6 +1639,7 @@ footer {
  },
       {
   codigo: "SOC-086",
+  agotado: true,
   nombre: "Porta pulseras doble",
   categoria: "Pulseras",
   material: "Variedad disponible",
@@ -2607,18 +2639,24 @@ footer {
       const modo = ordenar.value;
       const copia = [...lista];
 
+      const alFinalSiAgotado = (a, b) => {
+        const agotadoA = a.agotado === true ? 1 : 0;
+        const agotadoB = b.agotado === true ? 1 : 0;
+        return agotadoA - agotadoB;
+      };
+
       if (modo === "nuevo") {
-        copia.sort((a, b) => numeroSoc(b) - numeroSoc(a));
+        copia.sort((a, b) => alFinalSiAgotado(a, b) || numeroSoc(b) - numeroSoc(a));
       } else if (modo === "antiguo") {
-        copia.sort((a, b) => numeroSoc(a) - numeroSoc(b));
+        copia.sort((a, b) => alFinalSiAgotado(a, b) || numeroSoc(a) - numeroSoc(b));
       } else if (modo === "az") {
-        copia.sort((a, b) => a.nombre.localeCompare(b.nombre, "es", { sensitivity: "base" }));
+        copia.sort((a, b) => alFinalSiAgotado(a, b) || a.nombre.localeCompare(b.nombre, "es", { sensitivity: "base" }));
       } else if (modo === "za") {
-        copia.sort((a, b) => b.nombre.localeCompare(a.nombre, "es", { sensitivity: "base" }));
+        copia.sort((a, b) => alFinalSiAgotado(a, b) || b.nombre.localeCompare(a.nombre, "es", { sensitivity: "base" }));
       } else if (modo === "precio-asc") {
-        copia.sort((a, b) => Number(a.precio) - Number(b.precio) || numeroSoc(b) - numeroSoc(a));
+        copia.sort((a, b) => alFinalSiAgotado(a, b) || Number(a.precio) - Number(b.precio) || numeroSoc(b) - numeroSoc(a));
       } else if (modo === "precio-desc") {
-        copia.sort((a, b) => Number(b.precio) - Number(a.precio) || numeroSoc(b) - numeroSoc(a));
+        copia.sort((a, b) => alFinalSiAgotado(a, b) || Number(b.precio) - Number(a.precio) || numeroSoc(b) - numeroSoc(a));
       }
       return copia;
     }
@@ -2697,7 +2735,7 @@ function pintarProductos(categoria = categoriaActiva) {
     const imagenes = getImagenes(producto);
     const medios = getMedios(producto);
     const card = document.createElement("article");
-    card.className = "product";
+    card.className = "product" + (producto.agotado === true ? " agotado" : "");
 
     const thumbs = medios.length > 1
       ? `<div class="thumbs">
@@ -2717,6 +2755,7 @@ function pintarProductos(categoria = categoriaActiva) {
       <button class="photo-wrap" aria-label="Ampliar ${producto.nombre}">
         <span class="code">${producto.codigo}</span>
         <img loading="lazy" decoding="async" class="main-photo" src="${imagenes[0]}" alt="${producto.nombre}" onerror="this.src='img/placeholder.svg'">
+        ${producto.agotado === true ? `<span class="sold-out-badge">AGOTADO</span>` : ""}
         <span class="zoom-label">Ampliar</span>
       </button>
       ${thumbs}
@@ -2727,7 +2766,9 @@ function pintarProductos(categoria = categoriaActiva) {
         ${descripcionHtml}
         <div class="price-row">
           <span class="price">${formatoPrecio(producto.precio)}</span>
-          <a class="mini-btn" href="${linkWhatsApp(producto)}" target="_blank" rel="noopener">Pedir</a>
+          ${producto.agotado === true
+            ? `<span class="mini-btn agotado" aria-disabled="true">Agotado</span>`
+            : `<a class="mini-btn" href="${linkWhatsApp(producto)}" target="_blank" rel="noopener">Pedir</a>`}
         </div>
       </div>
     `;
