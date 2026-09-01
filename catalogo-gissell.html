@@ -274,10 +274,11 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 .modal { position: fixed; inset: 0; z-index: 100; display: none; align-items: center; justify-content: center; padding: 12px; background: rgba(28,18,15,.80); }
 .modal.open { display: flex; }
-.modal-card { width: min(960px, 100%); max-height: 94vh; overflow: auto; border-radius: 24px; background: #fff; box-shadow: var(--shadow-lg); }
+.modal-card { width: min(960px, 100%); max-width: calc(100vw - 24px); max-height: calc(100dvh - 24px); overflow: auto; overscroll-behavior: contain; border-radius: 24px; background: #fff; box-shadow: var(--shadow-lg); }
 .modal-top { position: sticky; top: 0; z-index: 4; display: flex; align-items: center; justify-content: space-between; padding: 10px 12px; border-bottom: 1px solid var(--border); background: rgba(255,255,255,.96); }
 .modal-top strong { font-family: Georgia, "Times New Roman", serif; }
-.modal-body { display: grid; }
+.modal-body { display: grid; min-width: 0; }
+.modal-body > *, .modal-media, .modal-details { min-width: 0; }
 .modal-media { position: relative; min-height: 310px; display: grid; place-items: center; background: #211713; }
 .modal-media img, .modal-media video { width: 100%; max-height: 66vh; object-fit: contain; }
 .modal-media img { cursor: zoom-in; }
@@ -334,6 +335,13 @@ button, a { -webkit-tap-highlight-color: transparent; }
 @media (max-width: 380px) {
   .grid { grid-template-columns: 1fr; }
   .brand-copy p { display: none; }
+}
+
+@media (max-width: 619px) {
+  .modal { padding: 0; }
+  .modal-card { width: 100%; max-width: 100%; max-height: 100dvh; border-radius: 0; }
+  .modal-media { min-height: 0; height: min(66dvh, 620px); }
+  .modal-media img, .modal-media video { height: 100%; max-height: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -728,13 +736,17 @@ const PRODUCTOS_CATALOGO = [
     "imagenes": [
       "img-web/soc-022-paraguas-plegable-led-7.webp",
       "img-web/soc-022-paraguas-plegable-led-8.webp",
-      "video-web/soc-022-paraguas-plegable-led-video-1.mp4",
+      "img-web/soc-022-paraguas-plegable-led-9.webp",
+      "img-web/soc-022-paraguas-plegable-led-10.webp",
+      "img-web/soc-022-paraguas-plegable-led-11.webp",
+      "img-web/soc-022-paraguas-plegable-led-12.webp",
       "img-web/soc-022-sombrilla-led-1.webp",
       "img-web/soc-022-sombrilla-led-2.webp",
       "img-web/soc-022-sombrilla-led-3.webp",
       "img-web/soc-022-sombrilla-led-4.webp",
       "img-web/soc-022-sombrilla-led-5.webp",
-      "img-web/soc-022-sombrilla-led-6.webp"
+      "img-web/soc-022-sombrilla-led-6.webp",
+      "video-web/soc-022-paraguas-plegable-led-video-1.mp4"
     ],
     "precioGissell": 110,
     "precioSocio": 184,
@@ -3730,8 +3742,10 @@ function crearProductosCatalogo(tipo) {
     elements.fullscreenImage.src = medio;
     elements.fullscreenImage.alt = productoModal?.nombre || "Imagen del producto";
     elements.fullscreenCounter.textContent = `${medioActual + 1} / ${mediosModal.length}`;
-    elements.fullscreenPrev.hidden = mediosModal.length <= 1;
-    elements.fullscreenNext.hidden = mediosModal.length <= 1;
+    const anterior = mediosModal[(medioActual - 1 + mediosModal.length) % mediosModal.length];
+    const siguiente = mediosModal[(medioActual + 1) % mediosModal.length];
+    elements.fullscreenPrev.hidden = mediosModal.length <= 1 || esVideo(anterior);
+    elements.fullscreenNext.hidden = mediosModal.length <= 1 || esVideo(siguiente);
     reiniciarZoom();
   }
 
