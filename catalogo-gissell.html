@@ -339,9 +339,11 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 @media (max-width: 619px) {
   .modal { padding: 0; }
-  .modal-card { width: 100%; max-width: 100%; max-height: 100dvh; border-radius: 0; }
-  .modal-media { min-height: 0; height: min(66dvh, 620px); }
-  .modal-media img, .modal-media video { height: 100%; max-height: none; }
+  .modal-card { width: 100%; max-width: 100%; max-height: 100vh; max-height: 100dvh; border-radius: 0; overflow-x: hidden; }
+  .modal-media { min-height: 0; height: 58vh; max-height: 620px; overflow: hidden; }
+  .modal-media img, .modal-media video { display: block; width: 100%; height: 100%; max-height: 100%; object-fit: contain; }
+  .modal-media video { display: none; }
+  .modal-thumbs { position: relative; z-index: 3; flex: 0 0 auto; min-height: 72px; background: #fff; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -746,7 +748,7 @@ const PRODUCTOS_CATALOGO = [
       "img-web/soc-022-sombrilla-led-4.webp",
       "img-web/soc-022-sombrilla-led-5.webp",
       "img-web/soc-022-sombrilla-led-6.webp",
-      "video-web/soc-022-paraguas-plegable-led-video-2.mp4"
+      "video-web/soc-022-paraguas-plegable-led-video-original.mp4"
     ],
     "precioGissell": 110,
     "precioSocio": 184,
