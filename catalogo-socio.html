@@ -3685,7 +3685,7 @@ function crearProductosCatalogo(tipo) {
     elements.orderDock.classList.toggle("visible", seleccion.size > 0);
   }
 
-  function abrirProducto(producto, index = 0) {
+  function abrirProducto(producto, index = 0, { registrarHistorial = true } = {}) {
     productoModal = producto;
     mediosModal = getMedios(producto);
     medioActual = index;
@@ -3696,7 +3696,9 @@ function crearProductosCatalogo(tipo) {
     elements.modalTitle.textContent = producto.nombre;
     pintarMedioModal();
     pintarDetallesModal();
-    window.history.replaceState(null, "", enlaceProducto(producto));
+    if (registrarHistorial) {
+      window.history.pushState({ catalogoVista: "producto", codigo: producto.codigo }, "", enlaceProducto(producto));
+    }
     elements.closeProductModal.focus();
   }
 
@@ -3784,11 +3786,14 @@ function crearProductosCatalogo(tipo) {
     return Math.hypot(toques[0].clientX - toques[1].clientX, toques[0].clientY - toques[1].clientY);
   }
 
-  function abrirPantallaCompleta() {
+  function abrirPantallaCompleta({ registrarHistorial = true } = {}) {
     if (!productoModal || esVideo(mediosModal[medioActual])) return;
     pintarPantallaCompleta();
     elements.fullscreenViewer.classList.add("open");
     elements.fullscreenViewer.setAttribute("aria-hidden", "false");
+    if (registrarHistorial) {
+      window.history.pushState({ catalogoVista: "imagen", codigo: productoModal.codigo, medio: medioActual }, "", window.location.href);
+    }
     elements.closeFullscreen.focus();
   }
 
@@ -3798,6 +3803,39 @@ function crearProductosCatalogo(tipo) {
     elements.fullscreenViewer.setAttribute("aria-hidden", "true");
     elements.fullscreenImage.removeAttribute("src");
     reiniciarZoom();
+  }
+
+  function cerrarProductoDesdeInterfaz() {
+    if (window.history.state?.catalogoVista === "producto") window.history.back();
+    else cerrarProducto();
+  }
+
+  function cerrarPantallaCompletaDesdeInterfaz() {
+    if (window.history.state?.catalogoVista === "imagen") window.history.back();
+    else cerrarPantallaCompleta();
+  }
+
+  function sincronizarVistaConHistorial(state = {}) {
+    const vista = state?.catalogoVista || "catalogo";
+    if (vista === "catalogo") {
+      cerrarPantallaCompleta();
+      if (elements.productModal.classList.contains("open")) cerrarProducto({ limpiarHash: false });
+      return;
+    }
+    const producto = productos.find(item => item.codigo === state.codigo);
+    if (!producto) return;
+    if (!elements.productModal.classList.contains("open") || productoModal?.codigo !== producto.codigo) {
+      abrirProducto(producto, Number(state.medio) || 0, { registrarHistorial: false });
+    }
+    if (vista === "producto") {
+      cerrarPantallaCompleta();
+      return;
+    }
+    medioActual = Number(state.medio) || 0;
+    pintarMedioModal();
+    if (!elements.fullscreenViewer.classList.contains("open")) {
+      abrirPantallaCompleta({ registrarHistorial: false });
+    }
   }
 
   function pintarDetallesModal() {
@@ -3912,14 +3950,14 @@ function crearProductosCatalogo(tipo) {
     if (seleccion.size) abrirPedido(); else cerrarPedido();
     pintarProductos();
   });
-  elements.closeProductModal.addEventListener("click", () => cerrarProducto());
-  elements.productModal.addEventListener("click", event => { if (event.target === elements.productModal) cerrarProducto(); });
+  elements.closeProductModal.addEventListener("click", cerrarProductoDesdeInterfaz);
+  elements.productModal.addEventListener("click", event => { if (event.target === elements.productModal) cerrarProductoDesdeInterfaz(); });
   elements.prevMedia.addEventListener("click", () => moverMedio(-1));
   elements.nextMedia.addEventListener("click", () => moverMedio(1));
   elements.modalImage.addEventListener("click", abrirPantallaCompleta);
   elements.videoFullscreen.addEventListener("click", abrirVideoPantallaCompleta);
-  elements.closeFullscreen.addEventListener("click", cerrarPantallaCompleta);
-  elements.fullscreenViewer.addEventListener("click", event => { if (event.target === elements.fullscreenViewer) cerrarPantallaCompleta(); });
+  elements.closeFullscreen.addEventListener("click", cerrarPantallaCompletaDesdeInterfaz);
+  elements.fullscreenViewer.addEventListener("click", event => { if (event.target === elements.fullscreenViewer) cerrarPantallaCompletaDesdeInterfaz(); });
   elements.fullscreenImage.addEventListener("dblclick", event => {
     event.preventDefault();
     zoomEscala = zoomEscala > 1 ? 1 : 2.5;
@@ -3974,14 +4012,15 @@ function crearProductosCatalogo(tipo) {
   });
   document.addEventListener("keydown", event => {
     if (event.key === "Escape") {
-      if (elements.fullscreenViewer.classList.contains("open")) cerrarPantallaCompleta();
-      else if (elements.productModal.classList.contains("open")) cerrarProducto();
+      if (elements.fullscreenViewer.classList.contains("open")) cerrarPantallaCompletaDesdeInterfaz();
+      else if (elements.productModal.classList.contains("open")) cerrarProductoDesdeInterfaz();
       if (elements.orderModal.classList.contains("open")) cerrarPedido();
     }
     if (elements.productModal.classList.contains("open") && event.key === "ArrowRight") moverMedio(1);
     if (elements.productModal.classList.contains("open") && event.key === "ArrowLeft") moverMedio(-1);
   });
   window.addEventListener("resize", () => pintarProductos());
+  window.addEventListener("popstate", event => sincronizarVistaConHistorial(event.state));
 
   const generalMessage = encodeURIComponent(`Hola, vengo del ${config.origenMensaje}. Quiero información de las piezas disponibles.`);
   const generalLink = `https://wa.me/${config.whatsapp}?text=${generalMessage}`;
@@ -3993,7 +4032,14 @@ function crearProductosCatalogo(tipo) {
   actualizarPedido();
 
   const hashProduct = productos.find(producto => `#${producto.codigo}` === window.location.hash.toUpperCase());
-  if (hashProduct) abrirProducto(hashProduct);
+  if (hashProduct) {
+    const catalogUrl = new URL(window.location.href);
+    catalogUrl.hash = "";
+    window.history.replaceState({ catalogoVista: "catalogo" }, "", catalogUrl);
+    abrirProducto(hashProduct);
+  } else {
+    window.history.replaceState({ catalogoVista: "catalogo" }, "", window.location.href);
+  }
 })();
 
 </script>
