@@ -280,6 +280,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .modal-body { display: grid; }
 .modal-media { position: relative; min-height: 310px; display: grid; place-items: center; background: #211713; }
 .modal-media img, .modal-media video { width: 100%; max-height: 66vh; object-fit: contain; }
+.modal-media img { cursor: zoom-in; }
 .modal-media video { display: none; }
 .nav-media { position: absolute; top: 50%; width: 42px; height: 42px; transform: translateY(-50%); border: 0; border-radius: 50%; color: var(--brand-strong); background: rgba(255,255,255,.90); font-size: 25px; cursor: pointer; }
 .nav-media.prev { left: 9px; }
@@ -290,6 +291,15 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .modal-thumb.active { border-color: #fff; }
 .modal-thumb img { width: 100%; height: 100%; object-fit: cover; }
 .video-label { width: 100%; height: 100%; display: grid; place-items: center; color: #fff; }
+.fullscreen-viewer { position: fixed; inset: 0; z-index: 180; display: none; align-items: center; justify-content: center; background: rgba(0,0,0,.96); touch-action: pan-x pan-y; }
+.fullscreen-viewer.open { display: flex; }
+.fullscreen-image { width: 100%; height: 100%; object-fit: contain; cursor: zoom-out; }
+.fullscreen-close, .fullscreen-nav { position: absolute; z-index: 2; display: grid; place-items: center; border: 0; border-radius: 50%; color: #2e2422; background: rgba(255,255,255,.92); box-shadow: 0 8px 24px rgba(0,0,0,.25); cursor: pointer; }
+.fullscreen-close { top: max(14px, env(safe-area-inset-top)); right: 14px; width: 46px; height: 46px; font-size: 25px; }
+.fullscreen-nav { top: 50%; width: 48px; height: 48px; transform: translateY(-50%); font-size: 30px; }
+.fullscreen-nav.prev { left: 12px; }
+.fullscreen-nav.next { right: 12px; }
+.fullscreen-counter { position: absolute; left: 50%; bottom: max(16px, env(safe-area-inset-bottom)); z-index: 2; transform: translateX(-50%); padding: 7px 11px; border-radius: 999px; color: #fff; background: rgba(46,36,34,.78); font-size: 12px; }
 .modal-details { display: flex; flex-direction: column; gap: 10px; padding: 18px; }
 .modal-details h2 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: 25px; }
 .modal-description { margin: 0; color: var(--muted); line-height: 1.55; white-space: pre-line; }
@@ -419,6 +429,14 @@ button, a { -webkit-tap-highlight-color: transparent; }
         <div class="modal-details" id="modalDetails"></div>
       </div>
     </div>
+  </div>
+
+  <div class="fullscreen-viewer" id="fullscreenViewer" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Imagen a pantalla completa">
+    <button class="fullscreen-close" id="closeFullscreen" aria-label="Cerrar imagen">×</button>
+    <button class="fullscreen-nav prev" id="fullscreenPrev" aria-label="Imagen anterior">‹</button>
+    <img class="fullscreen-image" id="fullscreenImage" src="" alt="">
+    <button class="fullscreen-nav next" id="fullscreenNext" aria-label="Imagen siguiente">›</button>
+    <span class="fullscreen-counter" id="fullscreenCounter"></span>
   </div>
 
   <div class="modal" id="orderModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="orderTitle">
@@ -3362,6 +3380,12 @@ function crearProductosCatalogo(tipo) {
     closeProductModal: $("#closeProductModal"),
     prevMedia: $("#prevMedia"),
     nextMedia: $("#nextMedia"),
+    fullscreenViewer: $("#fullscreenViewer"),
+    fullscreenImage: $("#fullscreenImage"),
+    fullscreenCounter: $("#fullscreenCounter"),
+    closeFullscreen: $("#closeFullscreen"),
+    fullscreenPrev: $("#fullscreenPrev"),
+    fullscreenNext: $("#fullscreenNext"),
     orderModal: $("#orderModal"),
     orderList: $("#orderList"),
     orderTotal: $("#orderTotal"),
@@ -3647,6 +3671,7 @@ function crearProductosCatalogo(tipo) {
   }
 
   function cerrarProducto({ limpiarHash = true } = {}) {
+    cerrarPantallaCompleta();
     elements.productModal.classList.remove("open");
     elements.productModal.setAttribute("aria-hidden", "true");
     elements.modalVideo.pause();
@@ -3681,6 +3706,35 @@ function crearProductosCatalogo(tipo) {
       <button class="modal-thumb${index === medioActual ? " active" : ""}" data-media="${index}" aria-label="Ver ${esVideo(item) ? "video" : "imagen"} ${index + 1}">
         ${esVideo(item) ? '<span class="video-label">▶</span>' : `<img loading="lazy" src="${textoSeguro(item)}" alt="">`}
       </button>`).join("") : "";
+    if (elements.fullscreenViewer.classList.contains("open")) {
+      if (esVideo(medio)) cerrarPantallaCompleta();
+      else pintarPantallaCompleta();
+    }
+  }
+
+  function pintarPantallaCompleta() {
+    const medio = mediosModal[medioActual];
+    if (!medio || esVideo(medio)) return;
+    elements.fullscreenImage.src = medio;
+    elements.fullscreenImage.alt = productoModal?.nombre || "Imagen del producto";
+    elements.fullscreenCounter.textContent = `${medioActual + 1} / ${mediosModal.length}`;
+    elements.fullscreenPrev.hidden = mediosModal.length <= 1;
+    elements.fullscreenNext.hidden = mediosModal.length <= 1;
+  }
+
+  function abrirPantallaCompleta() {
+    if (!productoModal || esVideo(mediosModal[medioActual])) return;
+    pintarPantallaCompleta();
+    elements.fullscreenViewer.classList.add("open");
+    elements.fullscreenViewer.setAttribute("aria-hidden", "false");
+    elements.closeFullscreen.focus();
+  }
+
+  function cerrarPantallaCompleta() {
+    if (!elements.fullscreenViewer.classList.contains("open")) return;
+    elements.fullscreenViewer.classList.remove("open");
+    elements.fullscreenViewer.setAttribute("aria-hidden", "true");
+    elements.fullscreenImage.removeAttribute("src");
   }
 
   function pintarDetallesModal() {
@@ -3799,6 +3853,11 @@ function crearProductosCatalogo(tipo) {
   elements.productModal.addEventListener("click", event => { if (event.target === elements.productModal) cerrarProducto(); });
   elements.prevMedia.addEventListener("click", () => moverMedio(-1));
   elements.nextMedia.addEventListener("click", () => moverMedio(1));
+  elements.modalImage.addEventListener("click", abrirPantallaCompleta);
+  elements.closeFullscreen.addEventListener("click", cerrarPantallaCompleta);
+  elements.fullscreenViewer.addEventListener("click", event => { if (event.target === elements.fullscreenViewer || event.target === elements.fullscreenImage) cerrarPantallaCompleta(); });
+  elements.fullscreenPrev.addEventListener("click", () => moverMedio(-1));
+  elements.fullscreenNext.addEventListener("click", () => moverMedio(1));
   elements.modalThumbs.addEventListener("click", event => {
     const button = event.target.closest("[data-media]");
     if (!button) return;
@@ -3813,7 +3872,8 @@ function crearProductosCatalogo(tipo) {
   });
   document.addEventListener("keydown", event => {
     if (event.key === "Escape") {
-      if (elements.productModal.classList.contains("open")) cerrarProducto();
+      if (elements.fullscreenViewer.classList.contains("open")) cerrarPantallaCompleta();
+      else if (elements.productModal.classList.contains("open")) cerrarProducto();
       if (elements.orderModal.classList.contains("open")) cerrarPedido();
     }
     if (elements.productModal.classList.contains("open") && event.key === "ArrowRight") moverMedio(1);
