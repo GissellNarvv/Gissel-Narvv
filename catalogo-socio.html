@@ -291,9 +291,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .modal-thumb.active { border-color: #fff; }
 .modal-thumb img { width: 100%; height: 100%; object-fit: cover; }
 .video-label { width: 100%; height: 100%; display: grid; place-items: center; color: #fff; }
-.fullscreen-viewer { position: fixed; inset: 0; z-index: 180; display: none; align-items: center; justify-content: center; background: rgba(0,0,0,.96); touch-action: pan-x pan-y; }
+.fullscreen-viewer { position: fixed; inset: 0; z-index: 180; display: none; align-items: center; justify-content: center; overflow: hidden; background: rgba(0,0,0,.96); touch-action: none; }
 .fullscreen-viewer.open { display: flex; }
-.fullscreen-image { width: 100%; height: 100%; object-fit: contain; cursor: zoom-out; }
+.fullscreen-image { width: 100%; height: 100%; object-fit: contain; cursor: grab; touch-action: none; user-select: none; -webkit-user-select: none; -webkit-user-drag: none; will-change: transform; }
 .fullscreen-close, .fullscreen-nav { position: absolute; z-index: 2; display: grid; place-items: center; border: 0; border-radius: 50%; color: #2e2422; background: rgba(255,255,255,.92); box-shadow: 0 8px 24px rgba(0,0,0,.25); cursor: pointer; }
 .fullscreen-close { top: max(14px, env(safe-area-inset-top)); right: 14px; width: 46px; height: 46px; font-size: 25px; }
 .fullscreen-nav { top: 50%; width: 48px; height: 48px; transform: translateY(-50%); font-size: 30px; }
@@ -3406,6 +3406,15 @@ function crearProductosCatalogo(tipo) {
   let mediosModal = [];
   let medioActual = 0;
   let focusAnterior = null;
+  let zoomEscala = 1;
+  let zoomX = 0;
+  let zoomY = 0;
+  let distanciaPinzaInicial = 0;
+  let escalaPinzaInicial = 1;
+  let inicioArrastreX = 0;
+  let inicioArrastreY = 0;
+  let zoomXInicial = 0;
+  let zoomYInicial = 0;
   const seleccion = new Set();
 
   function formatoPrecio(valor) {
@@ -3723,6 +3732,27 @@ function crearProductosCatalogo(tipo) {
     elements.fullscreenCounter.textContent = `${medioActual + 1} / ${mediosModal.length}`;
     elements.fullscreenPrev.hidden = mediosModal.length <= 1;
     elements.fullscreenNext.hidden = mediosModal.length <= 1;
+    reiniciarZoom();
+  }
+
+  function aplicarZoom() {
+    const limiteX = window.innerWidth * (zoomEscala - 1) / 2;
+    const limiteY = window.innerHeight * (zoomEscala - 1) / 2;
+    zoomX = Math.max(-limiteX, Math.min(limiteX, zoomX));
+    zoomY = Math.max(-limiteY, Math.min(limiteY, zoomY));
+    elements.fullscreenImage.style.transform = `translate3d(${zoomX}px, ${zoomY}px, 0) scale(${zoomEscala})`;
+    elements.fullscreenImage.style.cursor = zoomEscala > 1 ? "grab" : "zoom-in";
+  }
+
+  function reiniciarZoom() {
+    zoomEscala = 1;
+    zoomX = 0;
+    zoomY = 0;
+    aplicarZoom();
+  }
+
+  function distanciaEntreToques(toques) {
+    return Math.hypot(toques[0].clientX - toques[1].clientX, toques[0].clientY - toques[1].clientY);
   }
 
   function abrirPantallaCompleta() {
@@ -3738,6 +3768,7 @@ function crearProductosCatalogo(tipo) {
     elements.fullscreenViewer.classList.remove("open");
     elements.fullscreenViewer.setAttribute("aria-hidden", "true");
     elements.fullscreenImage.removeAttribute("src");
+    reiniciarZoom();
   }
 
   function pintarDetallesModal() {
@@ -3858,7 +3889,45 @@ function crearProductosCatalogo(tipo) {
   elements.nextMedia.addEventListener("click", () => moverMedio(1));
   elements.modalImage.addEventListener("click", abrirPantallaCompleta);
   elements.closeFullscreen.addEventListener("click", cerrarPantallaCompleta);
-  elements.fullscreenViewer.addEventListener("click", event => { if (event.target === elements.fullscreenViewer || event.target === elements.fullscreenImage) cerrarPantallaCompleta(); });
+  elements.fullscreenViewer.addEventListener("click", event => { if (event.target === elements.fullscreenViewer) cerrarPantallaCompleta(); });
+  elements.fullscreenImage.addEventListener("dblclick", event => {
+    event.preventDefault();
+    zoomEscala = zoomEscala > 1 ? 1 : 2.5;
+    zoomX = 0;
+    zoomY = 0;
+    aplicarZoom();
+  });
+  elements.fullscreenImage.addEventListener("touchstart", event => {
+    if (event.touches.length === 2) {
+      event.preventDefault();
+      distanciaPinzaInicial = distanciaEntreToques(event.touches);
+      escalaPinzaInicial = zoomEscala;
+    } else if (event.touches.length === 1 && zoomEscala > 1) {
+      event.preventDefault();
+      inicioArrastreX = event.touches[0].clientX;
+      inicioArrastreY = event.touches[0].clientY;
+      zoomXInicial = zoomX;
+      zoomYInicial = zoomY;
+    }
+  }, { passive: false });
+  elements.fullscreenImage.addEventListener("touchmove", event => {
+    if (event.touches.length === 2 && distanciaPinzaInicial) {
+      event.preventDefault();
+      const distanciaActual = distanciaEntreToques(event.touches);
+      zoomEscala = Math.max(1, Math.min(4, escalaPinzaInicial * distanciaActual / distanciaPinzaInicial));
+      if (zoomEscala === 1) { zoomX = 0; zoomY = 0; }
+      aplicarZoom();
+    } else if (event.touches.length === 1 && zoomEscala > 1) {
+      event.preventDefault();
+      zoomX = zoomXInicial + event.touches[0].clientX - inicioArrastreX;
+      zoomY = zoomYInicial + event.touches[0].clientY - inicioArrastreY;
+      aplicarZoom();
+    }
+  }, { passive: false });
+  elements.fullscreenImage.addEventListener("touchend", event => {
+    if (event.touches.length < 2) distanciaPinzaInicial = 0;
+    if (zoomEscala < 1.05) reiniciarZoom();
+  });
   elements.fullscreenPrev.addEventListener("click", () => moverMedio(-1));
   elements.fullscreenNext.addEventListener("click", () => moverMedio(1));
   elements.modalThumbs.addEventListener("click", event => {
