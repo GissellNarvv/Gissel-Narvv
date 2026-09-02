@@ -1,0 +1,4938 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta name="description" content="Piezas de Gissell Narvv disponibles en Dani Boutique.">
+  <meta name="theme-color" content="#fff9f6">
+  <title>Catálogo de Dani Boutique | Gissell Narvv</title>
+  <style>
+:root {
+  --bg: #fff9f6;
+  --surface: #fff;
+  --surface-soft: #f9eee9;
+  --text: #2e2422;
+  --muted: #6f625e;
+  --brand: #8a5544;
+  --brand-strong: #69392d;
+  --brand-soft: #f1d9cf;
+  --border: #e8d7d0;
+  --success: #18794e;
+  --whatsapp: #168a47;
+  --shadow-sm: 0 8px 22px rgba(77, 44, 34, .08);
+  --shadow-lg: 0 22px 70px rgba(61, 34, 27, .20);
+  --radius: 20px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 0 0, #fde9e1 0, transparent 28rem),
+    linear-gradient(180deg, #fff7f3, var(--bg) 28rem);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+body.modal-open { overflow: hidden; }
+button, input, select, a { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 3px solid rgba(105, 57, 45, .35); outline-offset: 3px; }
+
+.skip-link {
+  position: fixed;
+  left: 12px;
+  top: -60px;
+  z-index: 200;
+  padding: 10px 14px;
+  color: #fff;
+  background: var(--brand-strong);
+  border-radius: 12px;
+}
+.skip-link:focus { top: 12px; }
+
+.page { width: min(1120px, 100%); margin: 0 auto; padding: 16px 14px 100px; }
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 8px 0 14px;
+}
+.brand-mark {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  border: 1px solid rgba(138, 85, 68, .20);
+  border-radius: 50%;
+  color: var(--brand-strong);
+  background: linear-gradient(145deg, #fff, #f5ddd3);
+  box-shadow: var(--shadow-sm);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -.08em;
+}
+.brand-copy h1 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(25px, 5vw, 36px); letter-spacing: -.035em; }
+.brand-copy p { margin: 3px 0 0; color: var(--muted); font-size: 13px; }
+
+.hero {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: 26px;
+  background: rgba(255, 255, 255, .88);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(12px);
+}
+.eyebrow { color: var(--brand); font-size: 12px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+.hero h2 { margin: 5px 0 6px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(23px, 5.5vw, 34px); line-height: 1.05; }
+.hero p { margin: 0; max-width: 690px; color: var(--muted); font-size: 14px; line-height: 1.45; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.btn {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.btn-primary { color: #fff; background: var(--brand-strong); box-shadow: 0 8px 18px rgba(105, 57, 45, .18); }
+.btn-secondary { color: var(--brand-strong); background: #fff; border-color: var(--border); }
+.btn-whatsapp { color: #fff; background: var(--whatsapp); }
+
+.catalog-heading { display: flex; align-items: end; justify-content: space-between; gap: 12px; margin: 24px 3px 10px; }
+.catalog-heading h2 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: 25px; }
+.counter { color: var(--muted); font-size: 12px; text-align: right; }
+
+.catalog-controls {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  padding: 10px 0 8px;
+  background: linear-gradient(180deg, rgba(255, 249, 246, .98) 82%, transparent);
+}
+.search-row { display: grid; grid-template-columns: 1fr; gap: 8px; }
+.search-wrap { position: relative; }
+.search-icon { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: var(--muted); pointer-events: none; }
+.search-input, .sort-select, .more-select {
+  width: 100%;
+  min-height: 46px;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .96);
+}
+.search-input { padding: 11px 42px; }
+.clear-search {
+  position: absolute;
+  right: 7px;
+  top: 50%;
+  width: 34px;
+  height: 34px;
+  transform: translateY(-50%);
+  border: 0;
+  border-radius: 50%;
+  color: var(--muted);
+  background: transparent;
+  cursor: pointer;
+}
+.clear-search[hidden] { display: none; }
+.sort-select, .more-select { padding: 10px 36px 10px 14px; font-size: 13px; font-weight: 700; cursor: pointer; }
+
+.filter-row { display: flex; align-items: center; gap: 7px; margin-top: 8px; overflow-x: auto; padding: 2px 1px 8px; scrollbar-width: none; }
+.filter-row::-webkit-scrollbar { display: none; }
+.filter {
+  min-height: 40px;
+  flex: 0 0 auto;
+  padding: 8px 13px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--brand-strong);
+  background: rgba(255, 255, 255, .92);
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.filter.active { color: #fff; background: var(--brand-strong); border-color: var(--brand-strong); }
+.more-select { min-width: 154px; width: auto; min-height: 40px; flex: 0 0 auto; }
+
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.product {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+.photo-wrap { position: relative; width: 100%; aspect-ratio: 1 / 1.08; padding: 0; overflow: hidden; border: 0; background: var(--surface-soft); cursor: zoom-in; }
+.photo-wrap img { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform .35s ease; }
+.photo-wrap:hover img { transform: scale(1.025); }
+.code, .status-badge, .media-count {
+  position: absolute;
+  z-index: 2;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 900;
+  backdrop-filter: blur(8px);
+}
+.code { left: 8px; top: 8px; padding: 5px 8px; color: var(--brand-strong); background: rgba(255,255,255,.88); }
+.media-count { right: 8px; bottom: 8px; padding: 5px 8px; color: #fff; background: rgba(46,36,34,.74); }
+.status-badge { left: 50%; top: 50%; transform: translate(-50%, -50%); padding: 8px 12px; color: #fff; background: rgba(46,36,34,.88); letter-spacing: .06em; }
+.promo-badge { display: inline-flex; width: fit-content; padding: 4px 7px; border-radius: 999px; color: #8a3b2f; background: #ffe1d9; font-size: 10px; font-weight: 900; }
+.product-content { display: flex; flex: 1; flex-direction: column; gap: 5px; padding: 11px; }
+.category { color: var(--brand-strong); font-size: 10px; font-weight: 900; letter-spacing: .055em; text-transform: uppercase; }
+.product-name { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: 15px; line-height: 1.15; }
+.material, .description { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.35; }
+.description { display: -webkit-box; overflow: hidden; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.product-footer { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 8px; margin-top: auto; padding-top: 4px; }
+.price-stack { display: flex; min-width: 0; flex-direction: column; }
+.old-price { color: var(--muted); font-size: 10px; text-decoration: line-through; }
+.price { color: var(--text); font-size: 17px; font-weight: 900; white-space: nowrap; }
+.card-actions { display: flex; gap: 5px; }
+.icon-btn {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  color: var(--brand-strong);
+  background: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+.icon-btn.selected { color: #fff; background: var(--brand-strong); border-color: var(--brand-strong); }
+.product.agotado { opacity: .78; }
+.product.agotado .photo-wrap img { filter: grayscale(.28); }
+
+.empty-state { grid-column: 1 / -1; padding: 42px 18px; border: 1px dashed var(--border); border-radius: 24px; text-align: center; background: rgba(255,255,255,.65); }
+.empty-state h3 { margin: 0 0 7px; font-family: Georgia, "Times New Roman", serif; }
+.empty-state p { margin: 0 0 15px; color: var(--muted); }
+
+.load-more { width: 100%; margin: 18px 0 0; }
+.pagination { display: none; justify-content: center; gap: 6px; margin: 22px 0 0; }
+.page-btn { min-width: 40px; height: 40px; border: 1px solid var(--border); border-radius: 999px; color: var(--brand-strong); background: #fff; font-weight: 800; cursor: pointer; }
+.page-btn.active { color: #fff; background: var(--brand-strong); }
+.page-btn:disabled { opacity: .4; cursor: default; }
+
+.catalog-note { margin-top: 20px; padding: 15px 17px; border: 1px solid var(--border); border-radius: 18px; color: var(--muted); background: rgba(255,255,255,.75); font-size: 13px; }
+.site-footer { padding: 26px 0 0; color: var(--muted); text-align: center; font-size: 12px; }
+
+.floating-whatsapp {
+  position: fixed;
+  right: 14px;
+  bottom: 16px;
+  z-index: 45;
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--whatsapp);
+  box-shadow: 0 12px 28px rgba(22,138,71,.30);
+  text-decoration: none;
+  font-size: 21px;
+}
+.order-dock {
+  position: fixed;
+  left: 50%;
+  bottom: 16px;
+  z-index: 46;
+  min-height: 48px;
+  transform: translateX(-50%);
+  display: none;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 999px;
+  color: #fff;
+  background: var(--brand-strong);
+  box-shadow: var(--shadow-lg);
+  font-size: 13px;
+  font-weight: 900;
+  cursor: pointer;
+}
+.order-dock.visible { display: flex; }
+.order-count { min-width: 22px; height: 22px; display: grid; place-items: center; border-radius: 50%; color: var(--brand-strong); background: #fff; font-size: 11px; }
+
+.modal { position: fixed; inset: 0; z-index: 100; display: none; align-items: center; justify-content: center; padding: 12px; background: rgba(28,18,15,.80); }
+.modal.open { display: flex; }
+.modal-card { width: min(960px, 100%); max-width: calc(100vw - 24px); max-height: calc(100dvh - 24px); overflow: auto; overscroll-behavior: contain; border-radius: 24px; background: #fff; box-shadow: var(--shadow-lg); }
+.modal-top { position: sticky; top: 0; z-index: 4; display: flex; align-items: center; justify-content: space-between; padding: 10px 12px; border-bottom: 1px solid var(--border); background: rgba(255,255,255,.96); }
+.modal-top strong { font-family: Georgia, "Times New Roman", serif; }
+.modal-body { display: grid; min-width: 0; }
+.modal-body > *, .modal-media, .modal-details { min-width: 0; }
+.modal-media { position: relative; min-height: 310px; display: grid; place-items: center; background: #211713; }
+.modal-media img, .modal-media video { width: 100%; max-height: 66vh; object-fit: contain; }
+.modal-media img { cursor: zoom-in; }
+.modal-media video { display: none; }
+.video-fullscreen { display: none; position: absolute; top: 12px; right: 12px; z-index: 4; width: 44px; height: 44px; place-items: center; border: 0; border-radius: 50%; color: #fff; background: rgba(0,0,0,.68); font-size: 23px; box-shadow: 0 5px 18px rgba(0,0,0,.28); cursor: pointer; }
+.nav-media { position: absolute; top: 50%; width: 42px; height: 42px; transform: translateY(-50%); border: 0; border-radius: 50%; color: var(--brand-strong); background: rgba(255,255,255,.90); font-size: 25px; cursor: pointer; }
+.nav-media.prev { left: 9px; }
+.nav-media.next { right: 9px; }
+.modal-counter { position: absolute; right: 10px; bottom: 10px; padding: 6px 9px; border-radius: 999px; color: #fff; background: rgba(0,0,0,.55); font-size: 11px; }
+.modal-thumbs { display: flex; gap: 7px; overflow-x: auto; padding: 9px; border-top: 1px solid rgba(255,255,255,.16); }
+.modal-thumb { width: 54px; height: 54px; flex: 0 0 auto; overflow: hidden; padding: 0; border: 2px solid transparent; border-radius: 12px; background: #2e2422; cursor: pointer; }
+.modal-thumb.active { border-color: #fff; }
+.modal-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.video-label { width: 100%; height: 100%; display: grid; place-items: center; color: #fff; }
+.fullscreen-viewer { position: fixed; inset: 0; z-index: 180; display: none; align-items: center; justify-content: center; overflow: hidden; background: rgba(0,0,0,.96); touch-action: none; }
+.fullscreen-viewer.open { display: flex; }
+.fullscreen-image { width: 100%; height: 100%; object-fit: contain; cursor: grab; touch-action: none; user-select: none; -webkit-user-select: none; -webkit-user-drag: none; will-change: transform; }
+.fullscreen-close, .fullscreen-nav { position: absolute; z-index: 2; display: grid; place-items: center; border: 0; border-radius: 50%; color: #2e2422; background: rgba(255,255,255,.92); box-shadow: 0 8px 24px rgba(0,0,0,.25); cursor: pointer; }
+.fullscreen-close { top: max(14px, env(safe-area-inset-top)); right: 14px; width: 46px; height: 46px; font-size: 25px; }
+.fullscreen-nav { top: 50%; width: 48px; height: 48px; transform: translateY(-50%); font-size: 30px; }
+.fullscreen-nav.prev { left: 12px; }
+.fullscreen-nav.next { right: 12px; }
+.fullscreen-counter { position: absolute; left: 50%; bottom: max(16px, env(safe-area-inset-bottom)); z-index: 2; transform: translateX(-50%); padding: 7px 11px; border-radius: 999px; color: #fff; background: rgba(46,36,34,.78); font-size: 12px; }
+.modal-details { display: flex; flex-direction: column; gap: 10px; padding: 18px; }
+.modal-details h2 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: 25px; }
+.modal-description { margin: 0; color: var(--muted); line-height: 1.55; white-space: pre-line; }
+.modal-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.order-list { display: grid; gap: 8px; margin: 4px 0 6px; }
+.order-item { display: grid; grid-template-columns: 48px 1fr auto; align-items: center; gap: 9px; padding: 8px; border: 1px solid var(--border); border-radius: 14px; }
+.order-item img { width: 48px; height: 48px; border-radius: 10px; object-fit: cover; }
+.order-item strong { display: block; font-size: 13px; }
+.order-item span { color: var(--muted); font-size: 11px; }
+.remove-item { border: 0; color: var(--muted); background: transparent; cursor: pointer; }
+.toast { position: fixed; left: 50%; bottom: 78px; z-index: 150; transform: translateX(-50%) translateY(20px); padding: 10px 14px; border-radius: 999px; color: #fff; background: #2e2422; opacity: 0; pointer-events: none; transition: .2s ease; font-size: 12px; }
+.toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+
+@media (min-width: 620px) {
+  .page { padding: 24px 20px 90px; }
+  .site-header { justify-content: flex-start; }
+  .hero { grid-template-columns: 1fr auto; align-items: center; padding: 22px 26px; }
+  .search-row { grid-template-columns: 1fr 230px; }
+  .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  .load-more { display: none; }
+  .pagination { display: flex; }
+  .floating-whatsapp { right: 24px; bottom: 22px; }
+  .modal-body { grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr); }
+  .modal-details { padding: 26px; }
+}
+
+@media (min-width: 980px) {
+  .grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+@media (max-width: 380px) {
+  .grid { grid-template-columns: 1fr; }
+  .brand-copy p { display: none; }
+}
+
+@media (max-width: 619px) {
+  .modal { padding: 0; }
+  .modal-card { width: 100%; max-width: 100%; max-height: 100vh; max-height: 100dvh; border-radius: 0; overflow-x: hidden; }
+  .modal-media { min-height: 0; height: 58vh; max-height: 620px; overflow: hidden; }
+  .modal-media img { display: block; width: 100%; height: 100%; max-height: 100%; object-fit: contain; }
+  .modal-media img[hidden] { display: none; }
+  .modal-media video { display: none; width: 100%; height: auto; max-height: 100%; object-fit: contain; }
+  .video-fullscreen.visible { display: grid; }
+  .modal-thumbs { position: relative; z-index: 3; flex: 0 0 auto; min-height: 72px; background: #fff; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+}
+
+</style>
+  <script>window.CATALOGO_CONFIG = {"tipo":"socio","whatsapp":"527441861831","origenMensaje":"catálogo de Dani Boutique"};</script>
+  
+</head>
+<body>
+  <a class="skip-link" href="#catalogo">Ir al catálogo</a>
+  <main class="page">
+    <header class="site-header">
+      <div class="brand-mark" aria-label="Gissell Narvv">GN</div>
+      <div class="brand-copy">
+        <h1>Gissell Narvv</h1>
+        <p>Piezas disponibles en Dani Boutique</p>
+      </div>
+    </header>
+
+    <section class="hero" aria-labelledby="heroTitle">
+      <div>
+        <span class="eyebrow">Catálogo electrónico</span>
+        <h2 id="heroTitle">Piezas disponibles en tienda</h2>
+        <p>Las existencias pueden cambiar durante el día. Confirma la disponibilidad antes de apartar.</p>
+      </div>
+      <div class="hero-actions">
+        <a class="btn btn-primary" id="whatsappGeneral" href="#">Consultar por WhatsApp</a>
+        
+      </div>
+    </section>
+
+    <section id="catalogo" aria-labelledby="catalogTitle">
+      <div class="catalog-heading">
+        <h2 id="catalogTitle">Catálogo</h2>
+        <span class="counter" id="contador" aria-live="polite"></span>
+      </div>
+
+      <div class="catalog-controls">
+        <div class="search-row">
+          <div class="search-wrap">
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <label class="skip-link" for="buscador">Buscar productos</label>
+            <input class="search-input" type="search" id="buscador" placeholder="Buscar producto, material o código…" autocomplete="off">
+            <button class="clear-search" id="clearSearch" aria-label="Limpiar búsqueda" hidden>×</button>
+          </div>
+          <select id="ordenar" class="sort-select" aria-label="Ordenar productos">
+            <option value="nuevo">Más nuevos primero</option>
+            <option value="antiguo">Más antiguos primero</option>
+            <option value="az">Nombre: A → Z</option>
+            <option value="za">Nombre: Z → A</option>
+            <option value="precio-asc">Precio: menor → mayor</option>
+            <option value="precio-desc">Precio: mayor → menor</option>
+          </select>
+        </div>
+        <div class="filter-row" aria-label="Categorías">
+          <div class="filter-row" id="filters"></div>
+          <label class="skip-link" for="moreCategories">Más categorías</label>
+          <select class="more-select" id="moreCategories"></select>
+        </div>
+      </div>
+
+      <div class="grid" id="productos"></div>
+      <button class="btn btn-secondary load-more" id="loadMore">Cargar más productos</button>
+      <nav class="pagination" id="paginacion" aria-label="Páginas del catálogo"></nav>
+    </section>
+
+    <aside class="catalog-note"><strong>¿No encuentras una pieza?</strong> Escríbenos por WhatsApp y te ayudamos a localizarla.</aside>
+    <footer class="site-footer">Gissell Narvv · Catálogo de Dani Boutique</footer>
+  </main>
+
+  <a class="floating-whatsapp" id="floatingWhatsapp" href="#" target="_blank" rel="noopener" aria-label="Consultar por WhatsApp">✆</a>
+  <button class="order-dock" id="orderDock"><span class="order-count" id="orderCount">0</span> Ver mi pedido</button>
+
+  <div class="modal" id="productModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <div class="modal-top">
+        <strong id="modalTitle">Producto</strong>
+        <button class="icon-btn" id="closeProductModal" aria-label="Cerrar">×</button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <div class="modal-media">
+            <button class="nav-media prev" id="prevMedia" aria-label="Imagen anterior">‹</button>
+            <img id="modalImage" src="" alt="">
+            <video id="modalVideo" controls playsinline preload="metadata"></video>
+            <button class="video-fullscreen" id="videoFullscreen" aria-label="Ver video en pantalla completa" title="Pantalla completa">⛶</button>
+            <button class="nav-media next" id="nextMedia" aria-label="Imagen siguiente">›</button>
+            <span class="modal-counter" id="modalCounter"></span>
+          </div>
+          <div class="modal-thumbs" id="modalThumbs"></div>
+        </div>
+        <div class="modal-details" id="modalDetails"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fullscreen-viewer" id="fullscreenViewer" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Imagen a pantalla completa">
+    <button class="fullscreen-close" id="closeFullscreen" aria-label="Cerrar imagen">×</button>
+    <button class="fullscreen-nav prev" id="fullscreenPrev" aria-label="Imagen anterior">‹</button>
+    <img class="fullscreen-image" id="fullscreenImage" src="" alt="">
+    <button class="fullscreen-nav next" id="fullscreenNext" aria-label="Imagen siguiente">›</button>
+    <span class="fullscreen-counter" id="fullscreenCounter"></span>
+  </div>
+
+  <div class="modal" id="orderModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="orderTitle">
+    <div class="modal-card" style="max-width:620px">
+      <div class="modal-top">
+        <strong id="orderTitle">Mi pedido</strong>
+        <button class="icon-btn" id="closeOrderModal" aria-label="Cerrar">×</button>
+      </div>
+      <div class="modal-details">
+        <p class="material" id="orderTotal"></p>
+        <div class="order-list" id="orderList"></div>
+        <a class="btn btn-whatsapp" id="sendOrder" href="#" target="_blank" rel="noopener">Enviar pedido por WhatsApp</a>
+      </div>
+    </div>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+// Fuente única de productos para ambos catálogos.
+// precioGissell: catálogo oficial; precioSocio: precio de venta en Dani Boutique.
+const PRODUCTOS_CATALOGO = [
+  {
+    "codigo": "SOC-001",
+    "nombre": "Cadena Hailey Bieber",
+    "categoria": "Cadenas",
+    "material": "Oro laminado",
+    "imagenes": [
+      "img-web/cadenabiber5.webp",
+      "img-web/cadenabiber4.webp",
+      "img-web/cadenabiber1.webp"
+    ],
+    "precioGissell": 75,
+    "precioSocio": 125
+  },
+  {
+    "codigo": "SOC-002",
+    "nombre": "Anillo Inicial",
+    "categoria": "Anillos",
+    "material": "Acero inoxidable",
+    "imagenes": [
+      "img-web/anilloinicial3.webp",
+      "img-web/anilloinicial1.webp"
+    ],
+    "precioGissell": 55,
+    "precioSocio": 92
+  },
+  {
+    "codigo": "SOC-003",
+    "agotado": true,
+    "nombre": "Coordinado Flor",
+    "categoria": "Coordinados",
+    "material": "Acero inoxidable dorado",
+    "imagenes": [
+      "img-web/coordinado1.webp",
+      "img-web/coordinadoflor3.webp"
+    ],
+    "precioGissell": 90,
+    "precioSocio": 150
+  },
+  {
+    "codigo": "SOC-004",
+    "nombre": "Coordinados Varios",
+    "categoria": "Coordinados",
+    "material": "Acero Inoxidable",
+    "imagenes": [
+      "img-web/imagen2.webp"
+    ],
+    "precioGissell": 90,
+    "precioSocio": 150
+  },
+  {
+    "codigo": "SOC-005",
+    "nombre": "Brazaletes VARIOS",
+    "categoria": "Brazalete",
+    "material": "Acero Inoxidable",
+    "imagenes": [
+      "img-web/imagen1.webp"
+    ],
+    "precioGissell": 90,
+    "precioSocio": 150
+  },
+  {
+    "codigo": "SOC-006",
+    "nombre": "Iniciales Varias",
+    "categoria": "Iniciales",
+    "material": "Acero Inoxidable",
+    "imagenes": [
+      "img-web/imagen4.webp"
+    ],
+    "precioGissell": 55,
+    "precioSocio": 92
+  },
+  {
+    "codigo": "SOC-007",
+    "nombre": "Arnes",
+    "categoria": "Pulsera",
+    "material": "Acero Inoxidable",
+    "imagenes": [
+      "img-web/arnes1.webp",
+      "img-web/arnes2.webp",
+      "img-web/arnes4.webp",
+      "img-web/arnes5.webp",
+      "img-web/arnes6.webp",
+      "img-web/arnes7.webp"
+    ],
+    "precioGissell": 100,
+    "precioSocio": 167
+  },
+  {
+    "codigo": "SOC-008",
+    "agotado": true,
+    "nombre": "Cadena Hijos",
+    "categoria": "Cadenas",
+    "material": "Oro laminado",
+    "imagenes": [
+      "img/cadenaniñoniña1.png"
+    ],
+    "precioGissell": 160,
+    "precioSocio": 267
+  },
+  {
+    "codigo": "SOC-009",
+    "nombre": "Cadena Letra Delgada",
+    "categoria": "Cadenas",
+    "material": "Acero Inoxidable",
+    "imagenes": [
+      "img-web/cadenaletradelgada1.webp",
+      "img-web/cadenaletradelgada2.webp"
+    ],
+    "precioGissell": 75,
+    "precioSocio": 125
+  },
+  {
+    "codigo": "SOC-010",
+    "nombre": "Aretes Puente (Par)",
+    "categoria": "Aretes",
+    "material": "Acero Inoxidable",
+    "imagenes": [
+      "img-web/aretepuente1.webp",
+      "img-web/aretepunete2.webp"
+    ],
+    "precioGissell": 120,
+    "precioSocio": 200
+  },
+  {
+    "codigo": "SOC-011",
+    "nombre": "Cadenitas corbata",
+    "categoria": "Cadenas",
+    "material": "Acero Inoxidable",
+    "imagenes": [
+      "img-web/corbatero1.webp",
+      "img-web/corbatero6.webp",
+      "img-web/corbatero7.webp",
+      "img-web/corbatero8.webp"
+    ],
+    "precioGissell": 95,
+    "precioSocio": 159
+  },
+  {
+    "codigo": "SOC-012",
+    "nombre": "Pulsera De Moda",
+    "categoria": "Pulsera",
+    "material": "Shakira",
+    "imagenes": [
+      "img-web/shakira1.webp",
+      "img-web/shakira2.webp"
+    ],
+    "precioGissell": 10,
+    "precioSocio": 17
+  },
+  {
+    "codigo": "SOC-013",
+    "agotado": true,
+    "nombre": "Pulsera Arcoiris",
+    "categoria": "Pulsera",
+    "material": "Acero Inoxidable",
+    "imagenes": [
+      "img-web/Pulseraarcoiris1.webp",
+      "img-web/Pulseraarcoiris2.webp",
+      "img-web/Pulseraarcoiris3.webp"
+    ],
+    "precioGissell": 110,
+    "precioSocio": 184
+  },
+  {
+    "codigo": "SOC-014",
+    "nombre": "Cadena Mar",
+    "categoria": "Cadenas",
+    "material": "Acero Inoxidable 316",
+    "imagenes": [
+      "img-web/cadenamar2.webp",
+      "img-web/cadenamar1.webp"
+    ],
+    "precioGissell": 190,
+    "precioSocio": 317
+  },
+  {
+    "codigo": "SOC-015",
+    "nombre": "Hops Corazon",
+    "categoria": "Aretes",
+    "material": "Acero Inoxidable",
+    "imagenes": [
+      "img-web/hugscorzon1.webp"
+    ],
+    "precioGissell": 70,
+    "precioSocio": 117
+  },
+  {
+    "codigo": "SOC-016",
+    "agotado": true,
+    "nombre": "Corbatero Corazon",
+    "categoria": "Corbateros",
+    "material": "Acero Inoxidable",
+    "imagenes": [
+      "img-web/cadenacorazoncorbatero2.webp",
+      "img-web/cadenacorazoncorbatero1.webp"
+    ],
+    "precioGissell": 110,
+    "precioSocio": 184
+  },
+  {
+    "codigo": "SOC-017",
+    "agotado": true,
+    "nombre": "Cadena Marinera",
+    "categoria": "Cadenas",
+    "material": "Acero Inoxidable",
+    "imagenes": [
+      "img-web/cadenitamarina1.webp",
+      "img-web/cadenitamarina2.webp"
+    ],
+    "precioGissell": 80,
+    "precioSocio": 134
+  },
+  {
+    "codigo": "SOC-018",
+    "agotado": true,
+    "nombre": "Anillo Tulipan",
+    "categoria": "Anillos",
+    "material": "Oro Laminado",
+    "imagenes": [
+      "img-web/anillotulipan1.webp",
+      "img-web/anillotulipan2.webp",
+      "img-web/anillotulipan3.webp"
+    ],
+    "precioGissell": 50,
+    "precioSocio": 84
+  },
+  {
+    "codigo": "SOC-019",
+    "nombre": "Anillo Pandora",
+    "categoria": "Anillos",
+    "material": "Oro Laminado",
+    "imagenes": [
+      "img-web/anillopandor1.webp",
+      "img-web/soc-019-anillo-pandora-2-v2.webp"
+    ],
+    "precioGissell": 60,
+    "precioSocio": 100
+  },
+  {
+    "codigo": "SOC-020",
+    "agotado": true,
+    "nombre": "Reloj Casio",
+    "categoria": "Reloj",
+    "material": "Metal",
+    "imagenes": [
+      "img-web/relojcasio1.webp",
+      "img-web/relojcasio2.webp"
+    ],
+    "precioGissell": 280,
+    "precioSocio": 467
+  },
+  {
+    "codigo": "SOC-021",
+    "nombre": "Anillos Chunky",
+    "categoria": "Anillos",
+    "material": "Acero Inoxidable 316",
+    "imagenes": [
+      "img-web/anilleroconanillos1.webp"
+    ],
+    "precioGissell": 110,
+    "precioSocio": 184
+  },
+  {
+    "codigo": "SOC-022",
+    "nombre": "Paraguas Plegable con LED",
+    "categoria": "Accesorios",
+    "material": "Tela impermeable y estructura reforzada",
+    "descripcion": "Paraguas plegable automático con lámpara LED en el mango, estructura reforzada y tela repelente al agua de secado rápido. Compacto y disponible en varios colores.",
+    "imagenes": [
+      "img-web/soc-022-paraguas-plegable-led-7.webp",
+      "img-web/soc-022-paraguas-plegable-led-8.webp",
+      "img-web/soc-022-paraguas-plegable-led-9.webp",
+      "img-web/soc-022-paraguas-plegable-led-10.webp",
+      "img-web/soc-022-paraguas-plegable-led-11.webp",
+      "img-web/soc-022-paraguas-plegable-led-12.webp",
+      "img-web/soc-022-sombrilla-led-1.webp",
+      "img-web/soc-022-sombrilla-led-2.webp",
+      "img-web/soc-022-sombrilla-led-3.webp",
+      "img-web/soc-022-sombrilla-led-4.webp",
+      "img-web/soc-022-sombrilla-led-5.webp",
+      "img-web/soc-022-sombrilla-led-6.webp"
+    ],
+    "precioGissell": 110,
+    "precioSocio": 184,
+    "descripcionSocio": "Paraguas plegable automático con lámpara LED en el mango, estructura reforzada y tela repelente al agua de secado rápido. Compacto y disponible en varios colores."
+  },
+  {
+    "codigo": "SOC-023",
+    "nombre": "Abanicos",
+    "categoria": "Accesorios",
+    "material": "Variedad disponible",
+    "descripcion": "Disponible ahora",
+    "imagenes": [
+      "img-web/soc-023-abanicos-1.webp"
+    ],
+    "precioGissell": 15,
+    "precioSocio": 25
+  },
+  {
+    "codigo": "SOC-024",
+    "agotado": true,
+    "nombre": "Cepillo masajeador",
+    "categoria": "Accesorios",
+    "material": "Variedad disponible",
+    "descripcion": "Disponible ahora",
+    "imagenes": [
+      "img-web/soc-024-cepillo-masajeador-1.webp",
+      "img-web/soc-024-cepillo-masajeador-2.webp",
+      "img-web/soc-024-cepillo-masajeador-3.webp",
+      "img-web/soc-024-cepillo-masajeador-4.webp"
+    ],
+    "precioGissell": 18,
+    "precioSocio": 30
+  },
+  {
+    "codigo": "SOC-025",
+    "agotado": true,
+    "nombre": "Anillos ajustables",
+    "categoria": "Anillos",
+    "material": "Acero inoxidable",
+    "descripcion": "Disponible ahora",
+    "imagenes": [
+      "img-web/soc-025-anillos-ajustables-1.webp",
+      "img-web/soc-025-anillos-ajustables-2.webp",
+      "img-web/soc-025-anillos-ajustables-3.webp"
+    ],
+    "precioGissell": 35,
+    "precioSocio": 59
+  },
+  {
+    "codigo": "SOC-026",
+    "nombre": "Exhibidor 3 niveles",
+    "categoria": "Exhibidores",
+    "material": "Madera",
+    "descripcion": "Para exhibición",
+    "imagenes": [
+      "img-web/soc-026-exhibidor-3-niveles-1.webp"
+    ],
+    "precioGissell": 230,
+    "precioSocio": 384
+  },
+  {
+    "codigo": "SOC-027",
+    "agotado": true,
+    "nombre": "Anillo Elan",
+    "categoria": "Anillos",
+    "material": "Variedad disponible",
+    "descripcion": "Estilo de mar",
+    "imagenes": [
+      "img-web/soc-027-anillo-elan-1.webp",
+      "img-web/soc-027-anillo-elan-2.webp",
+      "img-web/soc-027-anillo-elan-3.webp"
+    ],
+    "precioGissell": 110,
+    "precioSocio": 184
+  },
+  {
+    "codigo": "SOC-028",
+    "agotado": true,
+    "nombre": "Collar de cuentas",
+    "categoria": "Cadenas",
+    "material": "Acero inoxidable",
+    "descripcion": "Acabado dorado",
+    "imagenes": [
+      "img-web/soc-028-collar-de-cuentas-1.webp",
+      "img-web/soc-028-collar-de-cuentas-2.webp"
+    ],
+    "precioGissell": 50,
+    "precioSocio": 84
+  },
+  {
+    "codigo": "SOC-029",
+    "agotado": true,
+    "nombre": "Perfumes Sabrina",
+    "categoria": "Perfumes",
+    "material": "Variedad disponible",
+    "descripcion": "Aroma viral",
+    "imagenes": [
+      "img-web/soc-029-perfumes-sabrina-1.webp"
+    ],
+    "precioGissell": 250,
+    "precioSocio": 417
+  },
+  {
+    "codigo": "SOC-030",
+    "agotado": true,
+    "nombre": "Collar con cuentas artesanales",
+    "categoria": "Cadenas",
+    "material": "Acero inoxidable",
+    "descripcion": "Colorido y fresco",
+    "imagenes": [
+      "img-web/soc-030-collar-con-cuentas-artesanales-1.webp",
+      "img-web/soc-030-collar-con-cuentas-artesanales-2.webp"
+    ],
+    "precioGissell": 75,
+    "precioSocio": 125
+  },
+  {
+    "codigo": "SOC-031",
+    "agotado": true,
+    "nombre": "Collar estilo artesanal",
+    "categoria": "Cadenas",
+    "material": "Acero inoxidable",
+    "descripcion": "Disponible ahora",
+    "imagenes": [
+      "img-web/soc-031-collar-estilo-artesanal-1.webp",
+      "img-web/soc-031-collar-estilo-artesanal-2.webp"
+    ],
+    "precioGissell": 75,
+    "precioSocio": 125
+  },
+  {
+    "codigo": "SOC-032",
+    "agotado": true,
+    "nombre": "Hermoso collar estilo boho chic",
+    "categoria": "Cadenas",
+    "material": "Acero inoxidable",
+    "descripcion": "Disponible ahora",
+    "imagenes": [
+      "img-web/soc-032-hermoso-collar-estilo-boho-chic-1.webp",
+      "img-web/soc-032-hermoso-collar-estilo-boho-chic-2.webp"
+    ],
+    "precioGissell": 95,
+    "precioSocio": 159
+  },
+  {
+    "codigo": "SOC-033",
+    "nombre": "Cadenita estrella marina",
+    "categoria": "Cadenas",
+    "material": "Acero inoxidable",
+    "descripcion": "Estilo de mar",
+    "imagenes": [
+      "img-web/soc-033-cadenita-estrella-marina-1.webp",
+      "img-web/soc-033-cadenita-estrella-marina-2.webp"
+    ],
+    "precioGissell": 50,
+    "precioSocio": 84
+  },
+  {
+    "codigo": "SOC-034",
+    "nombre": "Porta lentes",
+    "categoria": "Cadenas",
+    "material": "Acero inoxidable",
+    "descripcion": "Para exhibición",
+    "imagenes": [
+      "img-web/soc-034-porta-lentes-1.webp",
+      "img-web/soc-034-porta-lentes-2.webp"
+    ],
+    "precioGissell": 110,
+    "precioSocio": 184
+  },
+  {
+    "codigo": "SOC-035",
+    "agotado": true,
+    "nombre": "Cadenita doble",
+    "categoria": "Cadenas",
+    "material": "Acero inoxidable",
+    "descripcion": "Disponible ahora",
+    "imagenes": [
+      "img-web/soc-035-cadenita-doble-1.webp",
+      "img-web/soc-035-cadenita-doble-2.webp"
+    ],
+    "precioGissell": 95,
+    "precioSocio": 159
+  },
+  {
+    "codigo": "SOC-036",
+    "agotado": true,
+    "nombre": "Cadena estilo playa",
+    "categoria": "Cadenas",
+    "material": "Acero inoxidable",
+    "descripcion": "Estilo de mar",
+    "imagenes": [
+      "img-web/soc-036-cadena-estilo-playa-1.webp",
+      "img-web/soc-036-cadena-estilo-playa-2.webp"
+    ],
+    "precioGissell": 90,
+    "precioSocio": 150
+  },
+  {
+    "codigo": "SOC-037",
+    "agotado": true,
+    "nombre": "Set flora",
+    "categoria": "Coordinados",
+    "material": "Acero inoxidable",
+    "descripcion": "Detalle floral",
+    "imagenes": [
+      "img-web/soc-037-set-flora-1.webp",
+      "img-web/soc-037-set-flora-2.webp"
+    ],
+    "precioGissell": 80,
+    "precioSocio": 134
+  },
+  {
+    "codigo": "SOC-038",
+    "nombre": "Ballerinas cabello",
+    "categoria": "Accesorios",
+    "material": "Variedad disponible",
+    "descripcion": "Colorido y fresco",
+    "imagenes": [
+      "img-web/soc-038-ballerinas-cabello-1.webp",
+      "img-web/soc-038-ballerinas-cabello-2.webp",
+      "img-web/soc-038-ballerinas-cabello-3.webp",
+      "img-web/soc-038-ballerinas-cabello-4.webp"
+    ],
+    "precioGissell": 55,
+    "precioSocio": 92
+  },
+  {
+    "codigo": "SOC-039",
+    "agotado": true,
+    "nombre": "Collar osito",
+    "categoria": "Cadenas",
+    "material": "Acero inoxidable",
+    "descripcion": "Disponible ahora",
+    "imagenes": [
+      "img-web/soc-039-collar-osito-1.webp",
+      "img-web/soc-039-collar-osito-2.webp",
+      "img-web/soc-039-collar-osito-3.webp"
+    ],
+    "precioGissell": 50,
+    "precioSocio": 84
+  },
+  {
+    "codigo": "SOC-040",
+    "nombre": "Collar osito",
+    "categoria": "Cadenas",
+    "material": "Variedad disponible",
+    "descripcion": "Estilo de mar",
+    "imagenes": [
+      "img-web/soc-040-collar-osito-1.webp",
+      "img-web/soc-040-collar-osito-2.webp",
+      "img-web/soc-040-collar-osito-3.webp"
+    ],
+    "precioGissell": 250,
+    "precioSocio": 417
+  },
+  {
+    "codigo": "SOC-041",
+    "nombre": "Moños docena",
+    "categoria": "Accesorios",
+    "material": "Variedad disponible",
+    "descripcion": "Disponible ahora",
+    "imagenes": [
+      "img-web/soc-041-monos-docena-1.webp",
+      "img-web/soc-041-monos-docena-2.webp"
+    ],
+    "precioGissell": 110,
+    "precioSocio": 184
+  },
+  {
+    "codigo": "SOC-042",
+    "agotado": true,
+    "nombre": "Hops",
+    "categoria": "Aretes",
+    "material": "Variedad disponible",
+    "descripcion": "Disponible ahora",
+    "imagenes": [
+      "img-web/soc-042-hops-1.webp",
+      "img-web/soc-042-hops-2.webp",
+      "img-web/soc-042-hops-3.webp",
+      "img-web/soc-042-hops-4.webp",
+      "img-web/soc-042-hops-5.webp",
+      "img-web/soc-042-hops-6.webp"
+    ],
+    "precioGissell": 55,
+    "precioSocio": 92
+  },
+  {
+    "codigo": "SOC-043",
+    "agotado": true,
+    "nombre": "Pines",
+    "categoria": "Accesorios",
+    "material": "Variedad disponible",
+    "descripcion": "Estilo de mar",
+    "imagenes": [
+      "img-web/soc-043-pines-1.webp",
+      "img-web/soc-043-pines-2.webp",
+      "img-web/soc-043-pines-3.webp",
+      "img-web/soc-043-pines-4.webp",
+      "img-web/soc-043-pines-5.webp"
+    ],
+    "precioGissell": 15,
+    "precioSocio": 25
+  },
+  {
+    "codigo": "SOC-044",
+    "agotado": true,
+    "nombre": "Charms para crocs",
+    "categoria": "Accesorios",
+    "material": "Variedad disponible",
+    "descripcion": "Disponible ahora",
+    "imagenes": [
+      "img-web/soc-044-charms-para-crocs-1.webp",
+      "img-web/soc-044-charms-para-crocs-2.webp",
+      "img-web/soc-044-charms-para-crocs-3.webp",
+      "img-web/soc-044-charms-para-crocs-4.webp",
+      "img-web/soc-044-charms-para-crocs-5.webp",
+      "img-web/soc-044-charms-para-crocs-6.webp"
+    ],
+    "precioGissell": 16,
+    "precioSocio": 27
+  },
+  {
+    "codigo": "SOC-045",
+    "agotado": true,
+    "nombre": "Cadenita lazo",
+    "categoria": "Cadenas",
+    "material": "Acero inoxidable",
+    "descripcion": "Disponible ahora",
+    "imagenes": [
+      "img-web/soc-045-cadenita-lazo-1.webp",
+      "img-web/soc-045-cadenita-lazo-2.webp",
+      "img-web/soc-045-cadenita-lazo-3.webp",
+      "img-web/soc-045-cadenita-lazo-4.webp"
+    ],
+    "precioGissell": 65,
+    "precioSocio": 109
+  },
+  {
+    "codigo": "SOC-046",
+    "agotado": true,
+    "nombre": "Cadenita flor de cerezo",
+    "categoria": "Cadenas",
+    "material": "Acero inoxidable",
+    "descripcion": "Detalle floral",
+    "imagenes": [
+      "img-web/soc-046-cadenita-flor-de-cerezo-1.webp",
+      "img-web/soc-046-cadenita-flor-de-cerezo-2.webp",
+      "img-web/soc-046-cadenita-flor-de-cerezo-3.webp"
+    ],
+    "precioGissell": 65,
+    "precioSocio": 109
+  },
+  {
+    "codigo": "SOC-047",
+    "agotado": true,
+    "nombre": "Cadenita corazón alas",
+    "categoria": "Cadenas",
+    "material": "Acero inoxidable",
+    "descripcion": "Detalle corazón",
+    "imagenes": [
+      "img-web/soc-047-cadenita-corazon-alas-1.webp"
+    ],
+    "precioGissell": 65,
+    "precioSocio": 109
+  },
+  {
+    "codigo": "SOC-048",
+    "nombre": "Italian bracelet",
+    "categoria": "Pulseras",
+    "material": "Acero inoxidable",
+    "descripcion": "Acabado dorado",
+    "imagenes": [
+      "img-web/soc-048-italian-bracelet-1.webp",
+      "img-web/soc-048-italian-bracelet-2.webp"
+    ],
+    "precioGissell": 75,
+    "precioSocio": 125
+  },
+  {
+    "codigo": "SOC-049",
+    "nombre": "Cadenita heart",
+    "categoria": "Cadenas",
+    "material": "Acero inoxidable",
+    "descripcion": "Detalle corazón",
+    "imagenes": [
+      "img-web/soc-049-cadenita-heart-1.webp"
+    ],
+    "precioGissell": 65,
+    "precioSocio": 109
+  },
+  {
+    "codigo": "SOC-050",
+    "nombre": "Cadenita pink",
+    "categoria": "Cadenas",
+    "material": "Acero inoxidable",
+    "descripcion": "Disponible ahora",
+    "imagenes": [
+      "img-web/soc-050-cadenita-pink-1.webp"
+    ],
+    "precioGissell": 65,
+    "precioSocio": 109
+  },
+  {
+    "codigo": "SOC-051",
+    "agotado": true,
+    "nombre": "Cadenita racimo",
+    "categoria": "Cadenas",
+    "material": "Acero inoxidable",
+    "descripcion": "Disponible ahora",
+    "imagenes": [
+      "img-web/soc-051-cadenita-racimo-1.webp"
+    ],
+    "precioGissell": 65,
+    "precioSocio": 109
+  },
+  {
+    "codigo": "SOC-052",
+    "nombre": "Cadenita torsal",
+    "categoria": "Cadenas",
+    "material": "Acero inoxidable",
+    "descripcion": "Disponible ahora",
+    "imagenes": [
+      "img-web/soc-052-cadenita-torsal-1.webp",
+      "img-web/soc-052-cadenita-torsal-2.webp",
+      "img-web/soc-052-cadenita-torsal-3.webp",
+      "img-web/soc-052-cadenita-torsal-4.webp",
+      "img-web/soc-052-cadenita-torsal-5.webp"
+    ],
+    "precioGissell": 35,
+    "precioSocio": 59
+  },
+  {
+    "codigo": "SOC-053",
+    "nombre": "Cadenita bailarina",
+    "categoria": "Cadenas",
+    "material": "Acero inoxidable",
+    "descripcion": "Disponible ahora",
+    "imagenes": [
+      "img-web/soc-053-cadenita-bailarina-1.webp",
+      "img-web/soc-053-cadenita-bailarina-2.webp",
+      "img-web/soc-053-cadenita-bailarina-3.webp"
+    ],
+    "precioGissell": 35,
+    "precioSocio": 59
+  },
+  {
+    "codigo": "SOC-054",
+    "agotado": true,
+    "nombre": "Coordinado Donna",
+    "categoria": "Coordinados",
+    "material": "Acero inoxidable",
+    "descripcion": "Disponible ahora",
+    "imagenes": [
+      "img-web/soc-054-coordinado-donna-1.webp",
+      "img-web/soc-054-coordinado-donna-2.webp"
+    ],
+    "precioGissell": 80,
+    "precioSocio": 134
+  },
+  {
+    "codigo": "SOC-055",
+    "agotado": true,
+    "nombre": "Coordinado star fish",
+    "categoria": "Aretes",
+    "material": "Acero inoxidable",
+    "descripcion": "Disponible ahora",
+    "imagenes": [
+      "img-web/soc-055-coordinado-star-fish-1.webp",
+      "img-web/soc-055-coordinado-star-fish-2.webp",
+      "img-web/soc-055-coordinado-star-fish-3.webp",
+      "img-web/soc-055-coordinado-star-fish-4.webp"
+    ],
+    "precioGissell": 80,
+    "precioSocio": 134
+  },
+  {
+    "codigo": "SOC-056",
+    "nombre": "Aretes perla",
+    "categoria": "Aretes",
+    "material": "Acero inoxidable",
+    "descripcion": "Acabado dorado",
+    "imagenes": [
+      "img-web/soc-056-aretes-perla-1.webp",
+      "img-web/soc-056-aretes-perla-2.webp",
+      "img-web/soc-056-aretes-perla-3.webp",
+      "img-web/soc-056-aretes-perla-4.webp"
+    ],
+    "precioGissell": 60,
+    "precioSocio": 100
+  },
+  {
+    "codigo": "SOC-057",
+    "agotado": true,
+    "nombre": "Coordinado",
+    "categoria": "Coordinados",
+    "material": "Acero inoxidable",
+    "descripcion": "Disponible ahora",
+    "imagenes": [
+      "img-web/soc-057-coordinado-1.webp",
+      "img-web/soc-057-coordinado-2.webp"
+    ],
+    "precioGissell": 145,
+    "precioSocio": 242
+  },
+  {
+    "codigo": "SOC-058",
+    "agotado": true,
+    "nombre": "Collar bandana",
+    "categoria": "Cadenas",
+    "material": "Acero inoxidable",
+    "descripcion": "Disponible ahora",
+    "imagenes": [
+      "img-web/soc-058-collar-bandana-1.webp",
+      "img-web/soc-058-collar-bandana-2.webp"
+    ],
+    "precioGissell": 145,
+    "precioSocio": 242
+  },
+  {
+    "codigo": "SOC-059",
+    "agotado": true,
+    "nombre": "Collar corbatero",
+    "categoria": "Corbateros",
+    "material": "Acero inoxidable",
+    "descripcion": "Disponible ahora",
+    "imagenes": [
+      "img-web/soc-059-collar-corbatero-1.webp",
+      "img-web/soc-059-collar-corbatero-2.webp",
+      "img-web/soc-059-collar-corbatero-3.webp",
+      "img-web/soc-059-collar-corbatero-4.webp",
+      "img-web/soc-059-collar-corbatero-5.webp"
+    ],
+    "precioGissell": 145,
+    "precioSocio": 242
+  },
+  {
+    "codigo": "SOC-060",
+    "nombre": "Collar plateado",
+    "categoria": "Cadenas",
+    "material": "Acero inoxidable",
+    "descripcion": "Acabado plateado",
+    "imagenes": [
+      "img-web/soc-060-collar-plateado-1.webp",
+      "img-web/soc-060-collar-plateado-2.webp"
+    ],
+    "precioGissell": 145,
+    "precioSocio": 242
+  },
+  {
+    "codigo": "SOC-061",
+    "agotado": true,
+    "nombre": "Collar turquesa",
+    "categoria": "Cadenas",
+    "material": "Acero inoxidable",
+    "descripcion": "Disponible ahora",
+    "imagenes": [
+      "img-web/soc-061-collar-turquesa-1.webp",
+      "img-web/soc-061-collar-turquesa-2.webp",
+      "img-web/soc-061-collar-turquesa-3.webp"
+    ],
+    "precioGissell": 145,
+    "precioSocio": 242
+  },
+  {
+    "codigo": "SOC-062",
+    "nombre": "Coordinados solares",
+    "categoria": "Coordinados",
+    "material": "Acero inoxidable",
+    "descripcion": "Disponible ahora",
+    "imagenes": [
+      "img-web/soc-062-coordinados-solares-1.webp",
+      "img-web/soc-062-coordinados-solares-2.webp",
+      "img-web/soc-062-coordinados-solares-3.webp",
+      "img-web/soc-062-coordinados-solares-4.webp"
+    ],
+    "precioGissell": 80,
+    "precioSocio": 134
+  },
+  {
+    "codigo": "SOC-063",
+    "agotado": true,
+    "nombre": "Brazalete coral",
+    "categoria": "Pulseras",
+    "material": "Acero inoxidable",
+    "descripcion": "Disponible ahora",
+    "imagenes": [
+      "img-web/soc-063-brazalete-coral-1.webp",
+      "img-web/soc-063-brazalete-coral-2.webp",
+      "img-web/soc-063-brazalete-coral-3.webp",
+      "img-web/soc-063-brazalete-coral-4.webp"
+    ],
+    "precioGissell": 80,
+    "precioSocio": 134
+  },
+  {
+    "codigo": "SOC-064",
+    "agotado": true,
+    "nombre": "Set nácar",
+    "categoria": "Coordinados",
+    "material": "Variedad disponible",
+    "descripcion": "Acabado dorado",
+    "imagenes": [
+      "img-web/soc-064-set-nacar-1.webp",
+      "img-web/soc-064-set-nacar-2.webp"
+    ],
+    "precioGissell": 145,
+    "precioSocio": 242
+  },
+  {
+    "codigo": "SOC-065",
+    "agotado": true,
+    "nombre": "Coordinado perla",
+    "categoria": "Coordinados",
+    "material": "Acero inoxidable",
+    "descripcion": "Detalle elegante",
+    "imagenes": [
+      "img-web/soc-065-coordinado-perla-1.webp",
+      "img-web/soc-065-coordinado-perla-2.webp"
+    ],
+    "precioGissell": 145,
+    "precioSocio": 242
+  },
+  {
+    "codigo": "SOC-066",
+    "nombre": "Coordinado gota",
+    "categoria": "Coordinados",
+    "material": "Acero inoxidable",
+    "descripcion": "Disponible ahora",
+    "imagenes": [
+      "img-web/soc-066-coordinado-gota-1.webp",
+      "img-web/soc-066-coordinado-gota-2.webp"
+    ],
+    "precioGissell": 145,
+    "precioSocio": 242
+  },
+  {
+    "codigo": "SOC-067",
+    "agotado": true,
+    "nombre": "Coordinado doble",
+    "categoria": "Coordinados",
+    "material": "Acero inoxidable",
+    "descripcion": "Disponible ahora",
+    "imagenes": [
+      "img-web/soc-067-coordinado-doble-1.webp",
+      "img-web/soc-067-coordinado-doble-2.webp"
+    ],
+    "precioGissell": 145,
+    "precioSocio": 242
+  },
+  {
+    "codigo": "SOC-068",
+    "agotado": true,
+    "nombre": "Exhibidor de pulceras",
+    "categoria": "Pulseras",
+    "material": "Madera",
+    "descripcion": "Para exhibición",
+    "imagenes": [
+      "img-web/soc-068-exhibidor-de-pulceras-1.webp"
+    ],
+    "precioGissell": 240,
+    "precioSocio": 400
+  },
+  {
+    "codigo": "SOC-069",
+    "agotado": true,
+    "nombre": "Maxi collar",
+    "categoria": "Cadenas",
+    "material": "Acero inoxidable",
+    "descripcion": "Acabado dorado",
+    "imagenes": [
+      "img-web/soc-069-maxi-collar-1.webp",
+      "img-web/soc-069-maxi-collar-2.webp",
+      "img-web/soc-069-maxi-collar-3.webp"
+    ],
+    "precioGissell": 145,
+    "precioSocio": 242
+  },
+  {
+    "codigo": "SOC-070",
+    "agotado": true,
+    "nombre": "Coordinado arcoíris",
+    "categoria": "Coordinados",
+    "material": "Acero inoxidable",
+    "descripcion": "Colorido y fresco",
+    "imagenes": [
+      "img-web/soc-070-coordinado-arcoiris-1.webp",
+      "img-web/soc-070-coordinado-arcoiris-2.webp"
+    ],
+    "precioGissell": 145,
+    "precioSocio": 242
+  },
+  {
+    "codigo": "SOC-071",
+    "nombre": "Pulseritas cristal",
+    "categoria": "Pulseras",
+    "material": "Variedad disponible",
+    "descripcion": "Disponible ahora",
+    "imagenes": [
+      "img-web/soc-071-pulseritas-cristal-1.webp",
+      "img-web/soc-071-pulseritas-cristal-2.webp",
+      "img-web/soc-071-pulseritas-cristal-3.webp",
+      "img-web/soc-071-pulseritas-cristal-4.webp",
+      "img-web/soc-071-pulseritas-cristal-5.webp"
+    ],
+    "precioGissell": 25,
+    "precioSocio": 42
+  },
+  {
+    "codigo": "SOC-072",
+    "nombre": "Cepillitos multiusos",
+    "categoria": "Accesorios",
+    "material": "Variedad disponible",
+    "descripcion": "Disponible ahora",
+    "imagenes": [
+      "img-web/soc-072-cepillitos-multiusos-1.webp",
+      "img-web/soc-072-cepillitos-multiusos-2.webp"
+    ],
+    "precioGissell": 10,
+    "precioSocio": 17
+  },
+  {
+    "codigo": "SOC-073",
+    "agotado": true,
+    "nombre": "Collar cerezitas",
+    "categoria": "Cadenas",
+    "material": "Variedad disponible",
+    "descripcion": "Disponible ahora",
+    "imagenes": [
+      "img-web/soc-073-collar-cerezitas-1.webp",
+      "img-web/soc-073-collar-cerezitas-2.webp"
+    ],
+    "precioGissell": 40,
+    "precioSocio": 67
+  },
+  {
+    "codigo": "SOC-074",
+    "nombre": "Collares de cuentas",
+    "categoria": "Cadenas",
+    "material": "Variedad disponible",
+    "descripcion": "Colorido y fresco",
+    "imagenes": [
+      "img-web/soc-074-collares-de-cuentas-1.webp",
+      "img-web/soc-074-collares-de-cuentas-2.webp",
+      "img-web/soc-074-collares-de-cuentas-3.webp"
+    ],
+    "precioGissell": 40,
+    "precioSocio": 67
+  },
+  {
+    "codigo": "SOC-075",
+    "agotado": true,
+    "nombre": "Collar concha perlas",
+    "categoria": "Cadenas",
+    "material": "Acero inoxidable",
+    "descripcion": "Estilo de mar",
+    "imagenes": [
+      "img-web/soc-075-collar-concha-perlas-1.webp",
+      "img-web/soc-075-collar-concha-perlas-2.webp"
+    ],
+    "precioGissell": 145,
+    "precioSocio": 242
+  },
+  {
+    "codigo": "SOC-076",
+    "agotado": true,
+    "nombre": "Cadena doble carey",
+    "categoria": "Cadenas",
+    "material": "Acero inoxidable",
+    "descripcion": "Colorido y fresco",
+    "imagenes": [
+      "img-web/soc-076-cadena-doble-carey-1.webp",
+      "img-web/soc-076-cadena-doble-carey-2.webp"
+    ],
+    "precioGissell": 145,
+    "precioSocio": 242
+  },
+  {
+    "codigo": "SOC-077",
+    "nombre": "Coronitas mini",
+    "categoria": "Accesorios",
+    "material": "Variedad disponible",
+    "descripcion": "Acabado dorado",
+    "imagenes": [
+      "img-web/soc-077-coronitas-mini-1.webp"
+    ],
+    "precioGissell": 20,
+    "precioSocio": 34
+  },
+  {
+    "codigo": "SOC-078",
+    "nombre": "Arracaditas lisas",
+    "categoria": "Aretes",
+    "material": "Acero inoxidable",
+    "descripcion": "Disponible ahora",
+    "imagenes": [
+      "img-web/soc-078-arracaditas-lisas-1.webp",
+      "img-web/soc-078-arracaditas-lisas-2.webp",
+      "img-web/soc-078-arracaditas-lisas-3.webp"
+    ],
+    "precioGissell": 10,
+    "precioSocio": 17
+  },
+  {
+    "codigo": "SOC-079",
+    "agotado": true,
+    "nombre": "Mini arracaditas",
+    "categoria": "Aretes",
+    "material": "Acero inoxidable",
+    "descripcion": "Disponible ahora",
+    "imagenes": [
+      "img-web/soc-079-mini-arracaditas-1.webp"
+    ],
+    "precioGissell": 60,
+    "precioSocio": 100
+  },
+  {
+    "codigo": "SOC-080",
+    "nombre": "Producto",
+    "categoria": "Accesorios",
+    "material": "Variedad disponible",
+    "descripcion": "Disponible ahora",
+    "imagenes": [
+      "img-web/soc-080-producto-1.webp",
+      "img-web/soc-080-producto-2.webp",
+      "img-web/soc-080-producto-3.webp"
+    ],
+    "precioGissell": 145,
+    "precioSocio": 242
+  },
+  {
+    "codigo": "SOC-081",
+    "agotado": true,
+    "nombre": "Pendientes premium",
+    "categoria": "Aretes",
+    "material": "Acero inoxidable 316",
+    "descripcion": "Disponible ahora",
+    "imagenes": [
+      "img-web/soc-081-pendientes-premium-1.webp",
+      "img-web/soc-081-pendientes-premium-2.webp"
+    ],
+    "precioGissell": 110,
+    "precioSocio": 184
+  },
+  {
+    "codigo": "SOC-082",
+    "agotado": true,
+    "nombre": "Pulsera dijes",
+    "categoria": "Pulseras",
+    "material": "Variedad disponible",
+    "descripcion": "Detalle elegante",
+    "imagenes": [
+      "img-web/soc-082-pulsera-dijes-1.webp",
+      "img-web/soc-082-pulsera-dijes-2.webp"
+    ],
+    "precioGissell": 145,
+    "precioSocio": 242
+  },
+  {
+    "codigo": "SOC-083",
+    "agotado": true,
+    "nombre": "Coordinado mariposa",
+    "categoria": "Coordinados",
+    "material": "Variedad disponible",
+    "descripcion": "Acabado dorado",
+    "imagenes": [
+      "img-web/soc-083-coordinado-mariposa-1.webp",
+      "img-web/soc-083-coordinado-mariposa-2.webp"
+    ],
+    "precioGissell": 110,
+    "precioSocio": 184
+  },
+  {
+    "codigo": "SOC-084",
+    "agotado": true,
+    "nombre": "Collares boho",
+    "categoria": "Cadenas",
+    "material": "Acero inoxidable",
+    "descripcion": "Detalle elegante",
+    "imagenes": [
+      "img-web/soc-084-collares-boho-1.webp"
+    ],
+    "precioGissell": 75,
+    "precioSocio": 125
+  },
+  {
+    "codigo": "SOC-085",
+    "nombre": "Tobilleras",
+    "categoria": "Tobilleras",
+    "material": "Acero inoxidable",
+    "descripcion": "Disponible ahora",
+    "imagenes": [
+      "img-web/soc-085-tobilleras-1.webp",
+      "img-web/soc-085-tobilleras-2.webp",
+      "img-web/soc-085-tobilleras-3.webp",
+      "img-web/soc-085-tobilleras-4.webp",
+      "img-web/soc-085-tobilleras-5.webp",
+      "img-web/soc-085-tobilleras-6.webp"
+    ],
+    "precioGissell": 55,
+    "precioSocio": 92
+  },
+  {
+    "codigo": "SOC-086",
+    "agotado": true,
+    "nombre": "Porta pulseras doble",
+    "categoria": "Pulseras",
+    "material": "Variedad disponible",
+    "descripcion": "Para exhibición",
+    "imagenes": [
+      "img-web/soc-086-porta-pulseras-doble-1.webp"
+    ],
+    "precioGissell": 65,
+    "precioSocio": 109
+  },
+  {
+    "codigo": "SOC-087",
+    "agotado": true,
+    "nombre": "Pulsera glow",
+    "categoria": "Pulseras",
+    "material": "Acero inoxidable 316",
+    "descripcion": "Disponible ahora",
+    "imagenes": [
+      "img-web/soc-087-pulsera-glow-1.webp",
+      "img-web/soc-087-pulsera-glow-2.webp"
+    ],
+    "precioGissell": 145,
+    "precioSocio": 242
+  },
+  {
+    "codigo": "SOC-088",
+    "agotado": true,
+    "nombre": "Pulseritas",
+    "categoria": "Pulseras",
+    "material": "Acero inoxidable",
+    "descripcion": "Disponible ahora",
+    "imagenes": [
+      "img-web/soc-088-pulseritas-1.webp"
+    ],
+    "precioGissell": 45,
+    "precioSocio": 75
+  },
+  {
+    "codigo": "SOC-089",
+    "nombre": "Pendientes",
+    "categoria": "Aretes",
+    "material": "Acero inoxidable",
+    "descripcion": "Disponible ahora",
+    "imagenes": [
+      "img-web/soc-089-pendientes-1.webp"
+    ],
+    "precioGissell": 25,
+    "precioSocio": 42
+  },
+  {
+    "codigo": "SOC-090",
+    "agotado": true,
+    "nombre": "Cadenita caballito de mar",
+    "categoria": "Cadenas",
+    "material": "Acero inoxidable",
+    "descripcion": "Estilo de mar",
+    "imagenes": [
+      "img-web/soc-090-cadenita-caballito-de-mar-1.webp",
+      "img-web/soc-090-cadenita-caballito-de-mar-2.webp"
+    ],
+    "precioGissell": 75,
+    "precioSocio": 125
+  },
+  {
+    "codigo": "SOC-091",
+    "agotado": true,
+    "nombre": "Cadenita caballito arcoíris",
+    "categoria": "Cadenas",
+    "material": "Acero inoxidable",
+    "descripcion": "Estilo de mar",
+    "imagenes": [
+      "img-web/soc-091-cadenita-caballito-arcoiris-1.webp",
+      "img-web/soc-091-cadenita-caballito-arcoiris-2.webp"
+    ],
+    "precioGissell": 75,
+    "precioSocio": 125
+  },
+  {
+    "codigo": "SOC-092",
+    "agotado": true,
+    "nombre": "Pulseritas corazones",
+    "categoria": "Pulseras",
+    "material": "Acero inoxidable",
+    "descripcion": "Acabado dorado",
+    "imagenes": [
+      "img-web/soc-092-pulseritas-corazones-1.webp",
+      "img-web/soc-092-pulseritas-corazones-2.webp"
+    ],
+    "precioGissell": 55,
+    "precioSocio": 92
+  },
+  {
+    "codigo": "SOC-093",
+    "agotado": true,
+    "nombre": "Pulsera lunetas",
+    "categoria": "Pulseras",
+    "material": "Acero inoxidable",
+    "descripcion": "Disponible ahora",
+    "imagenes": [
+      "img-web/soc-093-pulsera-lunetas-1.webp",
+      "img-web/soc-093-pulsera-lunetas-2.webp"
+    ],
+    "precioGissell": 75,
+    "precioSocio": 125
+  },
+  {
+    "codigo": "SOC-094",
+    "agotado": true,
+    "nombre": "Pulsera Mónaco",
+    "categoria": "Pulseras",
+    "material": "Oro laminado",
+    "descripcion": "Disponible ahora",
+    "imagenes": [
+      "img-web/soc-094-pulsera-monaco-1.webp",
+      "img-web/soc-094-pulsera-monaco-2.webp"
+    ],
+    "precioGissell": 95,
+    "precioSocio": 159
+  },
+  {
+    "codigo": "SOC-095",
+    "agotado": true,
+    "nombre": "Collar concha",
+    "categoria": "Cadenas",
+    "material": "Variedad disponible",
+    "descripcion": "Acabado dorado",
+    "imagenes": [
+      "img-web/soc-095-collar-concha-1.webp",
+      "img-web/soc-095-collar-concha-2.webp"
+    ],
+    "precioGissell": 65,
+    "precioSocio": 109
+  },
+  {
+    "codigo": "SOC-096",
+    "nombre": "Maxi collar",
+    "categoria": "Cadenas",
+    "material": "Acero inoxidable",
+    "descripcion": "Colorido y fresco",
+    "imagenes": [
+      "img-web/soc-096-maxi-collar-1.webp",
+      "img-web/soc-096-maxi-collar-2.webp"
+    ],
+    "precioGissell": 185,
+    "precioSocio": 309
+  },
+  {
+    "codigo": "SOC-097",
+    "agotado": true,
+    "nombre": "Maxi collar",
+    "categoria": "Cadenas",
+    "material": "Acero inoxidable 316",
+    "descripcion": "Estilo de mar",
+    "imagenes": [
+      "img-web/soc-097-maxi-collar-1.webp",
+      "img-web/soc-097-maxi-collar-2.webp"
+    ],
+    "precioGissell": 145,
+    "precioSocio": 242
+  },
+  {
+    "codigo": "SOC-098",
+    "nombre": "Producto",
+    "categoria": "Cadenas",
+    "material": "Acero inoxidable",
+    "descripcion": "Acabado dorado",
+    "imagenes": [
+      "img-web/soc-098-producto-1.webp"
+    ],
+    "precioGissell": 185,
+    "precioSocio": 309
+  },
+  {
+    "codigo": "SOC-099",
+    "agotado": true,
+    "nombre": "Set nácar",
+    "categoria": "Coordinados",
+    "material": "Variedad disponible",
+    "descripcion": "Acabado dorado",
+    "imagenes": [
+      "img-web/soc-099-set-nacar-1.webp",
+      "img-web/soc-099-set-nacar-2.webp"
+    ],
+    "precioGissell": 175,
+    "precioSocio": 292
+  },
+  {
+    "codigo": "SOC-100",
+    "agotado": true,
+    "nombre": "Cadena estrella Acrilica",
+    "categoria": "Accesorios",
+    "material": "Variedad disponible",
+    "descripcion": "Disponible ahora",
+    "imagenes": [
+      "img-web/soc-100-modificamos-1.webp",
+      "img-web/soc-100-modificamos-2.webp"
+    ],
+    "precioGissell": 175,
+    "precioSocio": 292
+  },
+  {
+    "codigo": "SOC-102",
+    "agotado": true,
+    "nombre": "Collar doble",
+    "categoria": "Cadenas",
+    "material": "Acero inoxidable",
+    "descripcion": "Disponible ahora",
+    "imagenes": [
+      "img-web/soc-102-collar-doble-1.webp"
+    ],
+    "precioGissell": 75,
+    "precioSocio": 125
+  },
+  {
+    "codigo": "SOC-103",
+    "agotado": true,
+    "nombre": "Maxi collar",
+    "categoria": "Cadenas",
+    "material": "Acero inoxidable",
+    "descripcion": "Colorido y fresco",
+    "imagenes": [
+      "img-web/soc-103-maxi-collar-1.webp",
+      "img-web/soc-103-maxi-collar-2.webp"
+    ],
+    "precioGissell": 175,
+    "precioSocio": 292
+  },
+  {
+    "codigo": "SOC-104",
+    "agotado": true,
+    "nombre": "Sabes q es lo más padre de esto",
+    "categoria": "Cadenas",
+    "material": "Acero inoxidable 316",
+    "descripcion": "Estilo de mar",
+    "imagenes": [
+      "img-web/soc-104-sabes-q-es-lo-mas-padre-de-esto-1.webp",
+      "img-web/soc-104-sabes-q-es-lo-mas-padre-de-esto-2.webp"
+    ],
+    "precioGissell": 165,
+    "precioSocio": 275
+  },
+  {
+    "codigo": "SOC-105",
+    "nombre": "Coordinado",
+    "categoria": "Coordinados",
+    "material": "Acero inoxidable",
+    "descripcion": "Detalle floral",
+    "imagenes": [
+      "img-web/soc-105-coordinado-1.webp",
+      "img-web/soc-105-coordinado-2.webp"
+    ],
+    "precioGissell": 145,
+    "precioSocio": 242
+  },
+  {
+    "codigo": "SOC-106",
+    "nombre": "Collar dije sol",
+    "categoria": "Cadenas",
+    "material": "Acero inoxidable",
+    "descripcion": "Disponible ahora",
+    "imagenes": [
+      "img-web/soc-106-collar-dije-sol-1.webp",
+      "img-web/soc-106-collar-dije-sol-2.webp",
+      "img-web/soc-106-collar-dije-sol-3.webp"
+    ],
+    "precioGissell": 150,
+    "precioSocio": 250
+  },
+  {
+    "codigo": "SOC-107",
+    "agotado": true,
+    "nombre": "Collar multi charms",
+    "categoria": "Cadenas",
+    "material": "Acero inoxidable",
+    "descripcion": "Disponible ahora",
+    "imagenes": [
+      "img-web/soc-107-collar-multi-charms-1.webp",
+      "img-web/soc-107-collar-multi-charms-2.webp"
+    ],
+    "precioGissell": 110,
+    "precioSocio": 184
+  },
+  {
+    "codigo": "SOC-108",
+    "agotado": true,
+    "nombre": "Pines",
+    "categoria": "Accesorios",
+    "material": "Variedad disponible",
+    "descripcion": "Estilo de mar",
+    "imagenes": [
+      "img-web/soc-108-pines-1.webp",
+      "img-web/soc-108-pines-2.webp",
+      "img-web/soc-108-pines-3.webp",
+      "img-web/soc-108-pines-4.webp",
+      "img-web/soc-108-pines-5.webp"
+    ],
+    "precioGissell": 16,
+    "precioSocio": 27
+  },
+  {
+    "codigo": "SOC-109",
+    "agotado": true,
+    "nombre": "Relojes vintage",
+    "categoria": "Relojes",
+    "material": "Metal",
+    "descripcion": "Moda vintage",
+    "imagenes": [
+      "img-web/soc-109-relojes-vintage-1.webp",
+      "img-web/soc-112-anillos-naturaleza-encapsulada-1.webp",
+      "img-web/soc-112-anillos-naturaleza-encapsulada-2.webp"
+    ],
+    "precioGissell": 185,
+    "precioSocio": 309
+  },
+  {
+    "codigo": "SOC-110",
+    "agotado": true,
+    "nombre": "Relojes de moda",
+    "categoria": "Relojes",
+    "material": "Metal",
+    "descripcion": "Diseño contemporáneo",
+    "imagenes": [
+      "img-web/soc-110-relojes-de-moda-1.webp",
+      "img-web/soc-112-anillos-naturaleza-encapsulada-3.webp",
+      "img-web/soc-112-anillos-naturaleza-encapsulada-4.webp"
+    ],
+    "precioGissell": 150,
+    "precioSocio": 250
+  },
+  {
+    "codigo": "SOC-111",
+    "agotado": true,
+    "nombre": "Reloj CK",
+    "categoria": "Relojes",
+    "material": "Metal",
+    "descripcion": "Estilo elegante",
+    "imagenes": [
+      "img-web/soc-111-reloj-ck-1.webp"
+    ],
+    "precioGissell": 250,
+    "precioSocio": 417
+  },
+  {
+    "codigo": "SOC-112",
+    "nombre": "Anillos naturaleza encapsulada",
+    "categoria": "Anillos",
+    "material": "Acero inoxidable",
+    "descripcion": "Flores encapsuladas",
+    "imagenes": [
+      "img-web/soc-112-anillos-naturaleza-encapsulada-5.webp",
+      "img-web/soc-113-anillo-organico-chunky-1.webp"
+    ],
+    "precioGissell": 40,
+    "precioSocio": 67
+  },
+  {
+    "codigo": "SOC-114",
+    "agotado": true,
+    "nombre": "Collares acrílicos",
+    "categoria": "Collares",
+    "material": "Fantasía",
+    "descripcion": "Coloridos y ligeros",
+    "imagenes": [
+      "img-web/soc-114-collares-acrilicos-4.webp"
+    ],
+    "precioGissell": 95,
+    "precioSocio": 159
+  },
+  {
+    "codigo": "SOC-115",
+    "nombre": "Cadena clásica",
+    "categoria": "Cadenas",
+    "material": "Acero inoxidable",
+    "descripcion": "Básico atemporal",
+    "imagenes": [
+      "img-web/soc-115-cadena-clasica-1.webp"
+    ],
+    "precioGissell": 50,
+    "precioSocio": 84
+  },
+  {
+    "codigo": "SOC-116",
+    "nombre": "Cadena tulipán",
+    "categoria": "Cadenas",
+    "material": "Acero inoxidable",
+    "descripcion": "Detalle romántico",
+    "imagenes": [
+      "img-web/soc-116-cadena-tulipan-1.webp"
+    ],
+    "precioGissell": 75,
+    "precioSocio": 125
+  },
+  {
+    "codigo": "SOC-117",
+    "nombre": "Anillo Nido",
+    "categoria": "Anillos",
+    "material": "Metal",
+    "descripcion": "Diseño envolvente",
+    "imagenes": [
+      "img-web/soc-117-anillo-nido-1.webp",
+      "img-web/soc-118-coordinados-acrilicos-1.webp"
+    ],
+    "precioGissell": 85,
+    "precioSocio": 142
+  },
+  {
+    "codigo": "SOC-118",
+    "nombre": "Coordinados acrílicos",
+    "categoria": "Coordinados",
+    "material": "Fantasía",
+    "descripcion": "Collar con aretes",
+    "imagenes": [
+      "img-web/soc-118-coordinados-acrilicos-2.webp"
+    ],
+    "precioGissell": 95,
+    "precioSocio": 159
+  },
+  {
+    "codigo": "SOC-119",
+    "nombre": "Coordinados de colores",
+    "categoria": "Coordinados",
+    "material": "Fantasía",
+    "descripcion": "Colores elegantes",
+    "imagenes": [
+      "img-web/soc-119-coordinados-de-colores-1.webp"
+    ],
+    "precioGissell": 95,
+    "precioSocio": 159
+  },
+  {
+    "codigo": "SOC-120",
+    "agotado": true,
+    "nombre": "Kit pestañas básico",
+    "categoria": "Pestañas",
+    "material": "Kit",
+    "descripcion": "Aplicación en racimos",
+    "imagenes": [
+      "img-web/soc-120-kit-pestanas-basico-1.webp"
+    ],
+    "precioGissell": 60,
+    "precioSocio": 100
+  },
+  {
+    "codigo": "SOC-121",
+    "agotado": true,
+    "nombre": "Kit pestañas completo",
+    "categoria": "Pestañas",
+    "material": "Kit",
+    "descripcion": "Cinco accesorios incluidos",
+    "imagenes": [
+      "img-web/soc-121-kit-pestanas-completo-1.webp",
+      "img-web/soc-121-kit-pestanas-completo-2.webp",
+      "img-web/soc-121-kit-pestanas-completo-3.webp",
+      "img-web/soc-121-kit-pestanas-completo-4.webp",
+      "img-web/soc-121-kit-pestanas-completo-5.webp",
+      "img-web/soc-121-kit-pestanas-completo-6.webp",
+      "img-web/soc-121-kit-pestanas-completo-7.webp",
+      "img-web/soc-121-kit-pestanas-completo-8.webp",
+      "img-web/soc-121-kit-pestanas-completo-9.webp",
+      "img-web/soc-121-kit-pestanas-completo-10.webp",
+      "img-web/soc-121-kit-pestanas-completo-11.webp",
+      "img-web/soc-121-kit-pestanas-completo-12.webp",
+      "img-web/soc-121-kit-pestanas-completo-13.webp"
+    ],
+    "precioGissell": 110,
+    "precioSocio": 184
+  },
+  {
+    "codigo": "SOC-122",
+    "nombre": "Collares acrílicos vibrantes",
+    "categoria": "Collares",
+    "material": "Fantasía",
+    "descripcion": "Tonos vibrantes",
+    "imagenes": [
+      "img-web/soc-122-collares-acrilicos-vibrantes-1.webp"
+    ],
+    "precioGissell": 95,
+    "precioSocio": 159
+  },
+  {
+    "codigo": "SOC-123",
+    "agotado": true,
+    "nombre": "Collares acrílicos neutros",
+    "categoria": "Collares",
+    "material": "Fantasía",
+    "descripcion": "Tonos neutros",
+    "imagenes": [
+      "img-web/soc-123-collares-acrilicos-neutros-1.webp"
+    ],
+    "precioGissell": 95,
+    "precioSocio": 159
+  },
+  {
+    "codigo": "SOC-124",
+    "nombre": "Collar perlas orgánicas",
+    "categoria": "Collares",
+    "material": "Fantasía",
+    "descripcion": "Perlas estilo orgánico",
+    "imagenes": [
+      "img-web/soc-124-collar-perlas-organicas-1.webp"
+    ],
+    "precioGissell": 170,
+    "precioSocio": 284
+  },
+  {
+    "codigo": "SOC-125",
+    "agotado": true,
+    "nombre": "Coordinados geométricos",
+    "categoria": "Coordinados",
+    "material": "Acero inoxidable",
+    "descripcion": "Diseño geométrico",
+    "imagenes": [
+      "img-web/soc-125-coordinados-geometricos-1.webp"
+    ],
+    "precioGissell": 80,
+    "precioSocio": 134
+  },
+  {
+    "codigo": "SOC-126",
+    "nombre": "Coordinado estilo Hermès",
+    "categoria": "Coordinados",
+    "material": "Acero inoxidable",
+    "descripcion": "Inspiración ecuestre",
+    "imagenes": [
+      "img-web/soc-126-coordinado-estilo-herm-s-1.webp",
+      "img-web/soc-126-coordinado-estilo-herm-s-2.webp"
+    ],
+    "precioGissell": 90,
+    "precioSocio": 150
+  },
+  {
+    "codigo": "SOC-127",
+    "nombre": "Collar charms marinos",
+    "categoria": "Collares",
+    "material": "Acero inoxidable",
+    "descripcion": "Detalles del mar",
+    "imagenes": [
+      "img-web/soc-127-collar-charms-marinos-1.webp"
+    ],
+    "precioGissell": 120,
+    "precioSocio": 200
+  },
+  {
+    "codigo": "SOC-128",
+    "nombre": "Cadena torsal gruesa",
+    "categoria": "Cadenas",
+    "material": "Acero inoxidable",
+    "descripcion": "Torsal de impacto",
+    "imagenes": [
+      "img-web/soc-128-cadena-torsal-gruesa-1.webp"
+    ],
+    "precioGissell": 65,
+    "precioSocio": 109
+  },
+  {
+    "codigo": "SOC-129",
+    "nombre": "Broqueles dorados",
+    "categoria": "Aretes",
+    "material": "Acero inoxidable",
+    "descripcion": "Pequeños y versátiles",
+    "imagenes": [
+      "img-web/soc-129-broqueles-dorados-1.webp"
+    ],
+    "precioGissell": 55,
+    "precioSocio": 92
+  },
+  {
+    "codigo": "SOC-130",
+    "nombre": "Collar corazón rojo",
+    "categoria": "Collares",
+    "material": "Acero inoxidable",
+    "descripcion": "Corazón protagonista",
+    "imagenes": [
+      "img-web/soc-130-collar-corazon-rojo-1.webp"
+    ],
+    "precioGissell": 165,
+    "precioSocio": 275
+  },
+  {
+    "codigo": "SOC-131",
+    "nombre": "Brazalete Ébano",
+    "categoria": "Brazaletes",
+    "material": "Acero inoxidable",
+    "descripcion": "Ajustable y moderno",
+    "imagenes": [
+      "img-web/soc-131-brazalete-ebano-1.webp",
+      "img-web/soc-131-brazalete-ebano-2.webp",
+      "img-web/soc-131-brazalete-ebano-3.webp"
+    ],
+    "precioGissell": 90,
+    "precioSocio": 150
+  },
+  {
+    "codigo": "SOC-133",
+    "nombre": "Anillo Donna Mini",
+    "categoria": "Anillos",
+    "material": "Acero inoxidable",
+    "descripcion": "Ajustable minimalista",
+    "imagenes": [
+      "img-web/soc-133-anillo-donna-mini-2.webp",
+      "img-web/soc-134-collar-multicorazones-1.webp"
+    ],
+    "precioGissell": 70,
+    "precioSocio": 117
+  },
+  {
+    "codigo": "SOC-134",
+    "nombre": "Collar multicorazones",
+    "categoria": "Collares",
+    "material": "Acero inoxidable",
+    "descripcion": "Corazones delicados",
+    "imagenes": [
+      "img-web/soc-134-collar-multicorazones-3.webp",
+      "img-web/soc-136-brazalete-conchas-marinas-1.webp"
+    ],
+    "precioGissell": 145,
+    "precioSocio": 242
+  },
+  {
+    "codigo": "SOC-135",
+    "nombre": "Collares de cuerda",
+    "categoria": "Collares",
+    "material": "Acero inoxidable",
+    "descripcion": "Dijes con textura",
+    "imagenes": [
+      "img-web/soc-135-collares-de-cuerda-1.webp",
+      "img-web/soc-134-collar-multicorazones-2.webp"
+    ],
+    "precioGissell": 85,
+    "precioSocio": 142
+  },
+  {
+    "codigo": "SOC-136",
+    "nombre": "Brazalete conchas marinas",
+    "categoria": "Brazaletes",
+    "material": "Acero inoxidable",
+    "descripcion": "Inspiración marina",
+    "imagenes": [
+      "img-web/soc-137-collar-zirconia-1.webp",
+      "img-web/soc-136-brazalete-conchas-marinas-2.webp"
+    ],
+    "precioGissell": 110,
+    "precioSocio": 184
+  },
+  {
+    "codigo": "SOC-137",
+    "nombre": "Collar zirconia",
+    "categoria": "Collares",
+    "material": "Acero inoxidable",
+    "descripcion": "Brillo delicado",
+    "imagenes": [
+      "img-web/soc-137-collar-zirconia-2.webp"
+    ],
+    "precioGissell": 80,
+    "precioSocio": 134
+  },
+  {
+    "codigo": "SOC-138",
+    "nombre": "Maxicollar Nautilo",
+    "categoria": "Collares",
+    "material": "Acero inoxidable",
+    "descripcion": "Diseño marino",
+    "imagenes": [
+      "img-web/soc-138-maxicollar-nautilo-1.webp",
+      "img-web/soc-138-maxicollar-nautilo-2.webp"
+    ],
+    "precioGissell": 165,
+    "precioSocio": 275
+  },
+  {
+    "codigo": "SOC-139",
+    "nombre": "Anillo Nautilo",
+    "categoria": "Anillos",
+    "material": "Acero inoxidable",
+    "descripcion": "Ajustable marino",
+    "imagenes": [
+      "img-web/soc-139-anillo-nautilo-1.webp",
+      "img-web/soc-139-anillo-nautilo-2.webp"
+    ],
+    "precioGissell": 70,
+    "precioSocio": 117
+  },
+  {
+    "codigo": "SOC-140",
+    "agotado": true,
+    "nombre": "Collares dijes dorados",
+    "categoria": "Collares",
+    "material": "Acero inoxidable",
+    "descripcion": "Dijes protagonistas",
+    "imagenes": [
+      "img-web/soc-140-collares-dijes-dorados-2.webp",
+      "img-web/soc-140-collares-dijes-dorados-3.webp",
+      "img-web/soc-140-collares-dijes-dorados-4.webp"
+    ],
+    "precioGissell": 150,
+    "precioSocio": 250
+  },
+  {
+    "codigo": "SOC-141",
+    "agotado": true,
+    "nombre": "Broches flor surtidos",
+    "categoria": "Accesorios",
+    "material": "Tela",
+    "descripcion": "Docena surtida",
+    "imagenes": [
+      "img-web/soc-141-broches-flor-surtidos-1.webp"
+    ],
+    "precioGissell": 150,
+    "precioSocio": 250
+  },
+  {
+    "codigo": "SOC-142",
+    "agotado": true,
+    "nombre": "Anillo Garabato Flor",
+    "categoria": "Anillos",
+    "material": "Metal",
+    "descripcion": "Flor contemporánea",
+    "imagenes": [
+      "img-web/soc-142-anillo-garabato-flor-3.webp",
+      "img-web/soc-143-collar-femme-fatale-1.webp",
+      "img-web/soc-143-collar-femme-fatale-2.webp",
+      "img-web/soc-143-collar-femme-fatale-3.webp"
+    ],
+    "precioGissell": 75,
+    "precioSocio": 125
+  },
+  {
+    "codigo": "SOC-143",
+    "agotado": true,
+    "nombre": "Collar Femme Fatale",
+    "categoria": "Collares",
+    "material": "Fantasía",
+    "descripcion": "Maxicollar transformable",
+    "imagenes": [
+      "img-web/soc-143-collar-femme-fatale-4.webp",
+      "img-web/soc-143-collar-femme-fatale-5.webp",
+      "img-web/soc-143-collar-femme-fatale-6.webp",
+      "img-web/soc-143-collar-femme-fatale-7.webp",
+      "img-web/soc-143-collar-femme-fatale-8.webp",
+      "img-web/soc-143-collar-femme-fatale-9.webp",
+      "img-web/soc-143-collar-femme-fatale-10.webp"
+    ],
+    "videos": [
+      "video-web/soc-143-collar-femme-fatale-video-1.mp4",
+      "video-web/soc-143-collar-femme-fatale-video-2.mp4",
+      "video-web/soc-143-collar-femme-fatale-video-3.mp4",
+      "video-web/soc-143-collar-femme-fatale-video-4.mp4"
+    ],
+    "precioGissell": 70,
+    "precioSocio": 117
+  },
+  {
+    "codigo": "SOC-144",
+    "nombre": "Anillos variados",
+    "categoria": "Anillos",
+    "material": "Metal",
+    "descripcion": "Modelos surtidos",
+    "imagenes": [
+      "img-web/soc-144-anillos-variados-3.webp",
+      "img-web/soc-144-anillos-variados-4.webp",
+      "img-web/soc-144-anillos-variados-18.webp",
+      "img-web/soc-144-anillos-variados-19.webp",
+      "img-web/soc-144-anillos-variados-20.webp",
+      "img-web/soc-144-anillos-variados-21.webp",
+      "img-web/soc-144-anillos-variados-35.webp",
+      "img-web/soc-144-anillos-variados-36.webp",
+      "img-web/soc-144-anillos-variados-37.webp",
+      "img-web/soc-144-anillos-variados-38.webp",
+      "img-web/soc-144-anillos-variados-39.webp",
+      "img-web/soc-144-anillos-variados-40.webp",
+      "img-web/soc-144-anillos-variados-41.webp",
+      "img-web/soc-144-anillos-variados-42.webp",
+      "img-web/soc-144-anillos-variados-43.webp",
+      "img-web/soc-144-anillos-variados-44.webp",
+      "img-web/soc-144-anillos-variados-45.webp"
+    ],
+    "precioGissell": 45,
+    "precioSocio": 75
+  },
+  {
+    "codigo": "SOC-145",
+    "nombre": "Anillo Dona",
+    "categoria": "Anillos",
+    "material": "Metal",
+    "descripcion": "Volumen elegante",
+    "imagenes": [
+      "img-web/soc-145-anillo-dona-5.webp",
+      "img-web/soc-145-anillo-dona-6.webp",
+      "img-web/soc-146-anillo-chunky-1.webp"
+    ],
+    "precioGissell": 75,
+    "precioSocio": 125
+  },
+  {
+    "codigo": "SOC-146",
+    "nombre": "Anillo Chunky",
+    "categoria": "Anillos",
+    "material": "Acero Inoxidable",
+    "descripcion": "Volumen protagonista",
+    "imagenes": [
+      "img-web/soc-146-anillo-chunky-2.webp",
+      "img-web/soc-146-anillo-chunky-7.webp",
+      "img-web/soc-144-anillos-variados-5.webp",
+      "img-web/soc-144-anillos-variados-6.webp",
+      "img-web/soc-144-anillos-variados-7.webp",
+      "img-web/soc-144-anillos-variados-8.webp",
+      "img-web/soc-144-anillos-variados-9.webp",
+      "img-web/soc-144-anillos-variados-10.webp",
+      "img-web/soc-144-anillos-variados-11.webp",
+      "img-web/soc-144-anillos-variados-12.webp",
+      "img-web/soc-144-anillos-variados-13.webp",
+      "img-web/soc-144-anillos-variados-14.webp",
+      "img-web/soc-144-anillos-variados-15.webp",
+      "img-web/soc-144-anillos-variados-16.webp",
+      "img-web/soc-144-anillos-variados-17.webp",
+      "img-web/soc-144-anillos-variados-22.webp",
+      "img-web/soc-144-anillos-variados-23.webp",
+      "img-web/soc-144-anillos-variados-24.webp",
+      "img-web/soc-144-anillos-variados-25.webp",
+      "img-web/soc-144-anillos-variados-26.webp",
+      "img-web/soc-144-anillos-variados-27.webp",
+      "img-web/soc-144-anillos-variados-28.webp",
+      "img-web/soc-144-anillos-variados-29.webp",
+      "img-web/soc-144-anillos-variados-30.webp",
+      "img-web/soc-144-anillos-variados-31.webp",
+      "img-web/soc-144-anillos-variados-32.webp",
+      "img-web/soc-144-anillos-variados-33.webp",
+      "img-web/soc-144-anillos-variados-34.webp"
+    ],
+    "precioGissell": 75,
+    "precioSocio": 125
+  },
+  {
+    "codigo": "SOC-147",
+    "nombre": "Exhibidor giratorio",
+    "categoria": "Exhibidores",
+    "material": "Acrílico",
+    "descripcion": "Exhibidor giratorio",
+    "imagenes": [
+      "img-web/soc-147-exhibidor-giratorio-1.webp"
+    ],
+    "precioGissell": 145,
+    "precioSocio": 242
+  },
+  {
+    "codigo": "SOC-148",
+    "nombre": "Porta pulseras",
+    "categoria": "Exhibidores",
+    "material": "Base de madera forrada en terciopelo",
+    "descripcion": "Calidad boutique · $140 c/u ✨️",
+    "imagenes": [
+      "img-web/soc-148-porta-pulseras-boutique-1.webp"
+    ],
+    "precioGissell": 140,
+    "precioSocio": 234,
+    "descripcionSocio": "Calidad boutique ·"
+  },
+  {
+    "codigo": "SOC-149",
+    "nombre": "Exhibidor de joyería mini",
+    "categoria": "Exhibidores",
+    "material": "Estuche organizador",
+    "descripcion": "Versión mini ✨ · Disponible en rosa, oro y coffee",
+    "imagenes": [
+      "img-web/soc-149-exhibidor-joyeria-mini-1.webp",
+      "img-web/soc-149-exhibidor-joyeria-mini-2.webp"
+    ],
+    "precioGissell": 175,
+    "precioSocio": 292
+  },
+  {
+    "codigo": "SOC-150",
+    "nombre": "Alhajero organizador",
+    "categoria": "Exhibidores",
+    "material": "Organizador para joyería",
+    "descripcion": "El lugar favorito de tus joyitas ✨🎀 · Espacios para anillos, aretes, cadenas y piezas favoritas · Disponible en rosa y beige",
+    "imagenes": [
+      "img-web/soc-150-alhajero-organizador-1.webp",
+      "img-web/soc-150-alhajero-organizador-2.webp",
+      "img-web/soc-150-alhajero-organizador-3.webp"
+    ],
+    "precioGissell": 250,
+    "precioSocio": 417
+  },
+  {
+    "codigo": "SOC-151",
+    "nombre": "Cuellos para collares",
+    "categoria": "Exhibidores",
+    "material": "Madera",
+    "descripcion": "Disponible en dos tamaños · Chicos $100 · Grandes $125",
+    "imagenes": [
+      "img-web/soc-151-cuellos-collares-madera-1.webp",
+      "img-web/soc-151-cuellos-collares-madera-2.webp"
+    ],
+    "precioGissell": 100,
+    "precioSocio": 167,
+    "descripcionSocio": "Disponible en dos tamaños: chico y grande"
+  },
+  {
+    "codigo": "SOC-152",
+    "nombre": "Exhibidor para aretes",
+    "categoria": "Exhibidores",
+    "material": "Acrílico con base de madera",
+    "descripcion": "Tus aretes siempre organizados y a la vista ✨ Exhibidor de acrílico con base de madera, ideal para mantener tus piezas ordenadas, elegirlas fácilmente y darle un toque elegante a tu espacio. Con capacidad para varios pares y diseño compacto. Medidas: 31 × 28.5 × 6 cm. ¡Pídelo antes de que se agote! 🤍",
+    "imagenes": [
+      "img-web/soc-152-exhibidor-aretes-1.webp",
+      "img-web/soc-152-exhibidor-aretes-2.webp",
+      "img-web/soc-152-exhibidor-aretes-3.webp",
+      "img-web/soc-152-exhibidor-aretes-4.webp"
+    ],
+    "precioGissell": 135,
+    "precioSocio": 225
+  },
+  {
+    "codigo": "SOC-153",
+    "nombre": "Exhibidor de brazaletes",
+    "categoria": "Exhibidores",
+    "material": "Madera de excelente calidad",
+    "descripcion": "Exhibidor de brazaletes en madera de excelente calidad 👌 Medidas aproximadas: 35 × 24 × 5 cm. Ideal para mantener y presentar tus brazaletes de forma ordenada y elegante.",
+    "imagenes": [
+      "img-web/soc-153-exhibidor-brazaletes-1.webp",
+      "img-web/soc-153-exhibidor-brazaletes-2.webp",
+      "img-web/soc-153-exhibidor-brazaletes-3.webp"
+    ],
+    "precioGissell": 275,
+    "precioSocio": 459
+  },
+  {
+    "codigo": "SOC-154",
+    "nombre": "Teddy Bear 🐻",
+    "categoria": "Cadenas",
+    "material": "Acero inoxidable 316L",
+    "descripcion": "Una cadenita muy pro 🧸✨ Porque hasta lo tierno puede verse elegante. Dorado + zirconias que le dan ese brillo perfecto para levantar cualquier look. ✨ Pequeña, coqueta y con mucha personalidad. 🤎",
+    "imagenes": [
+      "img-web/soc-154-teddy-bear-1.webp",
+      "img-web/soc-154-teddy-bear-2.webp",
+      "img-web/soc-154-teddy-bear-3.webp",
+      "img-web/soc-154-teddy-bear-4.webp"
+    ],
+    "precioGissell": 120,
+    "precioSocio": 200
+  },
+  {
+    "codigo": "SOC-155",
+    "nombre": "CONCHA DE NAUTILUS Nácar estilo Chunky",
+    "categoria": "Cadenas",
+    "material": "Acero inoxidable 316L",
+    "descripcion": "🐚✨ Una verdadera joya inspirada en el mar. Su diseño en forma de caracola combina el brillo del dorado con un delicado efecto aperlado, creando una pieza hermosa, elegante y con muchísima presencia. 🤍🌊 Tú eliges cómo llevarlo: puedes escoger la cadena que más te guste para acompañar este bellísimo dije y crear un collar totalmente a tu estilo. El dije enamora… la cadena la eliges tú. 🐚💛",
+    "imagenes": [
+      "img-web/soc-155-concha-nautilus-nacar-1.webp",
+      "img-web/soc-155-concha-nautilus-nacar-2.webp",
+      "img-web/soc-155-concha-nautilus-nacar-3.webp",
+      "img-web/soc-155-concha-nautilus-nacar-4.webp",
+      "img-web/soc-155-concha-nautilus-nacar-5.webp"
+    ],
+    "precioGissell": 120,
+    "precioSocio": 200
+  },
+  {
+    "codigo": "SOC-156",
+    "nombre": "Collar Caracola Marina 🐚",
+    "categoria": "Cadenas",
+    "material": "Fantasía ✨️",
+    "descripcion": "🌊 Collar Caracola Marina 🐚\n\nUn diseño inspirado en el mar que convierte cualquier look en uno fresco, elegante y diferente. Su gran dije de caracola y cordón trenzado crean ese estilo coastal perfecto para vacaciones, playa o un outfit de verano. 🤍✨\n\nUna pieza protagonista que no necesita nada más para llamar la atención.",
+    "imagenes": [
+      "img-web/soc-156-collar-caracola-marina.webp"
+    ],
+    "precioGissell": 65,
+    "precioSocio": 109
+  },
+  {
+    "codigo": "SOC-157",
+    "nombre": "Coordinado Collar + Pulsera ✨",
+    "categoria": "Coordinados",
+    "material": "Laminado dorado",
+    "descripcion": "✨ Coordinado Collar + Pulsera ✨\n\nUn diseño dorado con mucha presencia, perfecto para elevar cualquier look. Sus eslabones y dijes de formas orgánicas le dan ese toque moderno y elegante que no pasa desapercibido. 💛\n\n✨ Laminado dorado\n💫 Incluye collar + pulsera\n🤎 Úsalos juntos o por separado.\nCollar $60\nPulsera $40",
+    "imagenes": [
+      "img-web/soc-157-coordinado-collar-pulsera-1.webp",
+      "img-web/soc-157-coordinado-collar-pulsera-2.webp"
+    ],
+    "precioGissell": 100,
+    "precioSocio": 167,
+    "descripcionSocio": "✨ Coordinado Collar + Pulsera ✨\n\nUn diseño dorado con mucha presencia, perfecto para elevar cualquier look. Sus eslabones y dijes de formas orgánicas le dan ese toque moderno y elegante que no pasa desapercibido. "
+  },
+  {
+    "codigo": "SOC-158",
+    "nombre": "🌈🎀✨ PIZARRÓN MÁGICO ✨🎀🌈",
+    "categoria": "Accesorios",
+    "material": "Pizarra digital LCD",
+    "descripcion": "Ideal para dibujar, escribir y jugar una y otra vez. Ligero, práctico y fácil de usar. ✨ Incluye lápiz para dibujar. Disponible en tienda.",
+    "imagenes": [
+      "img-web/soc-158-pizarron-magico-1.webp",
+      "img-web/soc-158-pizarron-magico-2.webp",
+      "img-web/soc-158-pizarron-magico-3.webp",
+      "img-web/soc-158-pizarron-magico-4.webp"
+    ],
+    "precioGissell": 40,
+    "precioSocio": 67
+  },
+  {
+    "codigo": "SOC-159",
+    "nombre": "Pulsera masculina números romanos",
+    "categoria": "Pulsera",
+    "material": "Acero inoxidable plateado",
+    "descripcion": "Pulsera masculina de eslabones plateados con detalle central negro y números romanos. ⌚🖤\n\nElegante, moderna y fácil de combinar.\n\nÚnica pieza\nPrecio regular $90 → $63\n🔥 30% OFF",
+    "imagenes": [
+      "img-web/soc-159-pulsera-romanos-1.webp",
+      "img-web/soc-159-pulsera-romanos-2.webp"
+    ],
+    "precioGissell": 63,
+    "precioSocio": 105,
+    "descripcionSocio": "Pulsera masculina de eslabones plateados con detalle central negro y números romanos. ⌚🖤\n\nElegante, moderna y fácil de combinar"
+  },
+  {
+    "codigo": "SOC-160",
+    "nombre": "Pulsera Torsal · UNISEX ✨",
+    "categoria": "Pulsera",
+    "material": "Tono dorado",
+    "descripcion": "Diseño de cadena torsal en tono dorado, con broche de mosquetón y extensión ajustable. Clásica, versátil y fácil de combinar. Precio regular $45 → $40.",
+    "imagenes": [
+      "img-web/soc-160-pulsera-torsal-1.webp",
+      "img-web/soc-160-pulsera-torsal-2.webp",
+      "img-web/soc-160-pulsera-torsal-3.webp",
+      "img-web/soc-160-pulsera-torsal-4.webp"
+    ],
+    "precioGissell": 40,
+    "precioSocio": 67,
+    "descripcionSocio": "Diseño de cadena torsal en tono dorado, con broche de mosquetón y extensión ajustable. Clásica, versátil y fácil de combinar."
+  },
+  {
+    "codigo": "SOC-161",
+    "nombre": "Pulsera de caracol 🐚",
+    "categoria": "Pulsera",
+    "material": "Acabado dorado",
+    "descripcion": "Diseño inspirado en el mar, compuesto por caracoles en espiral con textura y acabado dorado. Precio regular $85 → $60. 🔥 30% OFF",
+    "imagenes": [
+      "img-web/soc-161-pulsera-caracol-1.webp",
+      "img-web/soc-161-pulsera-caracol-2.webp"
+    ],
+    "precioGissell": 60,
+    "precioSocio": 17,
+    "descripcionSocio": "Diseño inspirado en el mar, compuesto por caracoles en espiral con textura y acabado dorado."
+  },
+  {
+    "codigo": "SOC-162",
+    "nombre": "Pulsera de caracoles de colores 🌈🐚",
+    "categoria": "Pulsera",
+    "material": "Detalles dorados",
+    "descripcion": "Un pedacito del mar lleno de color 🌈 Pulsera de caracoles combinados con delicados detalles dorados. Pieza única.",
+    "imagenes": [
+      "img-web/soc-162-pulsera-caracoles-color-1.webp",
+      "img-web/soc-162-pulsera-caracoles-color-2.webp"
+    ],
+    "precioGissell": 75,
+    "precioSocio": 125
+  },
+  {
+    "codigo": "SOC-163",
+    "nombre": "Pulsera tulipán 🌷 Rojo ❤️",
+    "categoria": "Pulsera",
+    "material": "Acabado dorado",
+    "descripcion": "Pulsera dorada con delicadas piedras rojas inspiradas en pétalos y hojas. Un diseño elegante, femenino y lleno de color.\n\n30% de descuento\nAntes $75\nAhora $52.50",
+    "imagenes": [
+      "img-web/soc-163-pulsera-tulipan-roja-1.webp",
+      "img-web/soc-163-pulsera-tulipan-roja-2.webp"
+    ],
+    "videos": [
+      "video-web/soc-163-pulsera-tulipan-roja-video-1.mp4"
+    ],
+    "precioGissell": 52.5,
+    "precioSocio": 88,
+    "descripcionSocio": "Pulsera dorada con delicadas piedras rojas inspiradas en pétalos y hojas. Un diseño elegante, femenino y lleno de color."
+  },
+  {
+    "codigo": "SOC-164",
+    "nombre": "Sacapuntas doble By Apple",
+    "categoria": "Accesorios",
+    "material": "Diseño compacto",
+    "descripcion": "Sacapuntas doble con dos tamaños de entrada: uno amplio para crayones y lápices jumbo, y otro pequeño para delineadores y lápices convencionales. Su corte uniforme ayuda a conservar mejor las puntas. Compacto, práctico y fácil de llevar.",
+    "imagenes": [
+      "img-web/soc-164-sacapuntas-doble-by-apple-1.webp",
+      "img-web/soc-164-sacapuntas-doble-by-apple-2.webp",
+      "img-web/soc-164-sacapuntas-doble-by-apple-3.webp",
+      "img-web/soc-164-sacapuntas-doble-by-apple-4.webp"
+    ],
+    "precioGissell": 25,
+    "precioSocio": 42
+  },
+  {
+    "codigo": "SOC-165",
+    "nombre": "Crayón Jumbo By Apple",
+    "categoria": "Maquillaje",
+    "material": "Textura cremosa",
+    "descripcion": "Crayón jumbo de textura cremosa y fácil aplicación, ideal para definir ojos y crear trazos intensos con mayor precisión. Disponible en blanco y negro.",
+    "imagenes": [
+      "img-web/soc-165-crayon-jumbo-by-apple-1.webp",
+      "img-web/soc-165-crayon-jumbo-by-apple-2.webp",
+      "img-web/soc-165-crayon-jumbo-by-apple-3.webp",
+      "img-web/soc-165-crayon-jumbo-by-apple-4.webp",
+      "img-web/soc-165-crayon-jumbo-by-apple-5.webp"
+    ],
+    "precioGissell": 22,
+    "precioSocio": 37
+  },
+  {
+    "codigo": "SOC-166",
+    "nombre": "Brazalete Juste un Clou · Cartier",
+    "categoria": "Brazaletes",
+    "material": "Acero inoxidable 316",
+    "descripcion": "Brazalete dorado de diseño abierto inspirado en la forma de un clavo. Su silueta limpia y contemporánea aporta un acabado elegante, moderno y fácil de combinar.",
+    "imagenes": [
+      "img-web/soc-166-brazalete-juste-un-clou-cartier-1.webp",
+      "img-web/soc-166-brazalete-juste-un-clou-cartier-2.webp",
+      "img-web/soc-166-brazalete-juste-un-clou-cartier-3.webp"
+    ],
+    "precioGissell": 95,
+    "precioSocio": 159
+  },
+  {
+    "codigo": "SOC-167",
+    "nombre": "Tobilleras marinas doradas",
+    "categoria": "Tobilleras",
+    "material": "Acabado dorado",
+    "descripcion": "Colección de tobilleras doradas con dijes inspirados en el mar, como estrellas y conchas. Diseños sutiles y femeninos, perfectos para aportar un toque fresco y veraniego a cualquier look.",
+    "imagenes": [
+      "img-web/soc-167-tobilleras-marinas-doradas-1.webp",
+      "img-web/soc-167-tobilleras-marinas-doradas-2.webp"
+    ],
+    "precioGissell": 65,
+    "precioSocio": 109
+  },
+  {
+    "codigo": "SOC-168",
+    "nombre": "Pulsera Corazones Dorados",
+    "categoria": "Pulseras",
+    "material": "Acabado dorado",
+    "descripcion": "Pulsera de estilo romántico y elegante, formada por corazones abiertos y entrelazados con acabado dorado brillante. Una pieza con presencia, ideal para realzar cualquier look.",
+    "imagenes": [
+      "img-web/soc-168-pulsera-corazones-dorados-1.webp",
+      "img-web/soc-168-pulsera-corazones-dorados-2.webp"
+    ],
+    "precioGissell": 110,
+    "precioSocio": 184
+  },
+  {
+    "codigo": "SOC-169",
+    "nombre": "Coordinado Corazón Dorado",
+    "categoria": "Coordinados",
+    "material": "Acabado dorado",
+    "descripcion": "Coordinado de collar y aretes con corazón abierto y textura acanalada. Su acabado dorado brillante aporta luz, carácter y un toque moderno a cualquier look.\n\n30% de descuento\nAntes $110\nAhora $77",
+    "imagenes": [
+      "img-web/soc-169-coordinado-corazon-dorado-1.webp",
+      "img-web/soc-169-coordinado-corazon-dorado-2.webp"
+    ],
+    "precioGissell": 77,
+    "precioSocio": 129,
+    "descripcionSocio": "Coordinado de collar y aretes con corazón abierto y textura acanalada. Su acabado dorado brillante aporta luz, carácter y un toque moderno a cualquier look."
+  },
+  {
+    "codigo": "SOC-170",
+    "nombre": "Brazalete Ámbar Twisted",
+    "categoria": "Brazaletes",
+    "material": "Efecto cristal",
+    "descripcion": "Brazalete chunky de silueta abierta, diseño torcido y acabado ámbar translúcido. Una pieza atrevida y contemporánea que transforma incluso los looks más sencillos.\n\n30% de descuento\nAntes $45\nAhora $31.50",
+    "imagenes": [
+      "img-web/soc-170-brazalete-ambar-twisted-1.webp",
+      "img-web/soc-170-brazalete-ambar-twisted-2.webp"
+    ],
+    "videos": [
+      "video-web/soc-170-brazalete-ambar-twisted-video-2.mp4"
+    ],
+    "precioGissell": 31.5,
+    "precioSocio": 53,
+    "descripcionSocio": "Brazalete chunky de silueta abierta, diseño torcido y acabado ámbar translúcido. Una pieza atrevida y contemporánea que transforma incluso los looks más sencillos."
+  },
+  {
+    "codigo": "SOC-171",
+    "nombre": "Jucie Nature Viva Luck",
+    "categoria": "Perfumes",
+    "material": "Eau de Parfum · 100 ml",
+    "descripcion": "Fragancia femenina fresca y dulce, con salida de manzana verde y cítricos, corazón floral y un fondo cálido de vainilla, sándalo y almizcle. Ideal para uso diario.",
+    "imagenes": [
+      "img-web/soc-171-jucie-nature-viva-luck-1.webp"
+    ],
+    "precioGissell": 85,
+    "precioSocio": 142,
+    "descripcionSocio": "Fragancia femenina fresca y dulce, con salida de manzana verde y cítricos, corazón floral y un fondo cálido de vainilla, sándalo y almizcle. Ideal para uso diario."
+  },
+  {
+    "codigo": "SOC-172",
+    "nombre": "Refreshing Narcissus",
+    "categoria": "Perfumes",
+    "material": "Eau de Parfum · 100 ml",
+    "descripcion": "Perfume femenino fresco y fácil de llevar. Una opción versátil para la oficina, la escuela o las actividades cotidianas.",
+    "imagenes": [
+      "img-web/soc-172-refreshing-narcissus-1.webp"
+    ],
+    "precioGissell": 85,
+    "precioSocio": 142,
+    "descripcionSocio": "Perfume femenino fresco y fácil de llevar. Una opción versátil para la oficina, la escuela o las actividades cotidianas."
+  },
+  {
+    "codigo": "SOC-173",
+    "nombre": "Qimmah",
+    "categoria": "Perfumes",
+    "material": "Eau de Parfum · 100 ml",
+    "descripcion": "Fragancia árabe femenina, dulce y con gran presencia. Inspirada en Qimmah for Women de Lattafa; ideal para quienes prefieren aromas intensos y envolventes.",
+    "imagenes": [
+      "img-web/soc-173-qimmah-1.webp"
+    ],
+    "precioGissell": 85,
+    "precioSocio": 142,
+    "descripcionSocio": "Fragancia árabe femenina, dulce y con gran presencia. Inspirada en Qimmah for Women de Lattafa; ideal para quienes prefieren aromas intensos y envolventes."
+  },
+  {
+    "codigo": "SOC-174",
+    "nombre": "Brilliant Flore",
+    "categoria": "Perfumes",
+    "material": "Eau de Parfum · 120 ml",
+    "descripcion": "Fragancia femenina inspirada en Paris Hilton Limited Edition. Una propuesta elegante y versátil para complementar tu estilo todos los días.",
+    "imagenes": [
+      "img-web/soc-174-brilliant-flore-1.webp"
+    ],
+    "precioGissell": 85,
+    "precioSocio": 142,
+    "descripcionSocio": "Fragancia femenina inspirada en Paris Hilton Limited Edition. Una propuesta elegante y versátil para complementar tu estilo todos los días."
+  },
+  {
+    "codigo": "SOC-175",
+    "nombre": "Pink Rhythm",
+    "categoria": "Perfumes",
+    "material": "Eau de Parfum · 100 ml",
+    "descripcion": "Aroma dulce y floral de carácter femenino y juvenil. Perfecto para el uso diario, salidas casuales y citas.",
+    "imagenes": [
+      "img-web/soc-175-pink-rhythm-1.webp"
+    ],
+    "precioGissell": 85,
+    "precioSocio": 142,
+    "descripcionSocio": "Aroma dulce y floral de carácter femenino y juvenil. Perfecto para el uso diario, salidas casuales y citas."
+  },
+  {
+    "codigo": "SOC-176",
+    "nombre": "CHAVEG Eau de Tendre",
+    "categoria": "Perfumes",
+    "material": "Eau de Toilette · 100 ml",
+    "descripcion": "Fragancia fresca, floral y frutal, inspirada en Chance Eau Tendre de Chanel. Su aroma delicado y ligeramente dulce resulta elegante sin sentirse pesado.",
+    "imagenes": [
+      "img-web/soc-176-chaveg-eau-de-tendre-1.webp"
+    ],
+    "precioGissell": 85,
+    "precioSocio": 142,
+    "descripcionSocio": "Fragancia fresca, floral y frutal, inspirada en Chance Eau Tendre de Chanel. Su aroma delicado y ligeramente dulce resulta elegante sin sentirse pesado."
+  },
+  {
+    "codigo": "SOC-177",
+    "nombre": "White Ribbon",
+    "categoria": "Perfumes",
+    "material": "Eau de Parfum · 100 ml",
+    "descripcion": "Fragancia femenina suave, limpia y elegante. Su perfil delicado la convierte en una opción fácil de usar a diario, en la oficina o en ocasiones casuales.",
+    "imagenes": [
+      "img-web/soc-177-white-ribbon-1.webp"
+    ],
+    "precioGissell": 85,
+    "precioSocio": 142,
+    "descripcionSocio": "Fragancia femenina suave, limpia y elegante. Su perfil delicado la convierte en una opción fácil de usar a diario, en la oficina o en ocasiones casuales."
+  },
+  {
+    "codigo": "SOC-178",
+    "nombre": "Brilliant Flower",
+    "categoria": "Perfumes",
+    "material": "Eau de Parfum · 100 ml",
+    "descripcion": "Fragancia dulce y frutal inspirada en Fantasy de Britney Spears. Combina kiwi y lichi con un corazón cremoso de cupcake y chocolate blanco, sobre un fondo suave de almizcle y maderas.",
+    "imagenes": [
+      "img-web/soc-178-brilliant-flower-1.webp"
+    ],
+    "precioGissell": 85,
+    "precioSocio": 142,
+    "descripcionSocio": "Fragancia dulce y frutal inspirada en Fantasy de Britney Spears. Combina kiwi y lichi con un corazón cremoso de cupcake y chocolate blanco, sobre un fondo suave de almizcle y maderas."
+  },
+  {
+    "codigo": "SOC-179",
+    "nombre": "Brilliant Party Non Stop",
+    "categoria": "Perfumes",
+    "material": "Eau de Parfum · 100 ml",
+    "descripcion": "Perfume femenino pensado para acompañarte en salidas y ocasiones especiales. Una opción llamativa y juvenil para completar tu look.",
+    "imagenes": [
+      "img-web/soc-179-brilliant-party-non-stop-1.webp"
+    ],
+    "precioGissell": 85,
+    "precioSocio": 142,
+    "descripcionSocio": "Perfume femenino pensado para acompañarte en salidas y ocasiones especiales. Una opción llamativa y juvenil para completar tu look."
+  },
+  {
+    "codigo": "SOC-180",
+    "nombre": "Bayberry Her",
+    "categoria": "Perfumes",
+    "material": "Eau de Parfum · 100 ml",
+    "descripcion": "Fragancia dulce y frutal con notas que recuerdan a frutos rojos y flores. Un aroma femenino, juvenil y fácil de llevar.",
+    "imagenes": [
+      "img-web/soc-180-bayberry-her-1.webp"
+    ],
+    "precioGissell": 85,
+    "precioSocio": 142,
+    "descripcionSocio": "Fragancia dulce y frutal con notas que recuerdan a frutos rojos y flores. Un aroma femenino, juvenil y fácil de llevar."
+  },
+  {
+    "codigo": "SOC-181",
+    "nombre": "M2 Woman — Remember Music",
+    "categoria": "Perfumes",
+    "material": "Eau de Toilette · 100 ml",
+    "descripcion": "Aroma dulce y frutal con un toque fresco y floral. Una opción femenina y versátil para acompañarte todos los días.",
+    "imagenes": [
+      "img-web/soc-181-m2-woman-remember-music-1.webp"
+    ],
+    "precioGissell": 85,
+    "precioSocio": 142,
+    "descripcionSocio": "Aroma dulce y frutal con un toque fresco y floral. Una opción femenina y versátil para acompañarte todos los días."
+  },
+  {
+    "codigo": "SOC-182",
+    "nombre": "Pivoine Suzhou",
+    "categoria": "Perfumes",
+    "material": "Eau de Parfum · 100 ml",
+    "descripcion": "Fragancia floral con aroma a peonías y flores suaves. Delicada, femenina y agradable para el uso cotidiano.",
+    "imagenes": [
+      "img-web/soc-182-pivoine-suzhou-1.webp"
+    ],
+    "precioGissell": 85,
+    "precioSocio": 142,
+    "descripcionSocio": "Fragancia floral con aroma a peonías y flores suaves. Delicada, femenina y agradable para el uso cotidiano."
+  },
+  {
+    "codigo": "SOC-183",
+    "nombre": "Fringed Iris",
+    "categoria": "Perfumes",
+    "material": "Eau de Parfum · 100 ml",
+    "descripcion": "Aroma de flores frescas con una sensación limpia y ligera. Femenino, delicado y fácil de usar todos los días.",
+    "imagenes": [
+      "img-web/soc-183-fringed-iris-1.webp"
+    ],
+    "precioGissell": 85,
+    "precioSocio": 142,
+    "descripcionSocio": "Aroma de flores frescas con una sensación limpia y ligera. Femenino, delicado y fácil de usar todos los días."
+  },
+  {
+    "codigo": "SOC-184",
+    "nombre": "Dazzling Bling Pink",
+    "categoria": "Perfumes",
+    "material": "Eau de Parfum · 100 ml",
+    "descripcion": "Perfume de aroma dulce y floral, ideal para quienes prefieren fragancias femeninas, suaves y fáciles de combinar.",
+    "imagenes": [
+      "img-web/soc-184-dazzling-bling-pink-1.webp"
+    ],
+    "precioGissell": 85,
+    "precioSocio": 142,
+    "descripcionSocio": "Perfume de aroma dulce y floral, ideal para quienes prefieren fragancias femeninas, suaves y fáciles de combinar."
+  },
+  {
+    "codigo": "SOC-185",
+    "nombre": "Iris Finged",
+    "categoria": "Perfumes",
+    "material": "Eau de Parfum · 80 ml",
+    "descripcion": "Fragancia floral y ligeramente dulce, con sensación de flores frescas. Un aroma femenino y delicado para cualquier ocasión.",
+    "imagenes": [
+      "img-web/soc-185-iris-finged-1.webp"
+    ],
+    "precioGissell": 85,
+    "precioSocio": 142,
+    "descripcionSocio": "Fragancia floral y ligeramente dulce, con sensación de flores frescas. Un aroma femenino y delicado para cualquier ocasión."
+  },
+  {
+    "codigo": "SOC-186",
+    "nombre": "COOG — CHAVEG",
+    "categoria": "Perfumes",
+    "material": "Eau de Parfum · 100 ml",
+    "descripcion": "Perfume femenino de aroma elegante y sofisticado. Versátil para el uso diario y con presencia suficiente para una salida especial.",
+    "imagenes": [
+      "img-web/soc-186-coog-chaveg-1.webp"
+    ],
+    "precioGissell": 85,
+    "precioSocio": 142,
+    "descripcionSocio": "Perfume femenino de aroma elegante y sofisticado. Versátil para el uso diario y con presencia suficiente para una salida especial."
+  },
+  {
+    "codigo": "SOC-187",
+    "nombre": "Aretes Artesanales Langosta",
+    "categoria": "Aretes",
+    "material": "Diseño artesanal",
+    "descripcion": "Aretes colgantes con forma de langosta roja, llenos de color y personalidad. Una pieza divertida que convierte cualquier look en protagonista.",
+    "imagenes": [
+      "img-web/soc-187-aretes-langosta-1.webp"
+    ],
+    "precioGissell": 90,
+    "precioSocio": 150,
+    "descripcionSocio": "Aretes colgantes con forma de langosta roja, llenos de color y personalidad. Una pieza divertida que convierte cualquier look en protagonista."
+  },
+  {
+    "codigo": "SOC-188",
+    "nombre": "Moños con Tulipán",
+    "categoria": "Accesorios",
+    "material": "Textil",
+    "descripcion": "Moños delicados con encaje, listón y tulipanes en distintos colores. Un accesorio romántico y femenino para darle un detalle especial al peinado.\n\nMenudeo $35 · Mayoreo $25",
+    "imagenes": [
+      "img-web/soc-188-monos-tulipan-1.webp",
+      "img-web/soc-188-monos-tulipan-2.webp",
+      "img-web/soc-188-monos-tulipan-3.webp"
+    ],
+    "precioGissell": 35,
+    "precioSocio": 42,
+    "descripcionSocio": "Moños delicados con encaje, listón y tulipanes en distintos colores. Un accesorio romántico y femenino para darle un detalle especial al peinado."
+  },
+  {
+    "codigo": "SOC-189",
+    "nombre": "Cinturón Corazones Noir",
+    "categoria": "Accesorios",
+    "material": "Acabado negro y dorado",
+    "descripcion": "Cinturón de corazones negros con detalles dorados. Su diseño estiliza la cintura y aporta un toque moderno y sofisticado.\n\nMenudeo $75 · Mayoreo $90",
+    "imagenes": [
+      "img-web/soc-189-cinturon-corazones-noir-1.webp"
+    ],
+    "precioGissell": 75,
+    "precioSocio": 150,
+    "descripcionSocio": "Cinturón de corazones negros con detalles dorados. Su diseño estiliza la cintura y aporta un toque moderno y sofisticado."
+  },
+  {
+    "codigo": "SOC-190",
+    "nombre": "Broqueles Caballito",
+    "categoria": "Aretes",
+    "material": "Plata tibetana",
+    "descripcion": "Broqueles pequeños con diseño de caballito y acabado dorado. Delicados, originales y fáciles de combinar.\n\nMenudeo $55 · Mayoreo $45",
+    "imagenes": [
+      "img-web/soc-190-broqueles-caballito-1.webp"
+    ],
+    "precioGissell": 55,
+    "precioSocio": 75,
+    "descripcionSocio": "Broqueles pequeños con diseño de caballito y acabado dorado. Delicados, originales y fáciles de combinar."
+  },
+  {
+    "codigo": "SOC-191",
+    "nombre": "Collar Eslabón Náutico",
+    "categoria": "Collares",
+    "material": "Acabado dorado",
+    "descripcion": "Collar de eslabones dorados entrelazados, con presencia y brillo. Su estilo clásico con aire náutico eleva incluso los looks más sencillos.",
+    "imagenes": [
+      "img-web/soc-191-collar-eslabon-nautico-1.webp",
+      "img-web/soc-191-collar-eslabon-nautico-2.webp"
+    ],
+    "precioGissell": 50,
+    "precioSocio": 42,
+    "descripcionSocio": "Collar de eslabones dorados entrelazados, con presencia y brillo. Su estilo clásico con aire náutico eleva incluso los looks más sencillos."
+  },
+  {
+    "codigo": "SOC-192",
+    "nombre": "Coordinado Elegancia con Borlas",
+    "categoria": "Coordinados",
+    "material": "Acabado dorado",
+    "descripcion": "Coordinado de collar y aretes con delicadas borlas doradas. Una propuesta elegante y estilizada que aporta movimiento y sofisticación.\n\nMenudeo $110 · Mayoreo $90",
+    "imagenes": [
+      "img-web/soc-192-coordinado-elegancia-borlas-1.webp",
+      "img-web/soc-192-coordinado-elegancia-borlas-2.webp"
+    ],
+    "precioGissell": 110,
+    "precioSocio": 150,
+    "descripcionSocio": "Coordinado de collar y aretes con delicadas borlas doradas. Una propuesta elegante y estilizada que aporta movimiento y sofisticación."
+  },
+  {
+    "codigo": "SOC-193",
+    "nombre": "Coordinado Hojas Ginkgo",
+    "categoria": "Coordinados",
+    "material": "Acabado dorado",
+    "descripcion": "Coordinado de collar y aretes inspirado en hojas de ginkgo. Su acabado brillante crea una pieza protagonista, elegante y contemporánea.\n\nMenudeo $110 · Mayoreo $95",
+    "imagenes": [
+      "img-web/soc-193-coordinado-hojas-ginkgo-1.webp",
+      "img-web/soc-193-coordinado-hojas-ginkgo-2.webp"
+    ],
+    "precioGissell": 110,
+    "precioSocio": 159,
+    "descripcionSocio": "Coordinado de collar y aretes inspirado en hojas de ginkgo. Su acabado brillante crea una pieza protagonista, elegante y contemporánea."
+  },
+  {
+    "codigo": "SOC-194",
+    "nombre": "Collar Niña con Corazones",
+    "categoria": "Collares",
+    "material": "Acabado dorado y zirconias",
+    "descripcion": "Collar con dije de niña en acabado dorado, acompañado de corazones con zirconias. Una pieza tierna y elegante para llevar cerca a alguien especial.\n\nMenudeo $75 · Mayoreo $65",
+    "imagenes": [
+      "img-web/soc-194-collar-nina-corazones-1.webp"
+    ],
+    "precioGissell": 75,
+    "precioSocio": 109,
+    "descripcionSocio": "Collar con dije de niña en acabado dorado, acompañado de corazones con zirconias. Una pieza tierna y elegante para llevar cerca a alguien especial."
+  },
+  {
+    "codigo": "SOC-195",
+    "nombre": "Collar Rosa Eterna",
+    "categoria": "Collares",
+    "material": "Acabado dorado",
+    "descripcion": "Collar romántico con dos capullos de rosa en rojo intenso, enmarcados por un acabado dorado y detalles brillantes.\n\nMenudeo $75 · Mayoreo $65",
+    "imagenes": [
+      "img-web/soc-195-collar-rosa-eterna-1.webp",
+      "img-web/soc-195-collar-rosa-eterna-2.webp"
+    ],
+    "precioGissell": 75,
+    "precioSocio": 109,
+    "descripcionSocio": "Collar romántico con dos capullos de rosa en rojo intenso, enmarcados por un acabado dorado y detalles brillantes."
+  },
+  {
+    "codigo": "SOC-196",
+    "nombre": "Coordinado Otoño",
+    "categoria": "Coordinados",
+    "material": "Acabado dorado",
+    "descripcion": "Coordinado de collar y aretes con tonos cálidos y formas orgánicas. Un diseño elegante con movimiento y personalidad.\n\n30% de descuento\nAntes $125\nAhora $88",
+    "imagenes": [
+      "img-web/soc-196-coordinado-otono-1.webp",
+      "img-web/soc-196-coordinado-otono-2.webp"
+    ],
+    "precioGissell": 88,
+    "precioSocio": 147,
+    "descripcionSocio": "Coordinado de collar y aretes con tonos cálidos y formas orgánicas. Un diseño elegante con movimiento y personalidad."
+  },
+  {
+    "codigo": "SOC-197",
+    "nombre": "Collar Flor de Perlas",
+    "categoria": "Collares",
+    "material": "Acabado dorado y perlas",
+    "descripcion": "Collar delicado con una pequeña flor formada por perlas blancas y centro dorado. Femenino, romántico y fácil de combinar.",
+    "imagenes": [
+      "img-web/soc-197-collar-flor-perlas-1.webp",
+      "img-web/soc-197-collar-flor-perlas-2.webp"
+    ],
+    "precioGissell": 50,
+    "precioSocio": 84,
+    "descripcionSocio": "Collar delicado con una pequeña flor formada por perlas blancas y centro dorado. Femenino, romántico y fácil de combinar."
+  },
+  {
+    "codigo": "SOC-198",
+    "nombre": "Collar Cristales Baguette",
+    "categoria": "Collares",
+    "material": "Acabado dorado y cristales",
+    "descripcion": "Collar de cristales rectangulares con tres piezas colgantes que aportan movimiento y brillo. Un diseño sofisticado para ocasiones especiales.\n\nMenudeo $80 · Mayoreo $70",
+    "imagenes": [
+      "img-web/soc-198-collar-cristales-baguette-1.webp"
+    ],
+    "precioGissell": 80,
+    "precioSocio": 117,
+    "descripcionSocio": "Collar de cristales rectangulares con tres piezas colgantes que aportan movimiento y brillo. Un diseño sofisticado para ocasiones especiales."
+  },
+  {
+    "codigo": "SOC-199",
+    "nombre": "Pendientes Largos",
+    "categoria": "Aretes",
+    "material": "Acero inoxidable",
+    "descripcion": "Pendientes largos de silueta fina y acabado dorado. Ligeros, modernos y perfectos para estilizar el rostro.",
+    "imagenes": [
+      "img-web/soc-199-pendientes-largos-1.webp",
+      "img-web/soc-199-pendientes-largos-2.webp"
+    ],
+    "precioGissell": 50,
+    "precioSocio": 84,
+    "descripcionSocio": "Pendientes largos de silueta fina y acabado dorado. Ligeros, modernos y perfectos para estilizar el rostro."
+  },
+  {
+    "codigo": "SOC-200",
+    "nombre": "Brazalete Ámbar Orgánico",
+    "categoria": "Brazaletes",
+    "material": "Efecto cristal",
+    "descripcion": "Brazalete abierto de diseño orgánico y acabado ámbar translúcido. Una pieza llamativa que captura la luz y transforma cualquier look.\n\n30% de descuento\nAntes $45\nAhora $32",
+    "imagenes": [
+      "img-web/soc-200-brazalete-ambar-organico-1.webp",
+      "img-web/soc-200-brazalete-ambar-organico-2.webp"
+    ],
+    "precioGissell": 32,
+    "precioSocio": 54,
+    "descripcionSocio": "Brazalete abierto de diseño orgánico y acabado ámbar translúcido. Una pieza llamativa que captura la luz y transforma cualquier look."
+  },
+  {
+    "codigo": "SOC-201",
+    "nombre": "Pulseras Pastel Marinas",
+    "categoria": "Pulseras",
+    "material": "Bisutería",
+    "descripcion": "Pulseras delicadas en tonos pastel con estrellas y conchitas. Un diseño fresco, femenino y lleno de color.\n\nMenudeo $35 · Mayoreo $25",
+    "imagenes": [
+      "img-web/soc-201-pulseras-pastel-marinas-1.webp"
+    ],
+    "precioGissell": 35,
+    "precioSocio": 42,
+    "descripcionSocio": "Pulseras delicadas en tonos pastel con estrellas y conchitas. Un diseño fresco, femenino y lleno de color."
+  },
+  {
+    "codigo": "SOC-202",
+    "nombre": "Pulseras Red",
+    "categoria": "Pulseras",
+    "material": "Bisutería",
+    "descripcion": "Pulseras de cuentas rojas con pequeños detalles decorativos. Alegres, llamativas y perfectas para añadir color al look.\n\nMenudeo $35 · Mayoreo $25",
+    "imagenes": [
+      "img-web/soc-202-pulseras-red-1.webp"
+    ],
+    "precioGissell": 35,
+    "precioSocio": 42,
+    "descripcionSocio": "Pulseras de cuentas rojas con pequeños detalles decorativos. Alegres, llamativas y perfectas para añadir color al look."
+  },
+  {
+    "codigo": "SOC-203",
+    "nombre": "Pulseras Destellos Pastel",
+    "categoria": "Pulseras",
+    "material": "Bisutería",
+    "descripcion": "Pulseras delicadas con cristales en tonos pastel y detalles dorados que reflejan la luz. Femeninas y fáciles de combinar.\n\nMenudeo $35 · Mayoreo $25",
+    "imagenes": [
+      "img-web/soc-203-pulseras-destellos-pastel-1.webp"
+    ],
+    "precioGissell": 35,
+    "precioSocio": 42,
+    "descripcionSocio": "Pulseras delicadas con cristales en tonos pastel y detalles dorados que reflejan la luz. Femeninas y fáciles de combinar."
+  },
+  {
+    "codigo": "SOC-204",
+    "nombre": "Jabón de Arroz",
+    "categoria": "Belleza",
+    "material": "Presentación individual",
+    "descripcion": "Jabón de arroz para complementar la rutina de limpieza corporal. Ayuda a mantener la piel limpia y con una sensación suave.\n\n$10 por pieza · $110 por docena",
+    "imagenes": [
+      "img-web/soc-204-jabon-arroz-1.webp"
+    ],
+    "precioGissell": 10,
+    "precioSocio": 16,
+    "descripcionSocio": "Jabón de arroz para complementar la rutina de limpieza corporal. Ayuda a mantener la piel limpia y con una sensación suave. Disponible por pieza o por docena."
+  },
+  {
+    "codigo": "SOC-205",
+    "nombre": "Coordinado Corazón Ámbar",
+    "categoria": "Coordinados",
+    "material": "Acabado dorado",
+    "descripcion": "Coordinado de collar y aretes con corazón central en tono ámbar y detalles dorados. Sofisticado, llamativo y equilibrado entre lo clásico y lo moderno.\n\nMenudeo $165 · Mayoreo $145",
+    "imagenes": [
+      "img-web/soc-205-coordinado-corazon-ambar-1.webp",
+      "img-web/soc-205-coordinado-corazon-ambar-2.webp"
+    ],
+    "precioGissell": 165,
+    "precioSocio": 242,
+    "descripcionSocio": "Coordinado de collar y aretes con corazón central en tono ámbar y detalles dorados. Sofisticado, llamativo y equilibrado entre lo clásico y lo moderno."
+  },
+  {
+    "codigo": "SOC-206",
+    "nombre": "Coordinado Flor Vintage",
+    "categoria": "Coordinados",
+    "material": "Acabado dorado y esmalte",
+    "descripcion": "Coordinado de collar de doble cadena y aretes. El dije floral combina pétalos rojos con un centro ámbar para lograr un estilo vintage, cálido y sofisticado.\n\nMenudeo $165 · Mayoreo $145",
+    "imagenes": [
+      "img-web/soc-206-coordinado-flor-vintage-1.webp"
+    ],
+    "precioGissell": 165,
+    "precioSocio": 242,
+    "descripcionSocio": "Coordinado de collar de doble cadena y aretes. El dije floral combina pétalos rojos con un centro ámbar para lograr un estilo vintage, cálido y sofisticado."
+  },
+  {
+    "codigo": "SOC-207",
+    "nombre": "Pinza para Cabello Hello Kitty",
+    "categoria": "Accesorios",
+    "material": "Plástico y resorte metálico",
+    "descripcion": "Pinza para el cabello con diseño de Hello Kitty y su característico moño. Disponible en distintos colores.\n\n$20",
+    "imagenes": [
+      "img-web/soc-207-pinza-cabello-hello-kitty-1.webp",
+      "img-web/soc-207-pinza-cabello-hello-kitty-2.webp",
+      "img-web/soc-207-pinza-cabello-hello-kitty-3.webp"
+    ],
+    "precioGissell": 20,
+    "precioSocio": 34,
+    "descripcionSocio": "Pinza para el cabello con diseño de Hello Kitty y su característico moño. Disponible en distintos colores."
+  },
+  {
+    "codigo": "SOC-208",
+    "nombre": "Lápiz Delineador Hello Kitty",
+    "categoria": "Maquillaje",
+    "material": "Delineador líquido tipo plumón",
+    "descripcion": "Delineador negro Hello Kitty con punta fina para una aplicación rápida y precisa. Resistente al agua, de pigmentación intensa y duración de hasta 24 horas.\n\n$10 por pieza",
+    "imagenes": [
+      "img-web/soc-208-lapiz-delineador-hello-kitty-1.webp",
+      "img-web/soc-208-lapiz-delineador-hello-kitty-2.webp",
+      "img-web/soc-208-lapiz-delineador-hello-kitty-3.webp"
+    ],
+    "precioGissell": 10,
+    "precioSocio": 17,
+    "descripcionSocio": "Delineador negro Hello Kitty con punta fina para una aplicación rápida y precisa. Resistente al agua, de pigmentación intensa y duración de hasta 24 horas."
+  },
+  {
+    "codigo": "SOC-209",
+    "nombre": "Sacapuntas Doble",
+    "categoria": "Belleza",
+    "material": "Plástico translúcido",
+    "descripcion": "Sacapuntas doble para lápices estándar y gruesos. Ideal para delineadores de ojos y labiales en lápiz.\n\n$10",
+    "precioGissell": 10,
+    "precioSocio": 17,
+    "imagenes": [
+      "img-web/soc-209-sacapuntas-doble-1.webp",
+      "img-web/soc-209-sacapuntas-doble-3.webp"
+    ],
+    "descripcionSocio": "Sacapuntas doble para lápices estándar y gruesos. Ideal para delineadores de ojos y labiales en lápiz."
+  },
+  {
+    "codigo": "SOC-210",
+    "nombre": "Cute Pimple Patch",
+    "categoria": "Belleza",
+    "material": "Parches hidrocoloides",
+    "descripcion": "Paquete con 40 parches para granitos, disponibles en diferentes diseños y colores. Discretos, bonitos y prácticos.\n\n$15 por paquete · $120 por docena",
+    "precioGissell": 15,
+    "precioSocio": 17,
+    "imagenes": [
+      "img-web/soc-210-cute-pimple-patch-1.webp",
+      "img-web/soc-209-sacapuntas-doble-2.webp",
+      "img-web/soc-210-cute-pimple-patch-2.webp",
+      "img-web/soc-210-cute-pimple-patch-3.webp"
+    ],
+    "descripcionSocio": "Paquete con 40 parches para granitos, disponibles en diferentes diseños y colores. Discretos, bonitos y prácticos.",
+    "imagenesSocio": [
+      "img-web/soc-209-sacapuntas-doble-2.webp",
+      "img-web/soc-210-cute-pimple-patch-2.webp",
+      "img-web/soc-210-cute-pimple-patch-3.webp"
+    ]
+  },
+  {
+    "codigo": "SOC-211",
+    "nombre": "Gomas para Rizador de Pestañas",
+    "categoria": "Belleza",
+    "material": "Silicona",
+    "descripcion": "Almohadillas de repuesto de silicona para rizador de pestañas.\n\n$10",
+    "precioGissell": 10,
+    "precioSocio": 17,
+    "imagenes": [
+      "img-web/soc-211-gomas-para-rizador-de-pestanas-1.webp"
+    ],
+    "descripcionSocio": "Almohadillas de repuesto de silicona para rizador de pestañas."
+  },
+  {
+    "codigo": "SOC-212",
+    "nombre": "Diadema para Skincare y Maquillaje",
+    "categoria": "Accesorios",
+    "material": "Tela suave y elástica",
+    "descripcion": "Mantiene el cabello lejos del rostro durante el maquillaje, la rutina de skincare o el lavado de cara. Suave, cómoda y ajustable.\n\n$30 por pieza · $240 por docena",
+    "precioGissell": 30,
+    "precioSocio": 34,
+    "imagenes": [
+      "img-web/soc-212-diadema-para-skincare-y-maquillaje-1.webp"
+    ],
+    "descripcionSocio": "Mantiene el cabello lejos del rostro durante el maquillaje, la rutina de skincare o el lavado de cara. Suave, cómoda y ajustable."
+  },
+  {
+    "codigo": "SOC-213",
+    "nombre": "Cepillos Desechables para Cejas y Pestañas",
+    "categoria": "Belleza",
+    "material": "Mango con glitter",
+    "descripcion": "Cepillos tipo spoolie con mango transparente con brillos y cerdas de colores. Ideales para cejas y pestañas.\n\n$10",
+    "precioGissell": 10,
+    "precioSocio": 17,
+    "imagenes": [
+      "img-web/soc-213-cepillos-desechables-para-cejas-y-pestanas-1.webp",
+      "img-web/soc-213-cepillos-desechables-para-cejas-y-pestanas-2.webp",
+      "img-web/soc-213-cepillos-desechables-para-cejas-y-pestanas-3.webp",
+      "img-web/soc-213-cepillos-desechables-para-cejas-y-pestanas-4.webp"
+    ],
+    "descripcionSocio": "Cepillos tipo spoolie con mango transparente con brillos y cerdas de colores. Ideales para cejas y pestañas."
+  },
+  {
+    "codigo": "SOC-214",
+    "nombre": "Sellador y Adhesivo para Pestañas 2 en 1",
+    "categoria": "Maquillaje",
+    "material": "Bond & Seal",
+    "descripcion": "Adhesivo negro y sellador transparente para extensiones de pestañas en grupo. Secado rápido, aplicación precisa y mayor duración.\n\n$35",
+    "precioGissell": 35,
+    "precioSocio": 59,
+    "imagenes": [
+      "img-web/soc-214-sellador-y-adhesivo-para-pestanas-2-en-1-1.webp",
+      "img-web/soc-214-sellador-y-adhesivo-para-pestanas-2-en-1-2.webp",
+      "img-web/soc-214-sellador-y-adhesivo-para-pestanas-2-en-1-3.webp",
+      "img-web/soc-214-sellador-y-adhesivo-para-pestanas-2-en-1-4.webp"
+    ],
+    "descripcionSocio": "Adhesivo negro y sellador transparente para extensiones de pestañas en grupo. Secado rápido, aplicación precisa y mayor duración."
+  },
+  {
+    "codigo": "SOC-215",
+    "nombre": "Calcetas de Algodón con Diseños",
+    "categoria": "Accesorios",
+    "material": "Algodón",
+    "descripcion": "Calcetas cómodas con diferentes diseños para cada ocasión.\n\n$10",
+    "precioGissell": 10,
+    "precioSocio": 17,
+    "imagenes": [
+      "img-web/soc-215-calcetas-de-algodon-con-disenos-1.webp",
+      "img-web/soc-215-calcetas-de-algodon-con-disenos-2.webp",
+      "img-web/soc-215-calcetas-de-algodon-con-disenos-3.webp",
+      "img-web/soc-215-calcetas-de-algodon-con-disenos-4.webp",
+      "img-web/soc-215-calcetas-de-algodon-con-disenos-5.webp",
+      "img-web/soc-215-calcetas-de-algodon-con-disenos-6.webp"
+    ],
+    "descripcionSocio": "Calcetas cómodas con diferentes diseños para cada ocasión."
+  },
+  {
+    "codigo": "SOC-216",
+    "nombre": "Kit de Pestañas Norvina",
+    "categoria": "Maquillaje",
+    "material": "Kit completo",
+    "descripcion": "Kit para extensiones de pestañas desde casa. Incluye pinzas, bond, sellador y 240 pestañas reutilizables de 8 a 16 mm.\n\n$60",
+    "precioGissell": 60,
+    "precioSocio": 100,
+    "imagenes": [
+      "img-web/soc-216-kit-de-pestanas-norvina-1.webp",
+      "img-web/soc-216-kit-de-pestanas-norvina-2.webp",
+      "img-web/soc-216-kit-de-pestanas-norvina-3.webp",
+      "img-web/soc-216-kit-de-pestanas-norvina-4.webp",
+      "img-web/soc-216-kit-de-pestanas-norvina-5.webp",
+      "img-web/soc-216-kit-de-pestanas-norvina-6.webp",
+      "img-web/soc-216-kit-de-pestanas-norvina-7.webp",
+      "img-web/soc-216-kit-de-pestanas-norvina-8.webp",
+      "img-web/soc-216-kit-de-pestanas-norvina-9.webp",
+      "img-web/soc-216-kit-de-pestanas-norvina-10.webp",
+      "img-web/soc-216-kit-de-pestanas-norvina-11.webp",
+      "img-web/soc-216-kit-de-pestanas-norvina-12.webp",
+      "img-web/soc-216-kit-de-pestanas-norvina-13.webp"
+    ],
+    "descripcionSocio": "Kit para extensiones de pestañas desde casa. Incluye pinzas, bond, sellador y 240 pestañas reutilizables de 8 a 16 mm."
+  },
+  {
+    "codigo": "SOC-217",
+    "nombre": "Parche Antiacné de Corazones",
+    "categoria": "Belleza",
+    "material": "Parches hidrocoloides",
+    "descripcion": "Parches en forma de corazón diseñados para proteger y calmar imperfecciones.\n\n$20",
+    "precioGissell": 20,
+    "precioSocio": 34,
+    "imagenes": [
+      "img-web/soc-217-parche-antiacne-de-corazones-1.webp",
+      "img-web/soc-217-parche-antiacne-de-corazones-2.webp"
+    ],
+    "descripcionSocio": "Parches en forma de corazón diseñados para proteger y calmar imperfecciones."
+  },
+  {
+    "codigo": "SOC-218",
+    "nombre": "Pinzas para Cabello de Estrella",
+    "categoria": "Accesorios",
+    "material": "Plástico",
+    "descripcion": "Paquete de pinzas para el cabello con forma de estrella en colores alegres.\n\n$10 por paquete",
+    "precioGissell": 10,
+    "precioSocio": 17,
+    "imagenes": [
+      "img-web/soc-218-pinzas-para-cabello-de-estrella-1.webp",
+      "img-web/soc-218-pinzas-para-cabello-de-estrella-2.webp",
+      "img-web/soc-218-pinzas-para-cabello-de-estrella-3.webp",
+      "img-web/soc-218-pinzas-para-cabello-de-estrella-5.webp"
+    ],
+    "descripcionSocio": "Paquete de pinzas para el cabello con forma de estrella en colores alegres."
+  },
+  {
+    "codigo": "SOC-219",
+    "nombre": "Ballerinas para Cabello",
+    "categoria": "Accesorios",
+    "material": "Tela elástica",
+    "descripcion": "Ballerinas en diversos colores para mantener el cabello fuera del rostro. La docena incluye dos piezas de cada color.\n\n$55 por docena",
+    "precioGissell": 55,
+    "precioSocio": 92,
+    "imagenes": [
+      "img-web/soc-219-ballerinas-para-cabello-1.webp",
+      "img-web/soc-219-ballerinas-para-cabello-2.webp",
+      "img-web/soc-219-ballerinas-para-cabello-3.webp",
+      "img-web/soc-218-pinzas-para-cabello-de-estrella-4.webp"
+    ],
+    "descripcionSocio": "Ballerinas en diversos colores para mantener el cabello fuera del rostro. La docena incluye dos piezas de cada color."
+  },
+  {
+    "codigo": "SOC-220",
+    "nombre": "Lazo Grande para Cabello",
+    "categoria": "Accesorios",
+    "material": "Tela",
+    "descripcion": "Moño grande disponible en distintos colores para darle un toque femenino y llamativo al peinado.\n\n$15 c/u · $125 por docena",
+    "precioGissell": 15,
+    "precioSocio": 18,
+    "imagenes": [
+      "img-web/soc-220-lazo-grande-para-cabello-1.webp"
+    ],
+    "descripcionSocio": "Moño grande disponible en distintos colores para darle un toque femenino y llamativo al peinado."
+  },
+  {
+    "codigo": "SOC-221",
+    "nombre": "Paleta de Sombras",
+    "categoria": "Maquillaje",
+    "material": "Sombras compactas",
+    "descripcion": "Paletas de sombras con buena pigmentación y combinaciones de tonos para distintos estilos.\n\n$35",
+    "precioGissell": 35,
+    "precioSocio": 59,
+    "imagenes": [
+      "img-web/soc-221-paleta-de-sombras-1.webp",
+      "img-web/soc-221-paleta-de-sombras-2.webp",
+      "img-web/soc-221-paleta-de-sombras-3.webp",
+      "img-web/soc-221-paleta-de-sombras-4.webp",
+      "img-web/soc-221-paleta-de-sombras-5.webp"
+    ],
+    "descripcionSocio": "Paletas de sombras con buena pigmentación y combinaciones de tonos para distintos estilos."
+  },
+  {
+    "codigo": "SOC-222",
+    "nombre": "Sombras en Barra Norvina Stay & Play",
+    "categoria": "Maquillaje",
+    "material": "Crayón cremoso retráctil",
+    "descripcion": "Sombras cremosas retráctiles, suaves, pigmentadas y de larga duración. Disponibles en seis tonos.\n\n$15 c/u · Gama de 6 por $60",
+    "precioGissell": 15,
+    "precioSocio": 17,
+    "imagenes": [
+      "img-web/soc-222-sombras-en-barra-norvina-stay-play-1.webp",
+      "img-web/soc-222-sombras-en-barra-norvina-stay-play-2.webp",
+      "img-web/soc-222-sombras-en-barra-norvina-stay-play-3.webp",
+      "img-web/soc-222-sombras-en-barra-norvina-stay-play-4.webp"
+    ],
+    "descripcionSocio": "Sombras cremosas retráctiles, suaves, pigmentadas y de larga duración. Disponibles en seis tonos."
+  },
+  {
+    "codigo": "SOC-223",
+    "nombre": "Rubor Líquido Sweet Cheek",
+    "categoria": "Maquillaje",
+    "material": "Rubor líquido multiusos",
+    "descripcion": "Rubor líquido Favorbeauty de fácil aplicación, disponible en seis tonos numerados del 01 al 06.\n\n$20",
+    "precioGissell": 20,
+    "precioSocio": 34,
+    "imagenes": [
+      "img-web/soc-223-rubor-liquido-sweet-cheek-1.webp",
+      "img-web/soc-223-rubor-liquido-sweet-cheek-2.webp",
+      "img-web/soc-223-rubor-liquido-sweet-cheek-3.webp"
+    ],
+    "descripcionSocio": "Rubor líquido Favorbeauty de fácil aplicación, disponible en seis tonos numerados del 01 al 06."
+  },
+  {
+    "codigo": "SOC-224",
+    "nombre": "Polvo Suelto Pink Me",
+    "categoria": "Maquillaje",
+    "material": "Polvo ultrafino",
+    "descripcion": "Polvo suelto de efecto mate seda que ayuda a fijar el maquillaje y controlar el brillo. Incluye espejo y borla; disponible en tres tonos.\n\n$35",
+    "precioGissell": 35,
+    "precioSocio": 59,
+    "imagenes": [
+      "img-web/soc-224-polvo-suelto-pink-me-1.webp",
+      "img-web/soc-224-polvo-suelto-pink-me-2.webp",
+      "img-web/soc-224-polvo-suelto-pink-me-3.webp",
+      "img-web/soc-224-polvo-suelto-pink-me-4.webp"
+    ],
+    "descripcionSocio": "Polvo suelto de efecto mate seda que ayuda a fijar el maquillaje y controlar el brillo. Incluye espejo y borla; disponible en tres tonos."
+  },
+  {
+    "codigo": "SOC-225",
+    "nombre": "Labial Matte Favorbeauty",
+    "categoria": "Maquillaje",
+    "material": "Labial mate",
+    "descripcion": "Color intenso con acabado mate aterciopelado, textura ligera y cómoda. Disponible en seis tonos.\n\n$10 cada uno",
+    "precioGissell": 10,
+    "precioSocio": 17,
+    "imagenes": [
+      "img-web/soc-225-labial-matte-favorbeauty-1.webp",
+      "img-web/soc-225-labial-matte-favorbeauty-2.webp",
+      "img-web/soc-225-labial-matte-favorbeauty-3.webp",
+      "img-web/soc-225-labial-matte-favorbeauty-4.webp",
+      "img-web/soc-225-labial-matte-favorbeauty-5.webp"
+    ],
+    "descripcionSocio": "Color intenso con acabado mate aterciopelado, textura ligera y cómoda. Disponible en seis tonos."
+  },
+  {
+    "codigo": "SOC-226",
+    "nombre": "Delineador en Lápiz con Sacapuntas",
+    "categoria": "Maquillaje",
+    "material": "Lápiz delineador",
+    "descripcion": "Delineador en lápiz con sacapuntas integrado, disponible en tonos negro y café.\n\n$10",
+    "precioGissell": 10,
+    "precioSocio": 17,
+    "imagenes": [
+      "img-web/soc-226-delineador-en-lapiz-con-sacapuntas-1.webp",
+      "img-web/soc-226-delineador-en-lapiz-con-sacapuntas-2.webp",
+      "img-web/soc-226-delineador-en-lapiz-con-sacapuntas-3.webp"
+    ],
+    "descripcionSocio": "Delineador en lápiz con sacapuntas integrado, disponible en tonos negro y café."
+  },
+  {
+    "codigo": "SOC-227",
+    "nombre": "Corrector Butter Bear",
+    "categoria": "Maquillaje",
+    "material": "Corrector cremoso",
+    "descripcion": "Corrector y contorno de textura suave y fácil de difuminar. Ideal para corregir, iluminar y definir el rostro.\n\n$10",
+    "precioGissell": 10,
+    "precioSocio": 17,
+    "imagenes": [
+      "img-web/soc-227-corrector-butter-bear-1.webp"
+    ],
+    "descripcionSocio": "Corrector y contorno de textura suave y fácil de difuminar. Ideal para corregir, iluminar y definir el rostro."
+  },
+  {
+    "codigo": "SOC-228",
+    "nombre": "Polvo Traslúcido Banana",
+    "categoria": "Maquillaje",
+    "material": "Polvo suelto",
+    "descripcion": "Polvo traslúcido ligero para sellar el maquillaje y controlar el brillo. Disponible en diferentes tonos.\n\n$20",
+    "precioGissell": 20,
+    "precioSocio": 34,
+    "imagenes": [
+      "img-web/soc-228-polvo-traslucido-banana-1.webp",
+      "img-web/soc-228-polvo-traslucido-banana-2.webp",
+      "img-web/soc-228-polvo-traslucido-banana-3.webp",
+      "img-web/soc-228-polvo-traslucido-banana-4.webp",
+      "img-web/soc-228-polvo-traslucido-banana-5.webp"
+    ],
+    "descripcionSocio": "Polvo traslúcido ligero para sellar el maquillaje y controlar el brillo. Disponible en diferentes tonos."
+  },
+  {
+    "codigo": "SOC-229",
+    "nombre": "Aceite Labial Strawberry",
+    "categoria": "Maquillaje",
+    "material": "Aceite labial",
+    "descripcion": "Aceite labial con aroma a fresa que aporta brillo y una sensación suave.\n\n$10",
+    "precioGissell": 10,
+    "precioSocio": 17,
+    "imagenes": [
+      "img-web/soc-229-aceite-labial-strawberry-1.webp"
+    ],
+    "descripcionSocio": "Aceite labial con aroma a fresa que aporta brillo y una sensación suave."
+  },
+  {
+    "codigo": "SOC-230",
+    "nombre": "Delineador 36H",
+    "categoria": "Maquillaje",
+    "material": "Delineador líquido tipo plumón",
+    "descripcion": "Delineador negro de larga duración con punta precisa. Disponible con diseños de corazón, estrella o flor.\n\n$10",
+    "precioGissell": 10,
+    "precioSocio": 17,
+    "imagenes": [
+      "img-web/soc-230-delineador-36h-1.webp",
+      "img-web/soc-230-delineador-36h-2.webp",
+      "img-web/soc-230-delineador-36h-3.webp",
+      "img-web/soc-230-delineador-36h-4.webp"
+    ],
+    "descripcionSocio": "Delineador negro de larga duración con punta precisa. Disponible con diseños de corazón, estrella o flor."
+  },
+  {
+    "codigo": "SOC-231",
+    "nombre": "Cepillo Desenredante",
+    "categoria": "Accesorios",
+    "material": "Plástico flexible",
+    "descripcion": "Cepillo flexible para desenredar el cabello de forma cómoda.\n\n$35 c/u · Promoción 2 por $50",
+    "precioGissell": 35,
+    "precioSocio": 42,
+    "imagenes": [
+      "img-web/soc-231-cepillo-desenredante-1.webp",
+      "img-web/soc-231-cepillo-desenredante-2.webp",
+      "img-web/soc-231-cepillo-desenredante-3.webp"
+    ],
+    "descripcionSocio": "Cepillo flexible para desenredar el cabello de forma cómoda."
+  },
+  {
+    "codigo": "SOC-232",
+    "nombre": "Abanico Grande",
+    "categoria": "Accesorios",
+    "material": "Plástico y tela",
+    "descripcion": "Abanico grande disponible en negro, azul cielo, rojo, rosa, blanco y azul rey.\n\n$55",
+    "precioGissell": 55,
+    "precioSocio": 92,
+    "imagenes": [
+      "img-web/soc-232-abanico-grande-1.webp",
+      "img-web/soc-232-abanico-grande-2.webp",
+      "img-web/soc-232-abanico-grande-3.webp"
+    ],
+    "descripcionSocio": "Abanico grande disponible en negro, azul cielo, rojo, rosa, blanco y azul rey."
+  },
+  {
+    "codigo": "SOC-233",
+    "nombre": "Ligas Elásticas para Cabello",
+    "categoria": "Accesorios",
+    "material": "Elástico",
+    "descripcion": "Ligas elásticas prácticas y resistentes, disponibles en varios colores para diferentes peinados.\n\n$10 por bolsa",
+    "precioGissell": 10,
+    "precioSocio": 17,
+    "imagenes": [
+      "img-web/soc-233-ligas-elasticas-para-cabello-1.webp",
+      "img-web/soc-233-ligas-elasticas-para-cabello-2.webp",
+      "img-web/soc-233-ligas-elasticas-para-cabello-3.webp",
+      "img-web/soc-233-ligas-elasticas-para-cabello-4.webp",
+      "img-web/soc-233-ligas-elasticas-para-cabello-5.webp"
+    ],
+    "descripcionSocio": "Ligas elásticas prácticas y resistentes, disponibles en varios colores para diferentes peinados."
+  },
+  {
+    "codigo": "SOC-234",
+    "nombre": "Espejo de Bolsillo",
+    "categoria": "Accesorios",
+    "material": "Plástico y espejo",
+    "descripcion": "Espejo compacto y ligero, ideal para llevar en el bolso.\n\n$10",
+    "precioGissell": 10,
+    "precioSocio": 17,
+    "imagenes": [
+      "img-web/soc-234-espejo-de-bolsillo-1.webp"
+    ],
+    "descripcionSocio": "Espejo compacto y ligero, ideal para llevar en el bolso."
+  },
+  {
+    "codigo": "SOC-235",
+    "nombre": "Pasadores Pastel de Estrellas y Flores",
+    "categoria": "Accesorios",
+    "material": "Plástico",
+    "descripcion": "Paquete de pasadores de estrellas y flores en colores pastel.\n\n$10 por paquete · $95 por docena",
+    "precioGissell": 10,
+    "precioSocio": 14,
+    "imagenes": [
+      "img-web/soc-235-pasadores-pastel-de-estrellas-y-flores-1.webp"
+    ],
+    "descripcionSocio": "Paquete de pasadores de estrellas y flores en colores pastel."
+  },
+  {
+    "codigo": "SOC-236",
+    "nombre": "SANIYE Super Stay",
+    "categoria": "Maquillaje",
+    "material": "Producto labial",
+    "descripcion": "Producto labial SANIYE Super Stay en tonos favorecedores.\n\n$35",
+    "precioGissell": 35,
+    "precioSocio": 59,
+    "imagenes": [
+      "img-web/soc-236-saniye-super-stay-2.webp"
+    ],
+    "descripcionSocio": "Producto labial SANIYE Super Stay en tonos favorecedores."
+  },
+  {
+    "codigo": "SOC-237",
+    "nombre": "Labial Humectante Bissú",
+    "categoria": "Maquillaje",
+    "material": "Aceites de coco y jojoba",
+    "descripcion": "Labial humectante con aceites de origen natural de coco y jojoba. Su textura suave se desliza fácilmente y aporta color intenso y uniforme.\n\n$65 c/u",
+    "precioGissell": 65,
+    "precioSocio": 109,
+    "imagenes": [
+      "img-web/soc-237-labial-humectante-bissu-1.webp",
+      "img-web/soc-237-labial-humectante-bissu-2.webp",
+      "img-web/soc-237-labial-humectante-bissu-3.webp",
+      "img-web/soc-237-labial-humectante-bissu-4.webp",
+      "img-web/soc-237-labial-humectante-bissu-5.webp",
+      "img-web/soc-237-labial-humectante-bissu-6.webp",
+      "img-web/soc-237-labial-humectante-bissu-7.webp",
+      "img-web/soc-237-labial-humectante-bissu-8.webp",
+      "img-web/soc-237-labial-humectante-bissu-9.webp"
+    ],
+    "descripcionSocio": "Labial humectante con aceites de origen natural de coco y jojoba. Su textura suave se desliza fácilmente y aporta color intenso y uniforme."
+  },
+  {
+    "codigo": "SOC-238",
+    "nombre": "Mini Tubbees Candy SANIYE",
+    "categoria": "Perfumería",
+    "material": "Eau de toilette · 20 ml",
+    "descripcion": "Fragancias inspiradas en dulces, frutas y postres, con aromas que van de la vainilla y el chocolate a notas frutales y cítricas. Tamaño ideal para llevar en el bolso.\n\n$35 c/u",
+    "precioGissell": 35,
+    "precioSocio": 59,
+    "imagenes": [
+      "img-web/soc-238-mini-tubbees-candy-saniye-1.webp",
+      "img-web/soc-238-mini-tubbees-candy-saniye-2.webp",
+      "img-web/soc-238-mini-tubbees-candy-saniye-3.webp",
+      "img-web/soc-238-mini-tubbees-candy-saniye-4.webp"
+    ],
+    "descripcionSocio": "Fragancias inspiradas en dulces, frutas y postres, con aromas que van de la vainilla y el chocolate a notas frutales y cítricas. Tamaño ideal para llevar en el bolso."
+  },
+  {
+    "codigo": "SOC-239",
+    "nombre": "Coordinado Floral Nacarado",
+    "categoria": "Coordinados",
+    "material": "Acero inoxidable",
+    "descripcion": "Collar y aretes con flores nacaradas en tonos rojo, blanco y rosa. Un diseño femenino que aporta color al look.\n\nMenudeo $165 · Mayoreo $145",
+    "precioGissell": 165,
+    "precioSocio": 242,
+    "imagenes": [
+      "img-web/soc-239-coordinado-floral-nacarado-1.webp",
+      "img-web/soc-239-coordinado-floral-nacarado-2.webp",
+      "img-web/soc-239-coordinado-floral-nacarado-3.webp"
+    ],
+    "descripcionSocio": "Collar y aretes con flores nacaradas en tonos rojo, blanco y rosa. Un diseño femenino que aporta color al look."
+  },
+  {
+    "codigo": "SOC-240",
+    "nombre": "Coordinado Floral Dorado",
+    "categoria": "Coordinados",
+    "material": "Acero inoxidable 316L",
+    "descripcion": "Coordinado floral con detalles dorados, disponible en blanco y en colores.\n\nMenudeo $175 · Mayoreo $145",
+    "precioGissell": 175,
+    "precioSocio": 242,
+    "imagenes": [
+      "img-web/soc-240-coordinado-floral-dorado-1.webp",
+      "img-web/soc-240-coordinado-floral-dorado-2.webp",
+      "img-web/soc-240-coordinado-floral-dorado-3.webp",
+      "img-web/soc-240-coordinado-floral-dorado-4.webp"
+    ],
+    "descripcionSocio": "Coordinado floral con detalles dorados, disponible en blanco y en colores."
+  },
+  {
+    "codigo": "SOC-241",
+    "nombre": "Brazaletes Florales de Colores",
+    "categoria": "Brazaletes",
+    "material": "Metal dorado y esmalte",
+    "descripcion": "Brazaletes florales con detalles dorados y flores en tonos vibrantes.\n\nMenudeo $95 · Mayoreo $80",
+    "precioGissell": 95,
+    "precioSocio": 134,
+    "imagenes": [
+      "img-web/soc-241-brazaletes-florales-de-colores-1.webp",
+      "img-web/soc-241-brazaletes-florales-de-colores-2.webp"
+    ],
+    "descripcionSocio": "Brazaletes florales con detalles dorados y flores en tonos vibrantes."
+  },
+  {
+    "codigo": "SOC-242",
+    "nombre": "Brazaletes Dorados Esmaltados",
+    "categoria": "Brazaletes",
+    "material": "Metal dorado y esmalte",
+    "descripcion": "Brazaletes dorados con detalles esmaltados en tonos rosa, verde y café.\n\nMenudeo $95 · Mayoreo $80",
+    "precioGissell": 95,
+    "precioSocio": 134,
+    "imagenes": [
+      "img-web/soc-242-brazaletes-dorados-esmaltados-1.webp",
+      "img-web/soc-242-brazaletes-dorados-esmaltados-2.webp"
+    ],
+    "descripcionSocio": "Brazaletes dorados con detalles esmaltados en tonos rosa, verde y café."
+  },
+  {
+    "codigo": "SOC-243",
+    "nombre": "Coordinado Estrella de Mar Verde",
+    "categoria": "Coordinados",
+    "material": "Acero inoxidable",
+    "descripcion": "Collar dorado estilo panza de víbora con dije de estrella de mar verde y aretes a juego.\n\nMenudeo $85 · Mayoreo $80",
+    "precioGissell": 85,
+    "precioSocio": 134,
+    "imagenes": [
+      "img-web/soc-243-coordinado-estrella-de-mar-verde-1.webp",
+      "img-web/soc-243-coordinado-estrella-de-mar-verde-2.webp"
+    ],
+    "descripcionSocio": "Collar dorado estilo panza de víbora con dije de estrella de mar verde y aretes a juego."
+  },
+  {
+    "codigo": "SOC-244",
+    "nombre": "Hops Mini",
+    "categoria": "Aretes",
+    "material": "Acero inoxidable",
+    "descripcion": "Hops mini ideales para perforaciones, disponibles en tres tamaños.\n\n$10 por par",
+    "precioGissell": 10,
+    "precioSocio": 17,
+    "imagenes": [
+      "img-web/soc-244-hops-mini-1.webp",
+      "img-web/soc-244-hops-mini-2.webp"
+    ],
+    "descripcionSocio": "Hops mini ideales para perforaciones, disponibles en tres tamaños."
+  },
+  {
+    "codigo": "SOC-245",
+    "nombre": "Coordinado Floral Rojo con Perla",
+    "categoria": "Coordinados",
+    "material": "Metal dorado",
+    "descripcion": "Collar y aretes con flores rojas, detalles dorados y centro tipo perla.\n\nMenudeo $85 · Mayoreo $80",
+    "precioGissell": 85,
+    "precioSocio": 134,
+    "imagenes": [
+      "img-web/soc-245-coordinado-floral-rojo-con-perla-1.webp",
+      "img-web/soc-245-coordinado-floral-rojo-con-perla-2.webp"
+    ],
+    "descripcionSocio": "Collar y aretes con flores rojas, detalles dorados y centro tipo perla."
+  },
+  {
+    "codigo": "SOC-246",
+    "nombre": "Coordinado Flor Roja",
+    "categoria": "Coordinados",
+    "material": "Metal dorado",
+    "descripcion": "Collar dorado con dije de flor roja y aretes a juego. Femenino, elegante y lleno de color.\n\nMenudeo $85 · Mayoreo $80",
+    "precioGissell": 85,
+    "precioSocio": 134,
+    "imagenes": [
+      "img-web/soc-246-coordinado-flor-roja-1.webp",
+      "img-web/soc-246-coordinado-flor-roja-2.webp"
+    ],
+    "descripcionSocio": "Collar dorado con dije de flor roja y aretes a juego. Femenino, elegante y lleno de color."
+  },
+  {
+    "codigo": "SOC-247",
+    "nombre": "Coordinado Caracol Marino",
+    "categoria": "Coordinados",
+    "material": "Metal dorado",
+    "descripcion": "Collar con dije de caracol en relieve y aretes a juego, con acabado dorado texturizado.\n\nMenudeo $85 · Mayoreo $70",
+    "precioGissell": 85,
+    "precioSocio": 117,
+    "imagenes": [
+      "img-web/soc-247-coordinado-caracol-marino-1.webp",
+      "img-web/soc-247-coordinado-caracol-marino-2.webp",
+      "img-web/soc-251-coordinado-flor-blanca-1.webp"
+    ],
+    "descripcionSocio": "Collar con dije de caracol en relieve y aretes a juego, con acabado dorado texturizado."
+  },
+  {
+    "codigo": "SOC-248",
+    "nombre": "Tobilleras con Colgantes Marinos",
+    "categoria": "Tobilleras",
+    "material": "Acero inoxidable",
+    "descripcion": "Tobilleras doradas con estrellas, conchas, perlas y otros colgantes inspirados en el mar.\n\nMenudeo $60 · Mayoreo $50",
+    "precioGissell": 60,
+    "precioSocio": 84,
+    "imagenes": [
+      "img-web/soc-248-tobilleras-con-colgantes-marinos-1.webp",
+      "img-web/soc-248-tobilleras-con-colgantes-marinos-2.webp"
+    ],
+    "descripcionSocio": "Tobilleras doradas con estrellas, conchas, perlas y otros colgantes inspirados en el mar."
+  },
+  {
+    "codigo": "SOC-249",
+    "nombre": "Aretes Maxi Flor",
+    "categoria": "Aretes",
+    "material": "Acero inoxidable 316L",
+    "descripcion": "Pendientes maxi en forma de flor, llamativos y ligeros para elevar cualquier look.\n\nMenudeo $60 · Mayoreo $56",
+    "precioGissell": 60,
+    "precioSocio": 94,
+    "imagenes": [
+      "img-web/soc-249-aretes-maxi-flor-1.webp"
+    ],
+    "descripcionSocio": "Pendientes maxi en forma de flor, llamativos y ligeros para elevar cualquier look."
+  },
+  {
+    "codigo": "SOC-250",
+    "nombre": "Coordinado Flores Doradas",
+    "categoria": "Coordinados",
+    "material": "Metal dorado",
+    "descripcion": "Collar y aretes de flores doradas en relieve, con acabado brillante y pétalos texturizados.\n\nMenudeo $85 · Mayoreo $70",
+    "precioGissell": 85,
+    "precioSocio": 117,
+    "imagenes": [
+      "img-web/soc-250-coordinado-flores-doradas-1.webp",
+      "img-web/soc-249-aretes-maxi-flor-2.webp"
+    ],
+    "descripcionSocio": "Collar y aretes de flores doradas en relieve, con acabado brillante y pétalos texturizados."
+  },
+  {
+    "codigo": "SOC-251",
+    "nombre": "Coordinado Flor Blanca",
+    "categoria": "Coordinados",
+    "material": "Metal dorado y esmalte",
+    "descripcion": "Coordinado de flor blanca, casual y sofisticado, con collar y aretes a juego.\n\nMenudeo $85 · Mayoreo $70",
+    "precioGissell": 85,
+    "precioSocio": 117,
+    "imagenes": [
+      "img-web/soc-251-coordinado-flor-blanca-3.webp"
+    ],
+    "descripcionSocio": "Coordinado de flor blanca, casual y sofisticado, con collar y aretes a juego."
+  },
+  {
+    "codigo": "SOC-252",
+    "nombre": "Aretes de Aro Marfil Marmoleado",
+    "categoria": "Aretes",
+    "material": "Resina y metal dorado",
+    "descripcion": "Aros en tono marfil con acabado marmoleado y detalle dorado brillante.\n\nMenudeo $60 · Mayoreo $50",
+    "precioGissell": 60,
+    "precioSocio": 84,
+    "imagenes": [
+      "img-web/soc-252-aretes-de-aro-marfil-marmoleado-1.webp",
+      "img-web/soc-251-coordinado-flor-blanca-2.webp"
+    ],
+    "descripcionSocio": "Aros en tono marfil con acabado marmoleado y detalle dorado brillante."
+  },
+  {
+    "codigo": "SOC-253",
+    "nombre": "Aretes de Aro Café Ámbar",
+    "categoria": "Aretes",
+    "material": "Resina y metal dorado",
+    "descripcion": "Aros gruesos en tono café ámbar con efecto marmoleado y pieza superior dorada.\n\nMenudeo $65 · Mayoreo $50",
+    "precioGissell": 65,
+    "precioSocio": 84,
+    "imagenes": [
+      "img-web/soc-253-aretes-de-aro-cafe-ambar-1.webp",
+      "img-web/soc-252-aretes-de-aro-marfil-marmoleado-2.webp"
+    ],
+    "descripcionSocio": "Aros gruesos en tono café ámbar con efecto marmoleado y pieza superior dorada."
+  },
+  {
+    "codigo": "SOC-254",
+    "nombre": "Aretes de Clip sin Perforación",
+    "categoria": "Aretes",
+    "material": "Metal dorado y silicona",
+    "descripcion": "Aretes de clip con almohadilla de silicona para una sujeción cómoda, sin necesidad de perforación. Diferentes diseños disponibles.\n\n$55",
+    "precioGissell": 55,
+    "precioSocio": 92,
+    "imagenes": [
+      "img-web/soc-254-aretes-de-clip-sin-perforacion-1.webp",
+      "img-web/soc-254-aretes-de-clip-sin-perforacion-2.webp",
+      "img-web/soc-254-aretes-de-clip-sin-perforacion-3.webp",
+      "img-web/soc-254-aretes-de-clip-sin-perforacion-4.webp",
+      "img-web/soc-254-aretes-de-clip-sin-perforacion-5.webp",
+      "img-web/soc-254-aretes-de-clip-sin-perforacion-6.webp"
+    ],
+    "descripcionSocio": "Aretes de clip con almohadilla de silicona para una sujeción cómoda, sin necesidad de perforación. Diferentes diseños disponibles."
+  },
+  {
+    "codigo": "SOC-255",
+    "nombre": "Aretes Estrella de Mar",
+    "categoria": "Aretes",
+    "material": "Metal dorado y esmalte",
+    "descripcion": "Aretes de estrella de mar con fondo rojo o rosa y acabado brillante.\n\n$45",
+    "precioGissell": 45,
+    "precioSocio": 75,
+    "imagenes": [
+      "img-web/soc-255-aretes-estrella-de-mar-1.webp",
+      "img-web/soc-255-aretes-estrella-de-mar-2.webp"
+    ],
+    "descripcionSocio": "Aretes de estrella de mar con fondo rojo o rosa y acabado brillante."
+  },
+  {
+    "codigo": "SOC-256",
+    "nombre": "Pulseras Marinas",
+    "categoria": "Pulseras",
+    "material": "Acero inoxidable",
+    "descripcion": "Pulseras doradas con estrellas, conchas, perlas y colgantes inspirados en el mar.\n\nMenudeo $65 · Mayoreo $50",
+    "precioGissell": 65,
+    "precioSocio": 84,
+    "imagenes": [
+      "img-web/soc-256-pulseras-marinas-1.webp",
+      "img-web/soc-256-pulseras-marinas-2.webp",
+      "img-web/soc-256-pulseras-marinas-3.webp",
+      "img-web/soc-256-pulseras-marinas-4.webp",
+      "img-web/soc-256-pulseras-marinas-5.webp"
+    ],
+    "descripcionSocio": "Pulseras doradas con estrellas, conchas, perlas y colgantes inspirados en el mar."
+  },
+  {
+    "codigo": "SOC-257",
+    "nombre": "Aretes Ovalados Rosa y Café",
+    "categoria": "Aretes",
+    "material": "Resina y metal dorado",
+    "descripcion": "Aretes ovalados en rosa y café con detalles dorados para realzar cualquier look.\n\n$45",
+    "precioGissell": 45,
+    "precioSocio": 75,
+    "imagenes": [
+      "img-web/soc-257-aretes-ovalados-rosa-y-cafe-1.webp",
+      "img-web/soc-257-aretes-ovalados-rosa-y-cafe-2.webp"
+    ],
+    "descripcionSocio": "Aretes ovalados en rosa y café con detalles dorados para realzar cualquier look."
+  },
+  {
+    "codigo": "SOC-258",
+    "nombre": "Aretes de Flor",
+    "categoria": "Aretes",
+    "material": "Metal dorado y esmalte",
+    "descripcion": "Aretes florales delicados y femeninos, disponibles en diferentes tonos.\n\n$45",
+    "precioGissell": 45,
+    "precioSocio": 75,
+    "imagenes": [
+      "img-web/soc-258-aretes-de-flor-1.webp",
+      "img-web/soc-258-aretes-de-flor-2.webp"
+    ],
+    "descripcionSocio": "Aretes florales delicados y femeninos, disponibles en diferentes tonos."
+  },
+  {
+    "codigo": "SOC-259",
+    "nombre": "Aretes de Corazón con Cristales",
+    "categoria": "Aretes",
+    "material": "Metal dorado y cristales",
+    "descripcion": "Aretes de corazón decorados con cristales brillantes.\n\n$50",
+    "precioGissell": 50,
+    "precioSocio": 84,
+    "imagenes": [
+      "img-web/soc-259-aretes-de-corazon-con-cristales-1.webp",
+      "img-web/soc-259-aretes-de-corazon-con-cristales-2.webp"
+    ],
+    "descripcionSocio": "Aretes de corazón decorados con cristales brillantes."
+  },
+  {
+    "codigo": "SOC-260",
+    "nombre": "Collar Doble",
+    "categoria": "Collares",
+    "material": "Acero inoxidable 316L",
+    "descripcion": "Collar de doble cadena con acabado dorado, ideal para estilizar el escote.\n\nMenudeo $165 · Mayoreo $145",
+    "precioGissell": 165,
+    "precioSocio": 242,
+    "imagenes": [
+      "img-web/soc-260-collar-doble-1.webp"
+    ],
+    "descripcionSocio": "Collar de doble cadena con acabado dorado, ideal para estilizar el escote."
+  },
+  {
+    "codigo": "SOC-261",
+    "nombre": "Collar Corbatero",
+    "categoria": "Collares",
+    "material": "Acero inoxidable 316L",
+    "descripcion": "Collar corbatero dorado de diseño elegante y alargado.\n\nMenudeo $155 · Mayoreo $145",
+    "precioGissell": 155,
+    "precioSocio": 242,
+    "imagenes": [
+      "img-web/soc-261-collar-corbatero-1.webp"
+    ],
+    "descripcionSocio": "Collar corbatero dorado de diseño elegante y alargado."
+  },
+  {
+    "codigo": "SOC-262",
+    "nombre": "Collar Bandana",
+    "categoria": "Collares",
+    "material": "Acero inoxidable 316L",
+    "descripcion": "Collar bandana con pañuelo y dijes marinos en acabado dorado.\n\nMenudeo $165 · Mayoreo $145",
+    "precioGissell": 165,
+    "precioSocio": 242,
+    "imagenes": [
+      "img-web/soc-262-collar-bandana-1.webp",
+      "img-web/soc-262-collar-bandana-2.webp",
+      "img-web/soc-263-broqueles-estilo-piercing-i-1.webp"
+    ],
+    "descripcionSocio": "Collar bandana con pañuelo y dijes marinos en acabado dorado."
+  },
+  {
+    "codigo": "SOC-263",
+    "nombre": "Broqueles Estilo Piercing I",
+    "categoria": "Aretes",
+    "material": "Metal dorado o plateado y cristales",
+    "descripcion": "Broqueles estilo piercing en distintos diseños con cristales. Disponibles en dorado y plateado.\n\nMenudeo $55 · Mayoreo $45",
+    "precioGissell": 55,
+    "precioSocio": 75,
+    "imagenes": [
+      "img-web/soc-263-broqueles-estilo-piercing-i-2.webp",
+      "img-web/soc-263-broqueles-estilo-piercing-i-3.webp",
+      "img-web/soc-262-collar-bandana-3.webp"
+    ],
+    "descripcionSocio": "Broqueles estilo piercing en distintos diseños con cristales. Disponibles en dorado y plateado."
+  },
+  {
+    "codigo": "SOC-264",
+    "nombre": "Collares con Dije para Diario",
+    "categoria": "Collares",
+    "material": "Acero inoxidable",
+    "descripcion": "Collares delicados con dijes variados, ideales para uso diario.\n\nMenudeo $50 · Mayoreo $45",
+    "precioGissell": 50,
+    "precioSocio": 75,
+    "imagenes": [
+      "img-web/soc-264-collares-con-dije-para-diario-1.webp",
+      "img-web/soc-264-collares-con-dije-para-diario-2.webp",
+      "img-web/soc-264-collares-con-dije-para-diario-3.webp",
+      "img-web/soc-264-collares-con-dije-para-diario-4.webp"
+    ],
+    "descripcionSocio": "Collares delicados con dijes variados, ideales para uso diario."
+  },
+  {
+    "codigo": "SOC-265",
+    "nombre": "Broqueles Estilo Piercing II",
+    "categoria": "Aretes",
+    "material": "Metal dorado o plateado y cristales",
+    "descripcion": "Broqueles delicados con cristales y diseños variados para darle brillo al look.\n\nMenudeo $55 · Mayoreo $45",
+    "precioGissell": 55,
+    "precioSocio": 75,
+    "imagenes": [
+      "img-web/soc-265-broqueles-estilo-piercing-ii-1.webp",
+      "img-web/soc-265-broqueles-estilo-piercing-ii-2.webp",
+      "img-web/soc-265-broqueles-estilo-piercing-ii-3.webp",
+      "img-web/soc-265-broqueles-estilo-piercing-ii-4.webp"
+    ],
+    "descripcionSocio": "Broqueles delicados con cristales y diseños variados para darle brillo al look."
+  },
+  {
+    "codigo": "SOC-266",
+    "nombre": "Broqueles Estilo Piercing III",
+    "categoria": "Aretes",
+    "material": "Metal dorado y cristales",
+    "descripcion": "Colección de broqueles estilo piercing con cristales y diferentes figuras.\n\nMenudeo $55 · Mayoreo $45",
+    "precioGissell": 55,
+    "precioSocio": 75,
+    "imagenes": [
+      "img-web/soc-266-broqueles-estilo-piercing-iii-1.webp",
+      "img-web/soc-266-broqueles-estilo-piercing-iii-2.webp",
+      "img-web/soc-266-broqueles-estilo-piercing-iii-3.webp",
+      "img-web/soc-266-broqueles-estilo-piercing-iii-4.webp",
+      "img-web/soc-266-broqueles-estilo-piercing-iii-5.webp",
+      "img-web/soc-266-broqueles-estilo-piercing-iii-6.webp"
+    ],
+    "descripcionSocio": "Colección de broqueles estilo piercing con cristales y diferentes figuras."
+  }
+
+];
+
+function crearProductosCatalogo(tipo) {
+  return PRODUCTOS_CATALOGO.map((producto) => {
+    const copia = { ...producto };
+    copia.precio = tipo === "socio" ? copia.precioSocio : copia.precioGissell;
+    if (tipo === "socio" && copia.descripcionSocio) copia.descripcion = copia.descripcionSocio;
+    if (tipo === "socio" && copia.imagenesSocio) copia.imagenes = copia.imagenesSocio;
+    delete copia.precioGissell;
+    delete copia.precioSocio;
+    delete copia.descripcionSocio;
+    delete copia.imagenesSocio;
+    return copia;
+  });
+}
+
+</script>
+<script>
+(() => {
+  "use strict";
+
+  const config = window.CATALOGO_CONFIG;
+  const productosOriginales = crearProductosCatalogo(config.tipo);
+  const aliasCategorias = {
+    Pulsera: "Pulseras",
+    Pulseras: "Pulseras",
+    Brazalete: "Brazaletes",
+    Brazaletes: "Brazaletes",
+    Reloj: "Relojes",
+    Relojes: "Relojes"
+  };
+  const productos = productosOriginales.map(producto => ({
+    ...producto,
+    categoriaVista: aliasCategorias[producto.categoria] || producto.categoria
+  }));
+
+  const $ = selector => document.querySelector(selector);
+  const elements = {
+    grid: $("#productos"),
+    filters: $("#filters"),
+    moreCategories: $("#moreCategories"),
+    search: $("#buscador"),
+    clearSearch: $("#clearSearch"),
+    sort: $("#ordenar"),
+    counter: $("#contador"),
+    pagination: $("#paginacion"),
+    loadMore: $("#loadMore"),
+    whatsappGeneral: $("#whatsappGeneral"),
+    floatingWhatsapp: $("#floatingWhatsapp"),
+    orderDock: $("#orderDock"),
+    orderCount: $("#orderCount"),
+    productModal: $("#productModal"),
+    modalTitle: $("#modalTitle"),
+    modalImage: $("#modalImage"),
+    modalVideo: $("#modalVideo"),
+    videoFullscreen: $("#videoFullscreen"),
+    modalCounter: $("#modalCounter"),
+    modalThumbs: $("#modalThumbs"),
+    modalDetails: $("#modalDetails"),
+    closeProductModal: $("#closeProductModal"),
+    prevMedia: $("#prevMedia"),
+    nextMedia: $("#nextMedia"),
+    fullscreenViewer: $("#fullscreenViewer"),
+    fullscreenImage: $("#fullscreenImage"),
+    fullscreenCounter: $("#fullscreenCounter"),
+    closeFullscreen: $("#closeFullscreen"),
+    fullscreenPrev: $("#fullscreenPrev"),
+    fullscreenNext: $("#fullscreenNext"),
+    orderModal: $("#orderModal"),
+    orderList: $("#orderList"),
+    orderTotal: $("#orderTotal"),
+    sendOrder: $("#sendOrder"),
+    closeOrderModal: $("#closeOrderModal"),
+    toast: $("#toast")
+  };
+
+  const PAGE_SIZE = 18;
+  const PRIMARY_CATEGORIES = ["Todo", "Cadenas", "Collares", "Pulseras", "Aretes", "Anillos", "Coordinados"];
+  let categoriaActiva = "Todo";
+  let paginaActual = 1;
+  let limiteMovil = PAGE_SIZE;
+  let productoModal = null;
+  let mediosModal = [];
+  let medioActual = 0;
+  let focusAnterior = null;
+  let zoomEscala = 1;
+  let zoomX = 0;
+  let zoomY = 0;
+  let distanciaPinzaInicial = 0;
+  let escalaPinzaInicial = 1;
+  let inicioArrastreX = 0;
+  let inicioArrastreY = 0;
+  let zoomXInicial = 0;
+  let zoomYInicial = 0;
+  const seleccion = new Set();
+
+  function formatoPrecio(valor) {
+    return new Intl.NumberFormat("es-MX", {
+      style: "currency",
+      currency: "MXN",
+      maximumFractionDigits: 0
+    }).format(valor);
+  }
+
+  function textoSeguro(valor = "") {
+    return String(valor)
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+  }
+
+  function normalizarTexto(valor = "") {
+    return String(valor)
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase();
+  }
+
+  function datosPromocion(producto) {
+    const descripcion = producto.descripcion || "";
+    const match = descripcion.match(/Precio regular\s*\$\s*([\d,.]+)\s*(?:→|a)\s*\$\s*([\d,.]+)/i);
+    if (!match) return { descripcion, anterior: null, descuento: null };
+    const anterior = Number(match[1].replaceAll(",", ""));
+    const actual = Number(match[2].replaceAll(",", ""));
+    const descuento = anterior > actual ? Math.round((1 - actual / anterior) * 100) : null;
+    const limpia = descripcion
+      .replace(match[0], "")
+      .replace(/🔥\s*\d+%\s*OFF/gi, "")
+      .replace(/\s{2,}/g, " ")
+      .trim();
+    return { descripcion: limpia, anterior, descuento };
+  }
+
+  function getMedios(producto) {
+    const imagenes = producto.imagenes?.length ? producto.imagenes : ["img/placeholder.svg"];
+    return [...imagenes, ...(producto.videos || [])];
+  }
+
+  function esVideo(ruta) { return /\.(mp4|webm|ogg)$/i.test(ruta); }
+  function numeroCodigo(producto) {
+    const match = String(producto.codigo || "").match(/(\d+)/);
+    return match ? Number(match[1]) : 0;
+  }
+
+  function mensajeProducto(producto) {
+    return encodeURIComponent(
+      `Hola, vengo del ${config.origenMensaje}. Me interesa esta pieza:\n\n` +
+      `Código: ${producto.codigo}\nProducto: ${producto.nombre}\n` +
+      `Precio: ${formatoPrecio(producto.precio)}\n\n¿Sigue disponible?`
+    );
+  }
+
+  function linkWhatsApp(producto) {
+    return `https://wa.me/${config.whatsapp}?text=${mensajeProducto(producto)}`;
+  }
+
+  function mensajePedido() {
+    const elegidos = productos.filter(producto => seleccion.has(producto.codigo));
+    const detalle = elegidos.map(producto =>
+      `• ${producto.codigo} · ${producto.nombre} · ${formatoPrecio(producto.precio)}`
+    ).join("\n");
+    return encodeURIComponent(
+      `Hola, vengo del ${config.origenMensaje}. Me interesan estas piezas:\n\n${detalle}\n\n¿Siguen disponibles?`
+    );
+  }
+
+  function enlaceProducto(producto) {
+    const url = new URL(window.location.href);
+    url.search = "";
+    url.hash = producto.codigo;
+    return url.toString();
+  }
+
+  function mostrarToast(mensaje) {
+    elements.toast.textContent = mensaje;
+    elements.toast.classList.add("show");
+    window.clearTimeout(mostrarToast.timer);
+    mostrarToast.timer = window.setTimeout(() => elements.toast.classList.remove("show"), 2200);
+  }
+
+  async function compartirProducto(producto) {
+    const data = { title: producto.nombre, text: `${producto.nombre} · ${formatoPrecio(producto.precio)}`, url: enlaceProducto(producto) };
+    if (navigator.share) {
+      try { await navigator.share(data); } catch (error) { if (error.name !== "AbortError") mostrarToast("No se pudo compartir"); }
+      return;
+    }
+    try {
+      await navigator.clipboard.writeText(data.url);
+      mostrarToast("Enlace copiado");
+    } catch { mostrarToast("Copia el enlace desde tu navegador"); }
+  }
+
+  function actualizarUrl() {
+    const url = new URL(window.location.href);
+    const query = elements.search.value.trim();
+    query ? url.searchParams.set("q", query) : url.searchParams.delete("q");
+    categoriaActiva !== "Todo" ? url.searchParams.set("categoria", categoriaActiva) : url.searchParams.delete("categoria");
+    elements.sort.value !== "nuevo" ? url.searchParams.set("orden", elements.sort.value) : url.searchParams.delete("orden");
+    window.history.replaceState(null, "", url);
+  }
+
+  function ordenarLista(lista) {
+    const copia = [...lista];
+    const agotadoAlFinal = (a, b) => Number(Boolean(a.agotado)) - Number(Boolean(b.agotado));
+    const nombre = (a, b) => a.nombre.localeCompare(b.nombre, "es", { sensitivity: "base" });
+    const modos = {
+      nuevo: (a, b) => agotadoAlFinal(a, b) || numeroCodigo(b) - numeroCodigo(a),
+      antiguo: (a, b) => agotadoAlFinal(a, b) || numeroCodigo(a) - numeroCodigo(b),
+      az: (a, b) => agotadoAlFinal(a, b) || nombre(a, b),
+      za: (a, b) => agotadoAlFinal(a, b) || nombre(b, a),
+      "precio-asc": (a, b) => agotadoAlFinal(a, b) || a.precio - b.precio,
+      "precio-desc": (a, b) => agotadoAlFinal(a, b) || b.precio - a.precio
+    };
+    return copia.sort(modos[elements.sort.value] || modos.nuevo);
+  }
+
+  function listaFiltrada() {
+    const consulta = normalizarTexto(elements.search.value.trim());
+    const lista = productos.filter(producto => {
+      const categoriaCoincide = categoriaActiva === "Todo" || producto.categoriaVista === categoriaActiva;
+      const contenido = normalizarTexto([
+        producto.codigo,
+        producto.nombre,
+        producto.categoriaVista,
+        producto.material,
+        producto.descripcion,
+        producto.precio
+      ].join(" "));
+      return categoriaCoincide && contenido.includes(consulta);
+    });
+    return ordenarLista(lista);
+  }
+
+  function cardProducto(producto) {
+    const medios = getMedios(producto);
+    const promo = datosPromocion(producto);
+    const seleccionado = seleccion.has(producto.codigo);
+    return `
+      <article class="product${producto.agotado ? " agotado" : ""}" data-code="${textoSeguro(producto.codigo)}">
+        <button class="photo-wrap" data-action="open" aria-label="Ver detalles de ${textoSeguro(producto.nombre)}">
+          <span class="code">${textoSeguro(producto.codigo)}</span>
+          <img loading="lazy" decoding="async" src="${textoSeguro(medios[0])}" alt="${textoSeguro(producto.nombre)}" onerror="this.src='img/placeholder.svg'">
+          ${producto.agotado ? '<span class="status-badge">AGOTADO</span>' : ""}
+          ${medios.length > 1 ? `<span class="media-count">${medios.length} fotos/video</span>` : ""}
+        </button>
+        <div class="product-content">
+          <span class="category">${textoSeguro(producto.categoriaVista)}</span>
+          <h3 class="product-name">${textoSeguro(producto.nombre)}</h3>
+          <p class="material">${textoSeguro(producto.material)}</p>
+          ${promo.descripcion ? `<p class="description">${textoSeguro(promo.descripcion)}</p>` : ""}
+          ${promo.descuento ? `<span class="promo-badge">${promo.descuento}% OFF</span>` : ""}
+          <div class="product-footer">
+            <div class="price-stack">
+              ${promo.anterior ? `<span class="old-price">${formatoPrecio(promo.anterior)}</span>` : ""}
+              <span class="price">${formatoPrecio(producto.precio)}</span>
+            </div>
+            <div class="card-actions">
+              ${producto.agotado ? "" : `<button class="icon-btn${seleccionado ? " selected" : ""}" data-action="select" aria-label="${seleccionado ? "Quitar" : "Agregar"} ${textoSeguro(producto.nombre)} ${seleccionado ? "del" : "al"} pedido" aria-pressed="${seleccionado}">＋</button>`}
+              ${producto.agotado ? "" : `<a class="icon-btn" href="${linkWhatsApp(producto)}" target="_blank" rel="noopener" aria-label="Pedir ${textoSeguro(producto.nombre)} por WhatsApp">↗</a>`}
+            </div>
+          </div>
+        </div>
+      </article>`;
+  }
+
+  function pintarProductos({ conservar = false } = {}) {
+    const lista = listaFiltrada();
+    const totalPaginas = Math.max(1, Math.ceil(lista.length / PAGE_SIZE));
+    paginaActual = Math.min(paginaActual, totalPaginas);
+    const desktop = window.matchMedia("(min-width: 620px)").matches;
+    const visibles = desktop
+      ? lista.slice((paginaActual - 1) * PAGE_SIZE, paginaActual * PAGE_SIZE)
+      : lista.slice(0, limiteMovil);
+
+    elements.counter.textContent = lista.length
+      ? `${lista.length} pieza${lista.length === 1 ? "" : "s"}${desktop ? ` · Página ${paginaActual} de ${totalPaginas}` : ""}`
+      : "0 piezas";
+
+    if (!lista.length) {
+      elements.grid.innerHTML = `
+        <div class="empty-state">
+          <h3>No encontramos esa pieza</h3>
+          <p>Prueba otra palabra o limpia los filtros.</p>
+          <button class="btn btn-secondary" data-action="reset">Limpiar búsqueda</button>
+        </div>`;
+    } else if (conservar && !desktop) {
+      elements.grid.insertAdjacentHTML("beforeend", visibles.slice(elements.grid.children.length).map(cardProducto).join(""));
+    } else {
+      elements.grid.innerHTML = visibles.map(cardProducto).join("");
+    }
+
+    elements.loadMore.hidden = desktop || visibles.length >= lista.length || !lista.length;
+    pintarPaginacion(totalPaginas, desktop && lista.length > 0);
+    actualizarUrl();
+  }
+
+  function pintarPaginacion(totalPaginas, visible) {
+    elements.pagination.innerHTML = "";
+    if (!visible || totalPaginas <= 1) return;
+    const paginas = [];
+    for (let pagina = 1; pagina <= totalPaginas; pagina += 1) {
+      paginas.push(`<button class="page-btn${pagina === paginaActual ? " active" : ""}" data-page="${pagina}" aria-label="Página ${pagina}"${pagina === paginaActual ? ' aria-current="page"' : ""}>${pagina}</button>`);
+    }
+    elements.pagination.innerHTML = `
+      <button class="page-btn" data-page="${paginaActual - 1}" aria-label="Página anterior" ${paginaActual === 1 ? "disabled" : ""}>‹</button>
+      ${paginas.join("")}
+      <button class="page-btn" data-page="${paginaActual + 1}" aria-label="Página siguiente" ${paginaActual === totalPaginas ? "disabled" : ""}>›</button>`;
+  }
+
+  function setCategoria(categoria) {
+    categoriaActiva = categoria;
+    paginaActual = 1;
+    limiteMovil = PAGE_SIZE;
+    elements.filters.querySelectorAll(".filter").forEach(button => {
+      const active = button.dataset.category === categoria;
+      button.classList.toggle("active", active);
+      button.setAttribute("aria-pressed", String(active));
+    });
+    elements.moreCategories.value = PRIMARY_CATEGORIES.includes(categoria) ? "" : categoria;
+    pintarProductos();
+  }
+
+  function pintarFiltros() {
+    const categories = [...new Set(productos.map(producto => producto.categoriaVista))].sort((a, b) => a.localeCompare(b, "es"));
+    const principales = PRIMARY_CATEGORIES.filter(category => category === "Todo" || categories.includes(category));
+    const extras = categories.filter(category => !principales.includes(category));
+    elements.filters.innerHTML = principales.map(category =>
+      `<button class="filter${category === categoriaActiva ? " active" : ""}" data-category="${textoSeguro(category)}" aria-pressed="${category === categoriaActiva}">${textoSeguro(category)}</button>`
+    ).join("");
+    elements.moreCategories.innerHTML = '<option value="">Más categorías</option>' + extras.map(category => `<option value="${textoSeguro(category)}">${textoSeguro(category)}</option>`).join("");
+  }
+
+  function seleccionarProducto(producto) {
+    seleccion.has(producto.codigo) ? seleccion.delete(producto.codigo) : seleccion.add(producto.codigo);
+    actualizarPedido();
+    pintarProductos();
+    if (productoModal?.codigo === producto.codigo) pintarDetallesModal();
+  }
+
+  function actualizarPedido() {
+    elements.orderCount.textContent = seleccion.size;
+    elements.orderDock.classList.toggle("visible", seleccion.size > 0);
+  }
+
+  function abrirProducto(producto, index = 0, { registrarHistorial = true } = {}) {
+    productoModal = producto;
+    mediosModal = getMedios(producto);
+    medioActual = index;
+    focusAnterior = document.activeElement;
+    elements.productModal.classList.add("open");
+    elements.productModal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
+    elements.modalTitle.textContent = producto.nombre;
+    pintarMedioModal();
+    pintarDetallesModal();
+    if (registrarHistorial) {
+      window.history.pushState({ catalogoVista: "producto", codigo: producto.codigo }, "", enlaceProducto(producto));
+    }
+    elements.closeProductModal.focus();
+  }
+
+  function cerrarProducto({ limpiarHash = true } = {}) {
+    cerrarPantallaCompleta();
+    elements.productModal.classList.remove("open");
+    elements.productModal.setAttribute("aria-hidden", "true");
+    elements.modalVideo.pause();
+    document.body.classList.remove("modal-open");
+    if (limpiarHash && window.location.hash.startsWith("#SOC-")) {
+      const url = new URL(window.location.href);
+      url.hash = "";
+      window.history.replaceState(null, "", url);
+    }
+    focusAnterior?.focus?.();
+  }
+
+  function pintarMedioModal() {
+    const medio = mediosModal[medioActual];
+    elements.modalVideo.pause();
+    if (esVideo(medio)) {
+      elements.modalImage.hidden = true;
+      elements.modalVideo.style.display = "block";
+      elements.videoFullscreen.classList.add("visible");
+      elements.modalVideo.src = medio;
+      elements.modalVideo.load();
+    } else {
+      elements.modalVideo.style.display = "none";
+      elements.videoFullscreen.classList.remove("visible");
+      elements.modalVideo.removeAttribute("src");
+      elements.modalImage.hidden = false;
+      elements.modalImage.src = medio;
+      elements.modalImage.alt = productoModal.nombre;
+    }
+    elements.modalCounter.textContent = `${medioActual + 1} / ${mediosModal.length}`;
+    elements.prevMedia.hidden = mediosModal.length <= 1;
+    elements.nextMedia.hidden = mediosModal.length <= 1;
+    elements.modalThumbs.innerHTML = mediosModal.length > 1 ? mediosModal.map((item, index) => `
+      <button class="modal-thumb${index === medioActual ? " active" : ""}" data-media="${index}" aria-label="Ver ${esVideo(item) ? "video" : "imagen"} ${index + 1}">
+        ${esVideo(item) ? '<span class="video-label">▶</span>' : `<img loading="lazy" src="${textoSeguro(item)}" alt="">`}
+      </button>`).join("") : "";
+    if (elements.fullscreenViewer.classList.contains("open")) {
+      if (esVideo(medio)) cerrarPantallaCompleta();
+      else pintarPantallaCompleta();
+    }
+  }
+
+  function pintarPantallaCompleta() {
+    const medio = mediosModal[medioActual];
+    if (!medio || esVideo(medio)) return;
+    elements.fullscreenImage.src = medio;
+    elements.fullscreenImage.alt = productoModal?.nombre || "Imagen del producto";
+    elements.fullscreenCounter.textContent = `${medioActual + 1} / ${mediosModal.length}`;
+    const anterior = mediosModal[(medioActual - 1 + mediosModal.length) % mediosModal.length];
+    const siguiente = mediosModal[(medioActual + 1) % mediosModal.length];
+    elements.fullscreenPrev.hidden = mediosModal.length <= 1 || esVideo(anterior);
+    elements.fullscreenNext.hidden = mediosModal.length <= 1 || esVideo(siguiente);
+    reiniciarZoom();
+  }
+
+  function abrirVideoPantallaCompleta() {
+    const video = elements.modalVideo;
+    if (video.requestFullscreen) video.requestFullscreen();
+    else if (video.webkitEnterFullscreen) video.webkitEnterFullscreen();
+    else if (video.webkitRequestFullscreen) video.webkitRequestFullscreen();
+  }
+
+  function aplicarZoom() {
+    const limiteX = window.innerWidth * (zoomEscala - 1) / 2;
+    const limiteY = window.innerHeight * (zoomEscala - 1) / 2;
+    zoomX = Math.max(-limiteX, Math.min(limiteX, zoomX));
+    zoomY = Math.max(-limiteY, Math.min(limiteY, zoomY));
+    elements.fullscreenImage.style.transform = `translate3d(${zoomX}px, ${zoomY}px, 0) scale(${zoomEscala})`;
+    elements.fullscreenImage.style.cursor = zoomEscala > 1 ? "grab" : "zoom-in";
+  }
+
+  function reiniciarZoom() {
+    zoomEscala = 1;
+    zoomX = 0;
+    zoomY = 0;
+    aplicarZoom();
+  }
+
+  function distanciaEntreToques(toques) {
+    return Math.hypot(toques[0].clientX - toques[1].clientX, toques[0].clientY - toques[1].clientY);
+  }
+
+  function abrirPantallaCompleta({ registrarHistorial = true } = {}) {
+    if (!productoModal || esVideo(mediosModal[medioActual])) return;
+    pintarPantallaCompleta();
+    elements.fullscreenViewer.classList.add("open");
+    elements.fullscreenViewer.setAttribute("aria-hidden", "false");
+    if (registrarHistorial) {
+      window.history.pushState({ catalogoVista: "imagen", codigo: productoModal.codigo, medio: medioActual }, "", window.location.href);
+    }
+    elements.closeFullscreen.focus();
+  }
+
+  function cerrarPantallaCompleta() {
+    if (!elements.fullscreenViewer.classList.contains("open")) return;
+    elements.fullscreenViewer.classList.remove("open");
+    elements.fullscreenViewer.setAttribute("aria-hidden", "true");
+    elements.fullscreenImage.removeAttribute("src");
+    reiniciarZoom();
+  }
+
+  function cerrarProductoDesdeInterfaz() {
+    if (window.history.state?.catalogoVista === "producto") window.history.back();
+    else cerrarProducto();
+  }
+
+  function cerrarPantallaCompletaDesdeInterfaz() {
+    if (window.history.state?.catalogoVista === "imagen") window.history.back();
+    else cerrarPantallaCompleta();
+  }
+
+  function sincronizarVistaConHistorial(state = {}) {
+    const vista = state?.catalogoVista || "catalogo";
+    if (vista === "catalogo") {
+      cerrarPantallaCompleta();
+      if (elements.productModal.classList.contains("open")) cerrarProducto({ limpiarHash: false });
+      return;
+    }
+    const producto = productos.find(item => item.codigo === state.codigo);
+    if (!producto) return;
+    if (!elements.productModal.classList.contains("open") || productoModal?.codigo !== producto.codigo) {
+      abrirProducto(producto, Number(state.medio) || 0, { registrarHistorial: false });
+    }
+    if (vista === "producto") {
+      cerrarPantallaCompleta();
+      return;
+    }
+    medioActual = Number(state.medio) || 0;
+    pintarMedioModal();
+    if (!elements.fullscreenViewer.classList.contains("open")) {
+      abrirPantallaCompleta({ registrarHistorial: false });
+    }
+  }
+
+  function pintarDetallesModal() {
+    const promo = datosPromocion(productoModal);
+    const selected = seleccion.has(productoModal.codigo);
+    elements.modalDetails.innerHTML = `
+      <span class="category">${textoSeguro(productoModal.categoriaVista)} · ${textoSeguro(productoModal.codigo)}</span>
+      <h2>${textoSeguro(productoModal.nombre)}</h2>
+      <p class="material">${textoSeguro(productoModal.material)}</p>
+      ${promo.descripcion ? `<p class="modal-description">${textoSeguro(promo.descripcion)}</p>` : ""}
+      ${promo.descuento ? `<span class="promo-badge">${promo.descuento}% OFF</span>` : ""}
+      <div class="price-stack">
+        ${promo.anterior ? `<span class="old-price">${formatoPrecio(promo.anterior)}</span>` : ""}
+        <span class="price">${formatoPrecio(productoModal.precio)}</span>
+      </div>
+      <div class="modal-actions">
+        ${productoModal.agotado ? '<span class="btn btn-secondary">Producto agotado</span>' : `<a class="btn btn-whatsapp" href="${linkWhatsApp(productoModal)}" target="_blank" rel="noopener">Pedir por WhatsApp</a>`}
+        ${productoModal.agotado ? "" : `<button class="btn btn-secondary" data-modal-action="select">${selected ? "Quitar del pedido" : "Agregar a mi pedido"}</button>`}
+        <button class="btn btn-secondary" data-modal-action="share">Compartir pieza</button>
+      </div>`;
+  }
+
+  function moverMedio(delta) {
+    if (mediosModal.length < 2) return;
+    medioActual = (medioActual + delta + mediosModal.length) % mediosModal.length;
+    pintarMedioModal();
+  }
+
+  function abrirPedido() {
+    const elegidos = productos.filter(producto => seleccion.has(producto.codigo));
+    elements.orderList.innerHTML = elegidos.map(producto => `
+      <div class="order-item">
+        <img src="${textoSeguro(getMedios(producto)[0])}" alt="">
+        <div><strong>${textoSeguro(producto.nombre)}</strong><span>${textoSeguro(producto.codigo)} · ${formatoPrecio(producto.precio)}</span></div>
+        <button class="remove-item" data-remove="${textoSeguro(producto.codigo)}" aria-label="Quitar ${textoSeguro(producto.nombre)}">×</button>
+      </div>`).join("");
+    elements.orderTotal.textContent = `${elegidos.length} pieza${elegidos.length === 1 ? "" : "s"} seleccionada${elegidos.length === 1 ? "" : "s"}`;
+    elements.sendOrder.href = `https://wa.me/${config.whatsapp}?text=${mensajePedido()}`;
+    elements.orderModal.classList.add("open");
+    elements.orderModal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
+    elements.closeOrderModal.focus();
+  }
+
+  function cerrarPedido() {
+    elements.orderModal.classList.remove("open");
+    elements.orderModal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
+    elements.orderDock.focus();
+  }
+
+  function restaurarEstadoUrl() {
+    const params = new URLSearchParams(window.location.search);
+    elements.search.value = params.get("q") || "";
+    elements.sort.value = params.get("orden") || "nuevo";
+    categoriaActiva = params.get("categoria") || "Todo";
+    elements.clearSearch.hidden = !elements.search.value;
+  }
+
+  elements.grid.addEventListener("click", event => {
+    const target = event.target.closest("[data-action]");
+    if (!target) return;
+    if (target.dataset.action === "reset") {
+      elements.search.value = "";
+      elements.clearSearch.hidden = true;
+      setCategoria("Todo");
+      return;
+    }
+    const card = target.closest(".product");
+    const producto = productos.find(item => item.codigo === card?.dataset.code);
+    if (!producto) return;
+    if (target.dataset.action === "open") abrirProducto(producto);
+    if (target.dataset.action === "select") seleccionarProducto(producto);
+  });
+
+  elements.filters.addEventListener("click", event => {
+    const button = event.target.closest("[data-category]");
+    if (button) setCategoria(button.dataset.category);
+  });
+  elements.moreCategories.addEventListener("change", () => {
+    if (elements.moreCategories.value) setCategoria(elements.moreCategories.value);
+  });
+  elements.search.addEventListener("input", () => {
+    elements.clearSearch.hidden = !elements.search.value;
+    paginaActual = 1;
+    limiteMovil = PAGE_SIZE;
+    pintarProductos();
+  });
+  elements.clearSearch.addEventListener("click", () => {
+    elements.search.value = "";
+    elements.clearSearch.hidden = true;
+    elements.search.focus();
+    pintarProductos();
+  });
+  elements.sort.addEventListener("change", () => { paginaActual = 1; limiteMovil = PAGE_SIZE; pintarProductos(); });
+  elements.pagination.addEventListener("click", event => {
+    const button = event.target.closest("[data-page]");
+    if (!button || button.disabled) return;
+    paginaActual = Number(button.dataset.page);
+    pintarProductos();
+    $("#catalogo").scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+  elements.loadMore.addEventListener("click", () => { limiteMovil += PAGE_SIZE; pintarProductos(); });
+  elements.orderDock.addEventListener("click", abrirPedido);
+  elements.closeOrderModal.addEventListener("click", cerrarPedido);
+  elements.orderModal.addEventListener("click", event => { if (event.target === elements.orderModal) cerrarPedido(); });
+  elements.orderList.addEventListener("click", event => {
+    const button = event.target.closest("[data-remove]");
+    if (!button) return;
+    seleccion.delete(button.dataset.remove);
+    actualizarPedido();
+    if (seleccion.size) abrirPedido(); else cerrarPedido();
+    pintarProductos();
+  });
+  elements.closeProductModal.addEventListener("click", cerrarProductoDesdeInterfaz);
+  elements.productModal.addEventListener("click", event => { if (event.target === elements.productModal) cerrarProductoDesdeInterfaz(); });
+  elements.prevMedia.addEventListener("click", () => moverMedio(-1));
+  elements.nextMedia.addEventListener("click", () => moverMedio(1));
+  elements.modalImage.addEventListener("click", abrirPantallaCompleta);
+  elements.videoFullscreen.addEventListener("click", abrirVideoPantallaCompleta);
+  elements.closeFullscreen.addEventListener("click", cerrarPantallaCompletaDesdeInterfaz);
+  elements.fullscreenViewer.addEventListener("click", event => { if (event.target === elements.fullscreenViewer) cerrarPantallaCompletaDesdeInterfaz(); });
+  elements.fullscreenImage.addEventListener("dblclick", event => {
+    event.preventDefault();
+    zoomEscala = zoomEscala > 1 ? 1 : 2.5;
+    zoomX = 0;
+    zoomY = 0;
+    aplicarZoom();
+  });
+  elements.fullscreenImage.addEventListener("touchstart", event => {
+    if (event.touches.length === 2) {
+      event.preventDefault();
+      distanciaPinzaInicial = distanciaEntreToques(event.touches);
+      escalaPinzaInicial = zoomEscala;
+    } else if (event.touches.length === 1 && zoomEscala > 1) {
+      event.preventDefault();
+      inicioArrastreX = event.touches[0].clientX;
+      inicioArrastreY = event.touches[0].clientY;
+      zoomXInicial = zoomX;
+      zoomYInicial = zoomY;
+    }
+  }, { passive: false });
+  elements.fullscreenImage.addEventListener("touchmove", event => {
+    if (event.touches.length === 2 && distanciaPinzaInicial) {
+      event.preventDefault();
+      const distanciaActual = distanciaEntreToques(event.touches);
+      zoomEscala = Math.max(1, Math.min(4, escalaPinzaInicial * distanciaActual / distanciaPinzaInicial));
+      if (zoomEscala === 1) { zoomX = 0; zoomY = 0; }
+      aplicarZoom();
+    } else if (event.touches.length === 1 && zoomEscala > 1) {
+      event.preventDefault();
+      zoomX = zoomXInicial + event.touches[0].clientX - inicioArrastreX;
+      zoomY = zoomYInicial + event.touches[0].clientY - inicioArrastreY;
+      aplicarZoom();
+    }
+  }, { passive: false });
+  elements.fullscreenImage.addEventListener("touchend", event => {
+    if (event.touches.length < 2) distanciaPinzaInicial = 0;
+    if (zoomEscala < 1.05) reiniciarZoom();
+  });
+  elements.fullscreenPrev.addEventListener("click", () => moverMedio(-1));
+  elements.fullscreenNext.addEventListener("click", () => moverMedio(1));
+  elements.modalThumbs.addEventListener("click", event => {
+    const button = event.target.closest("[data-media]");
+    if (!button) return;
+    medioActual = Number(button.dataset.media);
+    pintarMedioModal();
+  });
+  elements.modalDetails.addEventListener("click", event => {
+    const button = event.target.closest("[data-modal-action]");
+    if (!button) return;
+    if (button.dataset.modalAction === "select") seleccionarProducto(productoModal);
+    if (button.dataset.modalAction === "share") compartirProducto(productoModal);
+  });
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+      if (elements.fullscreenViewer.classList.contains("open")) cerrarPantallaCompletaDesdeInterfaz();
+      else if (elements.productModal.classList.contains("open")) cerrarProductoDesdeInterfaz();
+      if (elements.orderModal.classList.contains("open")) cerrarPedido();
+    }
+    if (elements.productModal.classList.contains("open") && event.key === "ArrowRight") moverMedio(1);
+    if (elements.productModal.classList.contains("open") && event.key === "ArrowLeft") moverMedio(-1);
+  });
+  window.addEventListener("resize", () => pintarProductos());
+  window.addEventListener("popstate", event => sincronizarVistaConHistorial(event.state));
+  window.addEventListener("pageshow", event => {
+    if (event.persisted) window.location.reload();
+  });
+
+  const generalMessage = encodeURIComponent(`Hola, vengo del ${config.origenMensaje}. Quiero información de las piezas disponibles.`);
+  const generalLink = `https://wa.me/${config.whatsapp}?text=${generalMessage}`;
+  elements.whatsappGeneral.href = generalLink;
+  elements.floatingWhatsapp.href = generalLink;
+  restaurarEstadoUrl();
+  pintarFiltros();
+  setCategoria(categoriaActiva);
+  actualizarPedido();
+
+  const hashProduct = productos.find(producto => `#${producto.codigo}` === window.location.hash.toUpperCase());
+  if (hashProduct) {
+    const catalogUrl = new URL(window.location.href);
+    catalogUrl.hash = "";
+    window.history.replaceState({ catalogoVista: "catalogo" }, "", catalogUrl);
+    abrirProducto(hashProduct);
+  } else {
+    window.history.replaceState({ catalogoVista: "catalogo" }, "", window.location.href);
+  }
+})();
+
+</script>
+</body>
+</html>
